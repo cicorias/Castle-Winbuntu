@@ -1,0 +1,236 @@
+"  AUTOGROUPS {{{
+
+augroup configgroup
+  autocmd!
+  autocmd BufEnter Rakefile set filetype=ruby
+  autocmd BufEnter Vagrantfile set filetype=ruby
+  autocmd BufEnter Gemfile set filetype=ruby
+augroup end
+
+" }}}
+" COLORS {{{
+
+" Enable syntax highlighting
+syntax enable
+
+"Set colorscheme
+set background=dark
+colorscheme gruvbox
+
+"}}}
+" PLUGIN OPTIONS {{{
+
+"vim-airline options
+set laststatus=2
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#tabline#show_tab_type = 0
+let g:airline#extensions#tabline#buffer_min_count = 2
+let g:airline_skip_empty_sections = 1
+let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
+
+" vim-markdown settings
+let g:markdown_include_jekyll_support = 0
+
+" allows cursor change in tmux mode
+if exists('$TMUX')
+    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+else
+    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
+
+" Git Gutter
+let g:gitgutter_sign_column_always = 1
+highlight GitGutterAdd          ctermbg=235 ctermfg=10
+highlight GitGutterChange       ctermbg=235 ctermfg=208
+highlight GitGutterDelete       ctermbg=235 ctermfg=9
+highlight GitGutterChangeDelete ctermbg=235 ctermfg=175
+
+" ALE Options
+let g:ale_lint_on_text_changed = 1
+let g:ale_lint_on_save = 0
+let g:ale_sign_error = '✘'
+let g:ale_sign_warning = '⚠'
+highlight ALEErrorSign ctermbg=NONE ctermfg=red
+highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
+
+" }}}
+" {{{ SPACES & TABS
+
+set tabstop=2
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+
+" Auto indent
+set autoindent
+set smartindent
+
+ " }}}
+" UI CONFIG {{{
+
+" Enable line numbers
+set number
+
+" Disable mouse
+set mouse=
+
+" Increase History
+set history=100
+
+" Minimum number of lines above and below cursor
+set scrolloff=14
+
+" Visual autocomplete for command menu
+set wildmenu
+
+" Redraw only when we ned to
+set lazyredraw
+
+" highlight matching brackets
+set showmatch
+
+" Hide buffers after they are abandoned. Also allows switching buffers without
+" saving them first.
+set hidden
+
+" Highlight Trailing Whitespace
+highlight ExtraWhitespace ctermbg=darkred guibg=darkred
+match ExtraWhitespace /\s\+$/
+
+" Highlight Literal Tabs
+highlight LiteralTabs ctermbg=darkred guibg=darkred
+match LiteralTabs /	/
+
+" Auto Complete Menu
+set completeopt=longest,menu
+
+" paulrouget vim settings:
+highlight vertsplit       ctermbg=235 ctermfg=239
+highlight LineNr                      ctermfg=239
+highlight StatusLine      ctermbg=245 ctermfg=235
+highlight StatusLineNC    ctermbg=237 ctermfg=235
+highlight Search          ctermbg=235 ctermfg=166
+highlight Default                     ctermfg=1
+highlight SignColumn      ctermbg=235
+highlight EndOfBuffer     ctermbg=235 ctermfg=235
+
+" }}}
+" SEARCHING {{{
+
+" Enable highlight search and highlight when searching
+set hlsearch
+set incsearch
+
+" Ignore case when searching
+set ignorecase
+set smartcase
+
+" Turn off search highlight with <leader><space>
+nnoremap <leader><space> :nohlsearch<CR>
+
+" }}}
+" FOLDING {{{
+
+" enable folding
+set foldenable
+
+" Open up to 10 folds by default
+set foldlevelstart=10
+
+" Max nested folds
+set foldnestmax=10
+
+" space opens/closes folds
+nnoremap <space> za
+
+
+"}}}
+" MOVEMENT {{{
+
+" Set to allow you to backspace while back past insert mode
+set backspace=2
+
+" move to beginning/end of line
+nnoremap B ^
+nnoremap E $
+
+" highlight last inserted text
+nnoremap gV `[v`]
+
+" Open file and goto previous location
+autocmd BufReadPost *  if line("'\"") > 1 && line("'\"") <= line("$")
+    \|     exe "normal! g`\""
+    \|  endif
+
+" }}}
+" SHORTCUTS {{{
+
+" Clear whitespace at end of line with '_$'
+nmap _$ :call Preserve("%s/\\s\\+$//e")<CR>
+
+" Quote words and lines with \q', \q", \qd
+:nnoremap <Leader>q" ciw""<Esc>P
+:nnoremap <Leader>q' ciw''<Esc>P
+:nnoremap <Leader>qd daW"=substitute(@@,"'\\\|\"","","g")<CR>P
+
+" Wrap words in backticks with:  \q`
+:nnoremap <Leader>q` ciw``<Esc>P
+
+" ALE Shortcuts
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
+
+" }}}
+" BACKUPS & HISTORY {{{
+
+" Disable files that don't need to be created
+set noswapfile
+set nobackup
+set nowritebackup
+
+" Persistent Undo
+if v:version >= 703
+    set undofile
+    set undodir=~/.vim/tmp,~/.tmp,~/tmp,~/var/tmp,/tmp
+endif
+
+" }}}
+" FUNCTIONS {{{
+
+function! Preserve(command)
+  " Preparation: save last search, and cursor position.
+  let _s=@/
+  let l = line(".")
+  let c = col(".")
+  " Do the business:
+  execute a:command
+  " Clean up: restore previous search history, and cursor position
+  let @/=_s
+  call cursor(l, c)
+endfunction
+
+" }}}
+" VARIOUS REMAPS {{{
+
+" Spelling / Typos
+:command! WQ wq
+:command! Wq wq
+:command! W w
+:command! Q q
+
+" Switch buffers with Tab & Shift-Tab
+:nnoremap <Tab> :bnext<CR>
+:nnoremap <S-Tab> :bprevious<CR>
+
+" }}}
+
+set modelines=1
+" vim:foldmethod=marker:foldlevel=0
+
+" Never do this again --> :set paste <ctrl-v> :set no paste
+let &t_SI .= "\<Esc>[?2004h"
+let &t_EI .= "\<Esc>[?2004l"
