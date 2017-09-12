@@ -50,7 +50,7 @@ export BASH_IT="/home/rtreweex/bash-it"
 
 # Lock and Load a custom theme file
 # location /.bash_it/themes/
-#export BASH_IT_THEME='powerline-multiline'
+export BASH_IT_THEME='powerline-multiline'
 
 # (Advanced): Change this to the name of your remote repo if you
 # cloned bash-it with a remote other than origin such as `bash-it`.
@@ -73,5 +73,10 @@ export BASH_IT="/home/rtreweex/bash-it"
 source "$BASH_IT"/bash_it.sh
 
 # Virtualenv
-WORKON_HOME=~/Envs
-source /usr/local/bin/virtualenvwrapper.sh
+#WORKON_HOME=~/Envs
+#source /usr/local/bin/virtualenvwrapper.sh
+
+# Golang
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/goprojects
+export PATH=$PATH:$GOPATH/bin

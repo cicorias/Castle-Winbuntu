@@ -30,6 +30,9 @@ let g:airline#extensions#tabline#buffer_min_count = 2
 let g:airline_skip_empty_sections = 1
 let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
 
+" vim-git options
+set autowrite
+
 " vim-markdown settings
 let g:markdown_include_jekyll_support = 0
 
@@ -43,7 +46,7 @@ else
 endif
 
 " Git Gutter
-let g:gitgutter_sign_column_always = 1
+set signcolumn=yes
 highlight GitGutterAdd          ctermbg=235 ctermfg=10
 highlight GitGutterChange       ctermbg=235 ctermfg=208
 highlight GitGutterDelete       ctermbg=235 ctermfg=9
