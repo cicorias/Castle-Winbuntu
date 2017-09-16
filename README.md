@@ -1,6 +1,6 @@
 # Castle Winbuntu
 
-This is totally a WIP, and my (somewhat clumsy) initial attempt at getting something functional across the Windows Subsystem for Linux (Bash on Ubuntu) that can also more or less work on Centos 7. At present, I've been running things through ConEmu, since it's the only terminal that I've found that (sort of) has tabs (I'm currently trying out Hyper.js which shows real promise!).
+This is totally a WIP, and my (somewhat clumsy) initial attempt at getting something functional across the Windows Subsystem for Linux (Bash on Ubuntu) that can also more or less work on Centos 7 (Just as an appreciative note, most of my dotfiles are really super useful things I've lifted from @jessfrazz and @natemccurdy who constantly inspire me through their generosity...thank you both!). At present, I've been running things through ConEmu, since it's the only terminal that I've found that (sort of) has tabs (I'm currently trying out Hyper.js which shows real promise!).
 ### Bash
 
 1. I'm a pretty big fan of bash_it, which despite a few missing items, still works pretty well on WSL.  Install it with: `sh -c "$(curl -fsSL https://raw.githubusercontent.com/Bash-it/bash-it/master/install.sh)"` (currently, running a special theme, i.e. powerline-multiline slows things down to a mere crawl, so I'd recommend limiting your customization...)
