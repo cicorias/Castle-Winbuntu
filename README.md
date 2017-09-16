@@ -3,12 +3,12 @@
 This is totally a WIP, and my (somewhat clumsy) initial attempt at getting something functional across the Windows Subsystem for Linux (Bash on Ubuntu) that can also more or less work on Centos 7 (Just as an appreciative note, most of my dotfiles are really super useful things I've lifted from @jessfrazz and @natemccurdy who constantly inspire me through their generosity...thank you both!). At present, I've been running things through ConEmu, since it's the only terminal that I've found that (sort of) has tabs (I'm currently trying out Hyper.js which shows real promise!).
 ### Bash
 
-1. I'm a pretty big fan of bash_it, which despite a few missing items, still works pretty well on WSL.  Install it with: `sh -c "$(curl -fsSL https://raw.githubusercontent.com/Bash-it/bash-it/master/install.sh)"` (currently, running a special theme, i.e. powerline-multiline slows things down to a mere crawl, so I'd recommend limiting your customization...)
+1. I'm a pretty big fan of Bash-it, which, despite a few missing items, still works pretty well on WSL :)  Install it with: `sh -c "$(curl -fsSL https://raw.githubusercontent.com/Bash-it/bash-it/master/install.sh)"` (currently, running a special theme, i.e. powerline-multiline slows things down to a mere crawl, so I'd recommend limiting your customization...)
 
 
 ### Homesick
 
-1. I'm also a big fan of managing things with Homesick (I've tried the custom Makefile approach w/ symlinks, etc. but have found that I'm not as smart as people like Jessie Frazelle, and that Homesick is just a more sustainable method of organization and deployment for me :). First install ruby, then `gem install homesick`
+1. I'm also a big fan of managing my dotfiles across different distributions with Homesick (I've tried the Makefile approach w/ symlinks, etc. but have found that I'm not as smart as people like Jessie Frazelle, and that Homesick limits the stuff I have to keep track of in my head, and is ultimately a more sustainable method of organization and deployment for me :). You'll first need to install ruby, then `gem install homesick`
 1. Clone this castle with `homesick clone rodtreweek/winbuntu`
 1. Create the symlinks with `homesick link winbuntu`
 
