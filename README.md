@@ -20,11 +20,7 @@ https://github.com/junegunn/vim-plug
 1. Vimplug Install: `curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim`
 1. Add a vim-plug section to your ~/.vimrc (or ~/.config/nvim/init.vim for Neovim):
-
-Begin the section with call plug#begin()
-List the plugins with Plug commands
-call plug#end() to update &runtimepath and initialize plugin system
-Automatically executes filetype plugin indent on and syntax enable. You can revert the settings after the call. e.g. filetype indent off, syntax off, etc.
+https://github.com/junegunn/vim-plug#usage
 1. Setting up YouCompleteeMe is unfortunately still a WIP at the moment, mainly due to the older versions of vim packaged with both Ubuntu Trusty and Xenial. If you want Vim 8 (like I typically do) then you'll need to build this from source by following the instructions here: https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source . There are a whole bunch of other things you'll need to sort out if you want golang completion to work properly (again, still a wip for me currently), like using a combination of YCM with vim-git, and pulling in additonal binaries, etc...I'll add more to this section once I get this figured out (It's working on Centos 7 for me now...but WSL with Xenial is still not quite useable...)
     
 
