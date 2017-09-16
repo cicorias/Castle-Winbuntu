@@ -8,11 +8,13 @@ This is totally a WIP, and my (somewhat clumsy) initial attempt at getting somet
 
 ### Homesick
 
-1. I'm a pretty big fan of managing things with Homesick (I've tried the custom Makefile approach w/ symlinks, etc. but have found Homesick to be a more sustainable method of organization and deployment. Install it with `gem install homesick`
+1. I'm also a big fan of managing things with Homesick (I've tried the custom Makefile approach w/ symlinks, etc. but have found Homesick to be a more sustainable method of organization and deployment. First install ruby, then `gem install homesick`
 1. Clone this castle with `homesick clone rodtreweek/winbuntu`
 1. Create the symlinks with `homesick link winbuntu`
 
 ### Vim plugins
+
+I love, love, love vim-plug. You will too, I promise :)
 https://github.com/junegunn/vim-plug
 
 1. Vimplug Install: `curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
@@ -32,7 +34,7 @@ I've included a .fonts directory that should have a large number of useful fonts
 
 1. Download and install an Awesome patched font:
   * <https://github.com/gabrielelana/awesome-terminal-fonts/raw/patching-strategy/patched/Inconsolata%2BAwesome.ttf>
-2. Again, I'm currently using ConEmu for my terminal, which although I'm not super-fond of the result, does allow for this font to be loaded up and used (Frankly, I am still finding this adjustmment chief among my many challenges in establishing/adopting a reasonable dev workflow on Windows...I've tried wsltty, which was fine but didn't have tabs, and am now looking at Hyper.js which I'll probably switch to...).
+2. Again, I'm currently using ConEmu for my terminal, which although I'm not super-fond of the result, does allow for this font to be loaded up and used (Frankly, I am still finding this adjustmment chief among my many challenges in establishing/adopting a reasonable dev workflow on Windows...I've tried wsltty, which was fine --but didn't have (at least any obvious way) to do tabs, and am now looking at Hyper.js which I'll probably switch to...).
 
 
 
