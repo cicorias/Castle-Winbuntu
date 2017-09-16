@@ -8,7 +8,7 @@ This is totally a WIP, and my (somewhat clumsy) initial attempt at getting somet
 
 ### Homesick
 
-1. I'm also a big fan of managing things with Homesick (I've tried the custom Makefile approach w/ symlinks, etc. but have found Homesick to be a more sustainable method of organization and deployment. First install ruby, then `gem install homesick`
+1. I'm also a big fan of managing things with Homesick (I've tried the custom Makefile approach w/ symlinks, etc. but have found that I'm not as smart as people like Jessie Frazelle, and that Homesick is just a more sustainable method of organization and deployment for me :). First install ruby, then `gem install homesick`
 1. Clone this castle with `homesick clone rodtreweek/winbuntu`
 1. Create the symlinks with `homesick link winbuntu`
 
