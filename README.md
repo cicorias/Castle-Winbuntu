@@ -17,14 +17,14 @@ This repo is totally a WIP, and my (somewhat clumsy) initial attempt at getting 
 
 ### Vim plugins
 
-I love, love, love vim-plug. You will too. I promise:)
+I love, love, love vim-plug. You will too. I promise :)
 https://github.com/junegunn/vim-plug
 
 1. Vimplug Install: `curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim`
 1. Add a vim-plug section to your ~/.vimrc (or ~/.config/nvim/init.vim for Neovim):
 https://github.com/junegunn/vim-plug#usage
-1. Setting up YouCompleteeMe is unfortunately still a WIP at the moment, mainly due to the older versions of vim packaged with both Ubuntu Trusty and Xenial. If you want Vim 8 (like I typically do) then you'll need to build this from source by following the instructions here: https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source . There are a whole bunch of other things you'll need to sort out if you want golang completion to work properly (again, still a wip for me currently), like using a combination of YCM with vim-git, and pulling in additonal binaries, etc...I'll add more to this section once I get this figured out (It's working on Centos 7 for me now...but WSL with Xenial is still not quite useable...)
+1. Setting up YouCompleteMe is unfortunately still a WIP at the moment, mainly due to the older versions of vim packaged with both Ubuntu Trusty and Xenial. If you want Vim 8 (like I typically do) then you'll need to build this from source by following the instructions here: https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source . There are a whole bunch of other things you'll likely need to sort out if you want, for instance, golang completion to work properly (again, still a wip for me currently), and likely end up with a combination of YCM with vim-git pulling in additonal binaries, etc...I'll add more to this section once I get this figured out (It's working on Centos 7 for me now...but WSL with Xenial is still eluding me slightly...)
     
 
 ### Fonts
@@ -37,5 +37,5 @@ I've included a .fonts directory that should have a large number of useful fonts
 
 
 
-More to come....
+More to come, such as getting powerline-multiline to work with Hyper.js, etc....
 
