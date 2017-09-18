@@ -4,6 +4,31 @@ First, you'd do well to read an excellent blog post from Jessie Frazelle on the 
 
 This repo is totally a WIP, and my (somewhat clumsy) initial attempt at getting something functional across the Windows Subsystem for Linux (Bash on Ubuntu), that I can also use on Centos 7 (Just as an appreciative note, most of my dotfiles are a curation of super-useful things I've lifted from others, such as @jessfrazz and @natemccurdy --who constantly inspire me through their generosity...thank you both!). At present, I've been running things through ConEmu, since it's the only terminal that I've found that (sort of) has tabs (However I'm currently trying out Hyper.js ~which shows some real promise as a contender!~).
 
+One additional thing that I'll note here, is that simply removing and reinstalling WSL is *supposed to* upgrade you from Ubuntu 14.04 to 16.04.  In my instance this was not the case, and I ended up needing to upgrade with the following:
+
+
+*From cmd:*
+```
+lxrun /setdefaultuser root
+From bash as root:
+
+wget http://mirrors.kernel.org/ubuntu/pool/main/s/sudo/sudo_1.8.9p5-1ubuntu1.1_amd64.deb
+wget http://mirrors.kernel.org/ubuntu/pool/main/p/procps/procps_3.3.9-1ubuntu2_amd64.deb
+wget http://mirrors.kernel.org/ubuntu/pool/main/s/strace/strace_4.8-1ubuntu5_amd64.deb
+dpkg -i sudo_1.8.9p5-1ubuntu1.1_amd64.deb
+dpkg -i procps_3.3.9-1ubuntu2_amd64.deb
+dpkg -i strace_4.8-1ubuntu5_amd64.deb
+```
+
+*Then I had to do this to get ssh to work again:*
+```
+sudo chmod 0666 /dev/tty
+```
+
+YMMV, as to the above, but since this wasn't at all a straightforward process for me, I'm including these instructions in case you run into something similiar.
+
+Moving on...
+
 ### Bash
 
 1. I'm a pretty big fan of Bash-it, which, despite a few missing/broken items, still works pretty well on WSL:)  Install it with: `sh -c "$(curl -fsSL https://raw.githubusercontent.com/Bash-it/bash-it/master/install.sh)"` (currently, running a special theme, i.e. powerline-multiline slows things down to a mere crawl, so I'd recommend limiting your customization...)
