@@ -2,7 +2,7 @@
 
 First, you'd do well to read an excellent blog post from Jessie Frazelle on the nuts and bolts of the Windows Subsystem for Linux available here: https://blog.jessfraz.com/post/windows-for-linux-nerds/
 
-This repo is totally a WIP, and my (somewhat clumsy) initial attempt at getting something functional across the Windows Subsystem for Linux (Bash on Ubuntu), that I can also use on Centos 7 (Just as an appreciative note, most of my dotfiles are a curation of super-useful things I've lifted from others, such as @jessfrazz and @natemccurdy --who constantly inspire me through their generosity...thank you both!). At present, I've been running things through ConEmu, since it's the only terminal that I've found that (sort of) has tabs (However I'm currently trying out Hyper.js which shows some real promise as a contender!).
+This repo is totally a WIP, and my (somewhat clumsy) initial attempt at getting something functional across the Windows Subsystem for Linux (Bash on Ubuntu), that I can also use on Centos 7 (Just as an appreciative note, most of my dotfiles are a curation of super-useful things I've lifted from others, such as @jessfrazz and @natemccurdy --who constantly inspire me through their generosity...thank you both!). At present, I've been running things through ConEmu, since it's the only terminal that I've found that (sort of) has tabs (However I'm currently trying out Hyper.js ~which shows some real promise as a contender!~).
 
 ### Bash
 
@@ -33,9 +33,9 @@ I've included a .fonts directory that should have a large number of useful fonts
 
 1. Download and install an Awesome patched font:
   * <https://github.com/gabrielelana/awesome-terminal-fonts/raw/patching-strategy/patched/Inconsolata%2BAwesome.ttf>
-2. Again, I'm currently using ConEmu for my terminal, which although I'm not super-fond of the result, does allow for this font to be loaded up and used...Frankly, I am still finding this adjustmment chief among my many challenges in establishing/adopting a reasonable dev workflow on Windows...I've tried wsltty, which was fine --but didn't have (at least any obvious way) to do tabs, and am now looking squarely at Hyper.js which  I'll probably be switching to...).
+2. Again, I'm currently using ConEmu for my terminal, which although I'm not super-fond of the result, does allow for this font to be loaded up and used...Frankly, I am still finding this adjustmment chief among my many challenges in establishing/adopting a reasonable dev workflow on Windows...I've tried wsltty, which was fine --but didn't have (at least any obvious way) to do tabs, ~and am now looking squarely at Hyper.js which  I'll probably be switching to...~).
 
 
 
-More to come, such as getting powerline-multiline to work with Hyper.js, etc....
+More to come, such as getting powerline-multiline to work ~with Hyper.js~, etc....
 
