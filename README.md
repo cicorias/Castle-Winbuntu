@@ -2,7 +2,7 @@
 
 First, you'd do well to read an excellent blog post from Jessie Frazelle on the nuts and bolts of the Windows Subsystem for Linux available here: https://blog.jessfraz.com/post/windows-for-linux-nerds/
 
-This repo is totally a WIP, and my (somewhat clumsy) initial attempt at getting something functional across the Windows Subsystem for Linux (Bash on Ubuntu), that I can also use on Centos 7 (Just as an appreciative note, most of my dotfiles are a curation of super-useful things I've lifted from others, such as @jessfrazz and @natemccurdy --who constantly inspire me through their generosity...thank you both!). At present, I've been running things through ConEmu, since it's the only terminal that I've found that (sort of) has tabs (However I'm currently trying out Hyper.js ~which shows some real promise as a contender!~).
+This repo is totally a WIP, and my initial attempt at getting something functional across the Windows Subsystem for Linux (Bash on Ubuntu), that I can also use on Centos 7 (Just as an appreciative note, most of my dotfiles are a curation of super-useful things I've lifted from others, such as @jessfrazz and @natemccurdy --who constantly inspire me through their generosity...thank you both!). At present, I've been running things through ConEmu, since it's the only terminal that I've found that (sort of) has tabs (However I'm currently trying out Hyper.js ~which shows some real promise as a contender!~).
 
 One additional thing that I'll note here, is that simply removing and reinstalling WSL is *supposed to* upgrade you from Ubuntu 14.04 to 16.04.  In my instance this was not the case, and I ended up needing to upgrade with the following:
 
