@@ -25,7 +25,7 @@ dpkg -i strace_4.8-1ubuntu5_amd64.deb
 sudo chmod 0666 /dev/tty
 ```
 
-YMMV, as to the above, but since this wasn't at all a straightforward process for me, I'm including these instructions in case you run into something similiar.
+Mainly, the reason why I attempted the upgrade was due to a couple of *really* frustrating issues, a) Several issues with my vim plugins and the stock version of vim that ships with Ubuntu 14.04, and b) Issues getting sudo to work properly/consistently with my user.  YMMV, as to your own experience, but since this wasn't at all a straightforward process for me, I'm including these instructions in case you run into something similiar.
 
 Moving on...
 
