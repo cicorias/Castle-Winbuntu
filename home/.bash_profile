@@ -46,7 +46,7 @@ done
 #fortune -a -s | lolcat
 
 # Path to the bash it configuration
-export BASH_IT="/home/rtreweex/bash-it"
+export BASH_IT="~/bash-it"
 
 # Lock and Load a custom theme file
 # location /.bash_it/themes/
