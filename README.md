@@ -2,9 +2,17 @@
 
 First, you'd do well to read an excellent blog post from Jessie Frazelle on the nuts and bolts of the Windows Subsystem for Linux available here: https://blog.jessfraz.com/post/windows-for-linux-nerds/
 
-This repo is a WIP and my initial attempt at getting something cross-platform (WSL and CentOS 7) functional (Just as an appreciative note, most of my dotfiles are a curation of super-useful things I've lifted from others, such as @jessfrazz and @natemccurdy --who constantly inspire me through their generosity...thank you both!). At present, I've been running things through ConEmu, since it's the only terminal that I've found that more or less has tabs (However I'm currently trying out Hyper.js ~which shows some real promise as a contender!~).
+Also, before you get too precious about configuring WSL exclusively as your one-and-only development workflow oasis, be aware that WSL is *hightly* Windows build-dependent, and certain things you might fully expect to work(such as golang development, or specifically in my case the use of some vim code-completion plugins...) may only be supported in more recent, or possibly only in Windows Insider Program builds, -or perhaps not at all. (you can easily check your Windows build version by simply hitting the Windows key on your keyboard, and typing "winver", then checking this against [the release notes here](https://msdn.microsoft.com/en-us/commandline/wsl/release_notes)).
 
-One additional thing that I'll note here, is that simply removing and reinstalling WSL is *supposed to* upgrade you from Ubuntu 14.04 to 16.04.  However in my case for whatever reason this didn't happen (hung indefinitely at the command line...) and I ended up needing to upgrade to 16.04 using the following set of commands:
+Generally speaking, you'll really want to be on at least [build 14905](https://msdn.microsoft.com/en-us/commandline/wsl/release_notes#build-14905) as this release supports restartable system calls (otherwise, you'll likely start seeing near-constant "read |0: interrupted system call" errors when trying to pretty much do anything with Golang...this issue is also pretty thorougly discussed [here](https://github.com/Microsoft/BashOnWindows/issues/1198)
+
+Also, it should be noted that as my initial WIP in getting a sufficiently reproducible cross-platform WSL and CentOS 7 dev workflow configured, you can expect what's offered here to be frequently naive, often opinionated, potentially broken, and perhaps comically idiosyncratic :) The usual warnings/rules apply.
+
+Also, just as a super-appreciative shout-out here...most of my dotfiles are a curation of extremely useful things I've gleaned or lifted outright from others, like @jessfrazz and her immense contributions to docker (presumably continuing with WSL!), and her numerous functions, aliases, and just generally insightful development workflow guidance, and @natemccurdy for his elegant and rigorously efficient approach to ruby/Puppet development and agile-aligned workflow configuration and automated testing --you constantly inspire me through your intelligence and generosity...Thank you both!). 
+
+Presently, I'm also using ConEmu as my terminal application, as it feels the most similiar to iterm2, which I had grown quite fond of (at least to me, having now tried Hyper.js, wsltty, and a few others I'm now forgetting..) and supports tabbed-sessions, which I can't really live without.
+
+One additional thing that I'll note here, is that simply removing and reinstalling WSL is *supposed to* upgrade you from Ubuntu 14.04 to 16.04.  However in my case, for whatever reason, this didn't happen (hung indefinitely at the command line after I did an lxrun full uninstall, rebooted, then the lxrun install. command...I had to finally kill it in the end, -and was still left with 14.04...) I ended up finally managing to upgrade to 16.04 with the following set of commands:
 
 
 *From cmd:*
@@ -25,13 +33,15 @@ dpkg -i strace_4.8-1ubuntu5_amd64.deb
 sudo chmod 0666 /dev/tty
 ```
 
-Mainly, the reason why I attempted this upgrade in the first place was due to a couple of *really* frustrating issues, a) Several of my vim plugins didn't work with the stock version of vim that ships with Ubuntu 14.04, and b) Issues getting sudo to work properly/consistently.  YMMV, as to your own experience, but since this wasn't at all a straightforward process for me, I'm including these instructions in case you run into something similiar.
+Mainly, the only real reasons why I felt I needed to upgrade came down to a couple of *really* frustrating issues, a) several of my vim plugins didn't work with the stock version of vim that ships with Ubuntu 14.04 (which I ultimately just ended up building from source anyway), and b) I was having routine difficulty getting sudo to work predictably/consistently, and thought that upgrading might solve the problem (it didn't...or at least not initially...see the above "sudo downgrade" instructions....).  YMMV, as to your own experience, and again a lot of these issues are build/environment specific, but since this wass a much less than straightforward process for me, I'll include these instructions in case you find them useful.
 
-Moving on...
+Moving on now...
 
 ### Bash
 
-1. I'm a pretty big fan of Bash-it, which, despite a few missing/broken items, still works pretty well on WSL:)  Install it with: `sh -c "$(curl -fsSL https://raw.githubusercontent.com/Bash-it/bash-it/master/install.sh)"` (currently, running a special theme, i.e. powerline-multiline slows things down to a mere crawl, so I'd recommend limiting your customization...)
+1. I'm a pretty big fan of Bash-it (or alternately there's the excellent oh-my-zsh), which, despite a few missing/broken items, still works pretty well on WSL:)  Install it with: `sh -c "$(curl -fsSL https://raw.githubusercontent.com/Bash-it/bash-it/master/install.sh)"` 
+
+*Note that currently running a special theme in Bash-it, i.e. powerline-multiline slows things down intolerably, -I'd recommend limiting your customization if speed is important to you (although I haven't tried it yet, it's possible that things are a bit snappier with oh-my-zsh...)
 
 
 ### Homesick
@@ -49,18 +59,14 @@ https://github.com/junegunn/vim-plug
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim`
 1. Add a vim-plug section to your ~/.vimrc (or ~/.config/nvim/init.vim for Neovim):
 https://github.com/junegunn/vim-plug#usage
-1. Setting up YouCompleteMe is unfortunately still a WIP at the moment, mainly due to the older versions of vim packaged with both Ubuntu Trusty and Xenial. If you want Vim 8 (like I typically do) then you'll need to build this from source by following the instructions here: https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source . There are a whole bunch of other things you'll likely need to sort out if you want, for instance, golang completion to work properly (again, still a wip for me currently), and likely end up with a combination of YCM with vim-git pulling in additonal binaries, etc...I'll add more to this section once I get this figured out (It's working on Centos 7 for me now...but WSL with Xenial is still eluding me slightly...)
-    
+1. Setting up YouCompleteMe natively to support code-completion in WSL is unfortunately still a WIP for me, and tbth, a mostly failed experiment :( This appears to be mainly due to the limitations with my Windows/WSL build, although the dated versions of vim packaged with both Ubuntu Trusty and Xenial certainly haven't helped matters. If you want Vim 8 (generally preferred) then you'll need to build it from source by following the instructions here: https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source . --Be careful to heed the warning for python2 vs. 3 when building your onfig, as there are issues when attempting to use both.
 
 ### Fonts
 
-I've included a .fonts directory that should have a large number of useful fonts.  Here's also the link to a patched Inconsalata Awesome font:
+I've included a .fonts directory where I've been collected a number of useful fonts.  Here's a link to a patched Inconsalata Awesome font as well which I've found to work particularly well with vim-airline:
 
-1. Download and install an Awesome patched font:
+1. Download and install the Awesome patched font:
   * <https://github.com/gabrielelana/awesome-terminal-fonts/raw/patching-strategy/patched/Inconsolata%2BAwesome.ttf>
-2. Again, I'm currently using ConEmu for my terminal, which although I'm not super-fond of the result, does allow for this font to be loaded up and used...Frankly, I am still finding this adjustmment chief among my many challenges in establishing/adopting a reasonable dev workflow on Windows...I've tried wsltty, which was fine --but didn't have (at least any obvious way) to do tabs, ~and am now looking squarely at Hyper.js which  I'll probably be switching to...~).
+2. Again, I'm currently using ConEmu for my terminal, and although not perfectly rendered, this font can be pretty easily loaded and used without much difficulty. Frankly, I am still finding the adjustmment to using something other than iterm2 chief among my many challenges in establishing/adopting a reasonable dev workflow on Windows.  Howeverv I've only really begun exploring what's possible with ConEmu, and am always on the lookout for other interesting projects :)
 
-
-
-More to come, such as getting powerline-multiline to work ~with Hyper.js~, etc....
 
