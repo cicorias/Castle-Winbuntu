@@ -2,9 +2,9 @@
 
 First, you'd do well to read an excellent blog post from Jessie Frazelle on the nuts and bolts of the Windows Subsystem for Linux available here: https://blog.jessfraz.com/post/windows-for-linux-nerds/
 
-This repo is totally a WIP, and my initial attempt at getting something functional across the Windows Subsystem for Linux (Bash on Ubuntu), that I can also use on Centos 7 (Just as an appreciative note, most of my dotfiles are a curation of super-useful things I've lifted from others, such as @jessfrazz and @natemccurdy --who constantly inspire me through their generosity...thank you both!). At present, I've been running things through ConEmu, since it's the only terminal that I've found that (sort of) has tabs (However I'm currently trying out Hyper.js ~which shows some real promise as a contender!~).
+This repo is a WIP and my initial attempt at getting something cross-platform (WSL and CentOS 7) functional (Just as an appreciative note, most of my dotfiles are a curation of super-useful things I've lifted from others, such as @jessfrazz and @natemccurdy --who constantly inspire me through their generosity...thank you both!). At present, I've been running things through ConEmu, since it's the only terminal that I've found that more or less has tabs (However I'm currently trying out Hyper.js ~which shows some real promise as a contender!~).
 
-One additional thing that I'll note here, is that simply removing and reinstalling WSL is *supposed to* upgrade you from Ubuntu 14.04 to 16.04.  In my instance this was not the case, and I ended up needing to upgrade with the following:
+One additional thing that I'll note here, is that simply removing and reinstalling WSL is *supposed to* upgrade you from Ubuntu 14.04 to 16.04.  However in my case for whatever reason this didn't happen (hung indefinitely at the command line...) and I ended up needing to upgrade to 16.04 using the following set of commands:
 
 
 *From cmd:*
@@ -25,7 +25,7 @@ dpkg -i strace_4.8-1ubuntu5_amd64.deb
 sudo chmod 0666 /dev/tty
 ```
 
-Mainly, the reason why I attempted the upgrade was due to a couple of *really* frustrating issues, a) Several issues with my vim plugins and the stock version of vim that ships with Ubuntu 14.04, and b) Issues getting sudo to work properly/consistently with my user.  YMMV, as to your own experience, but since this wasn't at all a straightforward process for me, I'm including these instructions in case you run into something similiar.
+Mainly, the reason why I attempted this upgrade in the first place was due to a couple of *really* frustrating issues, a) Several of my vim plugins didn't work with the stock version of vim that ships with Ubuntu 14.04, and b) Issues getting sudo to work properly/consistently.  YMMV, as to your own experience, but since this wasn't at all a straightforward process for me, I'm including these instructions in case you run into something similiar.
 
 Moving on...
 
@@ -36,7 +36,7 @@ Moving on...
 
 ### Homesick
 
-1. I'm also a big fan of managing my dotfiles across different distributions with Homesick (I've tried the Makefile approach w/ symlinks, etc. but have found that I'm not as smart as people like Jessie Frazelle, and that Homesick limits the stuff I have to keep track of in my head, --ultimately a more sustainable method of organization and deployment for me :). You'll first need to install ruby, then `gem install homesick`
+1. I'm also a big fan of managing my dotfiles across different distributions with Homesick. Homesick limits the stuff I have to keep track of in my head, --ultimately a more sustainable method of organization and deployment for me :). You'll first need to install ruby, then `gem install homesick`
 1. Clone this castle with `homesick clone rodtreweek/winbuntu`
 1. Create the symlinks with `homesick link winbuntu`
 
