@@ -37,9 +37,6 @@ let g:airline#extensions#tabline#buffer_min_count = 2
 let g:airline_skip_empty_sections = 1
 let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
 
-" vim-git options
-set autowrite
-
 " vim-markdown settings
 let g:markdown_include_jekyll_support = 0
 
@@ -53,7 +50,6 @@ else
 endif
 
 " Git Gutter
-set signcolumn=yes
 highlight GitGutterAdd          ctermbg=235 ctermfg=10
 highlight GitGutterChange       ctermbg=235 ctermfg=208
 highlight GitGutterDelete       ctermbg=235 ctermfg=9
@@ -66,6 +62,17 @@ let g:ale_sign_error = '✘'
 let g:ale_sign_warning = '⚠'
 highlight ALEErrorSign ctermbg=NONE ctermfg=red
 highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
+
+" MuComplete Options
+set completeopt=menuone,noinsert,noselect
+set shortmess+=c " Turn off completion messages
+inoremap <expr> <c-e> mucomplete#popup_exit("\<c-e>")
+inoremap <expr> <c-y> mucomplete#popup_exit("\<c-y>")
+inoremap <expr>  <cr> mucomplete#popup_exit("\<cr>")
+let g:mucomplete#enable_auto_at_startup = 1
+
+" PolyGot Settings
+let g:polyglot_disabled = ['puppet']
 
 " }}}
 " {{{ SPACES & TABS
@@ -115,9 +122,6 @@ match ExtraWhitespace /\s\+$/
 highlight LiteralTabs ctermbg=darkred guibg=darkred
 match LiteralTabs /	/
 
-" Auto Complete Menu
-set completeopt=longest,menu
-
 " paulrouget vim settings:
 highlight vertsplit       ctermbg=235 ctermfg=239
 highlight LineNr                      ctermfg=239
@@ -127,6 +131,12 @@ highlight Search          ctermbg=235 ctermfg=166
 highlight Default                     ctermfg=1
 highlight SignColumn      ctermbg=235
 highlight EndOfBuffer     ctermbg=235 ctermfg=235
+
+" New vertical splits go to the right rather than the left
+set splitright
+
+" Always show the sign column
+set signcolumn=yes
 
 " }}}
 " SEARCHING {{{
@@ -240,7 +250,3 @@ endfunction
 
 set modelines=1
 " vim:foldmethod=marker:foldlevel=0
-
-" Never do this again --> :set paste <ctrl-v> :set no paste
-let &t_SI .= "\<Esc>[?2004h"
-let &t_EI .= "\<Esc>[?2004l"
