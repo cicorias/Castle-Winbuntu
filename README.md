@@ -6,7 +6,7 @@ Now, before proceeding further, it should also be noted that prior to getting al
 
 You can easily check your Windows build version by simply hitting the Windows key on your keyboard, and typing "winver", then checking the version against [the release notes here](https://msdn.microsoft.com/en-us/commandline/wsl/release_notes)).
 
-Generally speaking, you'll likely want to be on at least [build 14905](https://msdn.microsoft.com/en-us/commandline/wsl/release_notes#build-14905) to support restartable system calls (otherwise, you'll start seeing near-constant "read |0: interrupted system call" errors when trying to pretty much do anything with Golang...there's a pretty thorough discussion of this [here](https://github.com/Microsoft/BashOnWindows/issues/1198)
+Generally speaking, you'll likely want to be on at least [build 14905](https://msdn.microsoft.com/en-us/commandline/wsl/release_notes#build-14905) to support restartable system calls (otherwise, you might start seeing near-constant "read |0: interrupted system call" errors when trying to pretty much do anything with Golang...there's a pretty thorough discussion of this [here](https://github.com/Microsoft/BashOnWindows/issues/1198))
 
 Also, just in case you arrived here expecting something other than a somewhat arbitrary, frequently naive, often opinionated, potentially broken, otherwise comically/perplexingly/stubbornly idiosyncratic collection of loosely-related, less-scientific/more-anecdotal, -yet well-intentioned sharing of observations/suggestions and variously useful/easily deployable dot/configuration files, -consider this your usual YMMV, normal rules/warnings apply motd :)
 
