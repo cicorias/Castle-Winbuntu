@@ -55,12 +55,12 @@ Moving on now...
 
 1. I'm a pretty big fan of Bash-it (or alternately there's the excellent oh-my-zsh), which, despite a few missing/broken items, still works pretty well on WSL:)  Install it with: `sh -c "$(curl -fsSL https://raw.githubusercontent.com/Bash-it/bash-it/master/install.sh)"` 
 
-*Note that currently running a special theme in Bash-it, i.e. powerline-multiline slows things down intolerably, -I'd recommend limiting your customization if speed is important to you (although I haven't tried it yet, it's possible that things are a bit snappier with oh-my-zsh...)
+*Note that currently running a special theme in Bash-it, i.e. powerline-multiline slows things down intolerably, - I'd recommend limiting your customization if speed is important to you (although I haven't tried it yet, it's possible that things are a bit snappier with oh-my-zsh...)
 
 
 ### Homesick
 
-1. I'm also a big fan of managing my dotfiles across different distributions with [Homesick](https://github.com/technicalpickles/homesick). Homesick limits the stuff I have to keep track of in my head, --ultimately a more sustainable method of organization and deployment for me :). You'll first need to install ruby, then `gem install homesick`
+1. I'm also a big fan of managing my dotfiles across different distributions with [Homesick](https://github.com/technicalpickles/homesick). Homesick limits the stuff I have to keep track of in my head, - ultimately a more sustainable method of organization and deployment for me:). You'll first need to install ruby, then `gem install homesick`
 1. Clone this castle with `homesick clone rodtreweek/winbuntu`
 1. Create the symlinks with `homesick link winbuntu`
 
@@ -69,10 +69,19 @@ Moving on now...
 I love, love, love vim-plug. You will too. I promise :)
 https://github.com/junegunn/vim-plug
 
-1. Vimplug Install: `curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+1. Vim-plug Install: `curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim`
 1. Add a vim-plug section to your ~/.vimrc (or ~/.config/nvim/init.vim for Neovim):
-https://github.com/junegunn/vim-plug#usage
+as suggested [here](https://github.com/junegunn/vim-plug#usage):
+1. Begin the section with `call plug#begin()`
+1. List the plugins with `Plug` commands:
+```
+" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
+Plug 'junegunn/vim-easy-align'
+```
+1. End with `call plug#end()` which updates `&runtimepath` and initializes plugin system
+    - Automatically executes `filetype plugin indent on` and `syntax enable`.
+      You can revert the settings after the call. e.g. `filetype indent off`, `syntax off`, etc.
 1. Setting up YouCompleteMe natively to support code-completion in WSL is unfortunately still a WIP for me, and tbth, a mostly failed experiment :( This appears to be mainly due to the limitations with my Windows/WSL build, although the dated versions of vim packaged with both Ubuntu Trusty and Xenial certainly haven't helped matters. If you want Vim 8 (generally preferred) then you'll need to build it from source by following the instructions here: https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source . --Be careful to heed the warning for python2 vs. 3 when building your config, as there are issues when attempting to use both. ***Update*** - I've since moved on from YCM, and am now using [vim-mucomplete](https://github.com/lifepillar/vim-mucomplete) for (fast!) tab-based code-completion and [vim-polyglot](https://github.com/sheerun/vim-polyglot) for syntax highlighting - a combo i'm extremely happy with :)
 
 ### Fonts
