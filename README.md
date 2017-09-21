@@ -64,7 +64,7 @@ https://github.com/junegunn/vim-plug
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim`
 1. Add a vim-plug section to your ~/.vimrc (or ~/.config/nvim/init.vim for Neovim):
 https://github.com/junegunn/vim-plug#usage
-1. Setting up YouCompleteMe natively to support code-completion in WSL is unfortunately still a WIP for me, and tbth, a mostly failed experiment :( This appears to be mainly due to the limitations with my Windows/WSL build, although the dated versions of vim packaged with both Ubuntu Trusty and Xenial certainly haven't helped matters. If you want Vim 8 (generally preferred) then you'll need to build it from source by following the instructions here: https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source . --Be careful to heed the warning for python2 vs. 3 when building your onfig, as there are issues when attempting to use both.
+1. Setting up YouCompleteMe natively to support code-completion in WSL is unfortunately still a WIP for me, and tbth, a mostly failed experiment :( This appears to be mainly due to the limitations with my Windows/WSL build, although the dated versions of vim packaged with both Ubuntu Trusty and Xenial certainly haven't helped matters. If you want Vim 8 (generally preferred) then you'll need to build it from source by following the instructions here: https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source . --Be careful to heed the warning for python2 vs. 3 when building your config, as there are issues when attempting to use both. ***Update - I've since moved on from YCM to vim-mucomplete and polyglot which i'm quite happy with :)
 
 ### Fonts
 
