@@ -81,7 +81,7 @@ I've also included a .fonts directory containing a number of fonts I've found us
 
 1. Download and install the Awesome patched font:
   * <https://github.com/gabrielelana/awesome-terminal-fonts/raw/patching-strategy/patched/Inconsolata%2BAwesome.ttf>
-2. Again, I'm currently using ConEmu for my terminal, and although not perfectly rendered, this font can be pretty easily loaded and used without much difficulty. Frankly, I am still finding the adjustmment to using something other than Iterm2 chief among my challenges in establishing a reasonable dev workflow on Windows.  However I've only really begun exploring what's possible with ConEmu, and am always on the lookout for other interesting projects :)
+2. Again, I'm currently using ConEmu for my terminal, and although not perfectly rendered, this font can be pretty easily loaded and used without much difficulty. Frankly, I am still finding the adjustment to using something other than Iterm2 chief among my challenges in establishing a reasonable dev workflow on Windows.  However I've only really begun exploring what's possible with ConEmu, and am always on the lookout for other interesting projects :)
 
 ### Boxtarter
 
@@ -95,3 +95,5 @@ Here are a few other blog posts I've found extremely helpful:
 
 * [Dariusz Parys's dev setup](https://medium.com/@dariuszparys/my-windows-10-dev-setup-67d7aecb63a6)
 * [David Tran's setup guide](https://davidtranscend.com/blog/windows-terminal-workflow-guide)
+
+I'll be continuing to frequently add/remove/edit items contained within this project (perhaps until I more suitably author a proper blog post elsewhere, limiting the scope of what's contained here to just the relevant installation and deployment details ;)
