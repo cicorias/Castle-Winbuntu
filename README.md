@@ -4,7 +4,7 @@ First, you'd do well to read this excellent blog post from former Docker/Google 
 
 Now, before proceeding further, it should also be noted that prior to getting all precious about using WSL exclusively as your one-and-only-personal-development-workflow-oasis, you'll want to be aware that WSL is *hightly* Windows build-dependent, meaning that certain things you might otherwise expect to be available/configurable from Ubuntu/Bash and that typically "just work" in these environmets (such as golang development, or specifically in my case the use of some vim code-completion plugins...) *may only be supported in more recent builds, or perhaps offered exclusively through the Windows Insider Program.
 
-You can easily check your Windows build version by simply hitting the Windows key on your keyboard, and typing "winver", hitting enter then checking the version against [the release notes here](https://msdn.microsoft.com/en-us/commandline/wsl/release_notes)).
+You can easily check your Windows build version by simply hitting the Windows key on your keyboard, and typing "winver", then checking the version against [the release notes here](https://msdn.microsoft.com/en-us/commandline/wsl/release_notes)).
 
 Generally speaking, you'll likely want to be on at least [build 14905](https://msdn.microsoft.com/en-us/commandline/wsl/release_notes#build-14905) to support restartable system calls (otherwise, you'll start seeing near-constant "read |0: interrupted system call" errors when trying to pretty much do anything with Golang...there's a pretty thorough discussion of this [here](https://github.com/Microsoft/BashOnWindows/issues/1198)
 
