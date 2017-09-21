@@ -1,6 +1,6 @@
 # Castle Winbuntu
 
-First, you'd do well to read this excellent blog post from former Docker/Google Engieer, - and now new member of Microsoft's core WSL/container development team, Jessie Frazelle discussing the nuts and bolts of the Windows Subsytem for Linux: https://blog.jessfraz.com/post/windows-for-linux-nerds/  
+First, you'd do well to read this excellent blog post from former Docker/Google Engieer, - and as of last week, newest member of Microsoft's core WSL/container development team, Jessie Frazelle discussing the nuts and bolts of the Windows Subsytem for Linux: https://blog.jessfraz.com/post/windows-for-linux-nerds/  
 
 Now, before proceeding further, it should also be noted that prior to getting all precious about using WSL exclusively as your one-and-only-personal-development-workflow-oasis, you'll want to be aware that WSL is *hightly* Windows build-dependent, meaning that certain things you might otherwise expect to be available/configurable from Ubuntu/Bash and that typically "just work" in these environmets (such as golang development, or specifically in my case the use of some vim code-completion plugins...) *may only be supported in more recent builds, or perhaps offered exclusively through the Windows Insider Program.*
 
