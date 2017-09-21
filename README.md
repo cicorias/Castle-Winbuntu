@@ -20,8 +20,13 @@ I was finally able to upgrade to 16.04 using the following set of commands:
 *From cmd:*
 ```
 lxrun /setdefaultuser root
-From bash as root:
-
+```
+*From bash as root:*
+```
+sudo do-release-upgrade
+```
+*Then:*
+```
 wget http://mirrors.kernel.org/ubuntu/pool/main/s/sudo/sudo_1.8.9p5-1ubuntu1.1_amd64.deb
 wget http://mirrors.kernel.org/ubuntu/pool/main/p/procps/procps_3.3.9-1ubuntu2_amd64.deb
 wget http://mirrors.kernel.org/ubuntu/pool/main/s/strace/stradpkg -i sudo_1.8.9p5-1ubuntu1.1_amd64.deb
@@ -35,9 +40,11 @@ dpkg -i strace_4.8-1ubuntu5_amd64.deb
 sudo chmod 0666 /dev/tty
 ```
 
-My decision to upgrade was really based on the presence of a couple of *really* frustrating issues that I thought would be resolved by upgrading, a) several of my vim plugins didn't work with the stock version of vim that ships with Ubuntu 14.04 (which I ultimately just ended up building from source anyway...), and b) the routine difficulty I was having with getting sudo to work predictably/reliably, i.e. sudo apt-get, etc. (ultimately upgrading to 16.04 really only improved things marginally for me...see the above "sudo downgrade" instructions....).  Again, this is all pretty build/environment specific, and as usual YMMV as to your own experience, but since this was a much less straightforward process than what I was expecting, I'll include these instructions just in case others might find them useful.
+The decision to upgrade was mainly prompted by a couple of *really* frustrating issues that I thought would be resolved in the WSL implementation of Ubuntu 16.04: a) several of my Vim plugins didn't work with the stock version of Vim that ships with Ubuntu 14.04 (I ended up building Vim 8 from source due to other limitations I encountered with the YouCompleteMe plugin, so this consideration was ultimately moot), and b) the routine difficulty I was having with getting sudo to work predictably/reliably, i.e. `sudo apt-get install` would typically hang, and I was constantly having to exit my shell to perform trivial tasks as root.
 
-Also, just a super-appreciative shout-out here before moving on...most of my dotfiles are a curation of extremely useful things I've gleaned, --or lifted outright from others, such as @jessfrazz, who has made immense contributions to Docker and OSS (...and presumably will continue with WSL!), and has been unfailingly generous in sharing her collected functions, aliases, and remarkably insightful guidance on creating a sustainable development workflow, as  well as @natemccurdy from Puppet, who in addition to inspiring the creation of this repo right here, continues to generously offer his elegantly tailored, thoughtfully maintained and rigorously "customer-prem" battle-tested configuration for a rapidly deployable ruby/Puppet development workflow  --you constantly inspire me through your intelligence and generosity...Thank you both!).
+While upgrading was perhaps the right decision for other reasons, it really didn't resolve either of the issues I'd sought to remedy; the YCM plugin still complained about the version of Vim, and `sudo apt-get install` was still busted. I finally resolved this by downgrading several packages (--see the `wget` and `dpkg -i` instructions above..) however each time I'm tempted to run `sudo apt-get update`, I'm again reminded that this will likely break sudo, and I will need to execute the downgrade steps once again.  Again, this is all pretty build/environment specific, and as mentioned earlier YMMV as to your own experience. Since this was a much less straightforward process than what I was expecting, I'm including this here just in case it's helpful to others.
+
+Also, just a super-appreciative shout-out here before moving on...most of my dotfiles are a curation of extremely useful things I've either iterated on, --or simply lifted outright from others. Several are sourced from _@jessfrazz_, who through her work with Docker, Google, (and now Microsoft!), continues to impressively shape many notable innovations while promoting OSS and remaining unfailingly generous in sharing her collected functions, aliases, and remarkably empathic and insightful guidance on a range of engineering/development issues, -- and also_ @natemccurdy_ from Puppet, who - in addition to inspiring the creation of this particular repo - continues to generously offer an elegantly tailored, thoughtfully maintained and rigorously "customer-prem battle-tested" configuration for a rapidly deployable Ruby/Puppet development workflow  --- You constantly inspire me through your intelligence and generosity --- Thank you both!).
 
 
 Moving on now...
@@ -72,7 +79,7 @@ I've also included a .fonts directory containing a number of fonts I've found us
 
 1. Download and install the Awesome patched font:
   * <https://github.com/gabrielelana/awesome-terminal-fonts/raw/patching-strategy/patched/Inconsolata%2BAwesome.ttf>
-2. Again, I'm currently using ConEmu for my terminal, and although not perfectly rendered, this font can be pretty easily loaded and used without much difficulty. Frankly, I am still finding the adjustmment to using something other than iterm2 chief among my many challenges in establishing/adopting a reasonable dev workflow on Windows.  However I've only really begun exploring what's possible with ConEmu, and am always on the lookout for other interesting projects :)
+2. Again, I'm currently using ConEmu for my terminal, and although not perfectly rendered, this font can be pretty easily loaded and used without much difficulty. Frankly, I am still finding the adjustmment to using something other than Iterm2 chief among my challenges in establishing a reasonable dev workflow on Windows.  However I've only really begun exploring what's possible with ConEmu, and am always on the lookout for other interesting projects :)
 
 ### Boxtarter
 
