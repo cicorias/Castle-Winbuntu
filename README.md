@@ -51,7 +51,7 @@ Moving on now...
 
 ### Homesick
 
-1. I'm also a big fan of managing my dotfiles across different distributions with Homesick. Homesick limits the stuff I have to keep track of in my head, --ultimately a more sustainable method of organization and deployment for me :). You'll first need to install ruby, then `gem install homesick`
+1. I'm also a big fan of managing my dotfiles across different distributions with [Homesick](https://github.com/technicalpickles/homesick). Homesick limits the stuff I have to keep track of in my head, --ultimately a more sustainable method of organization and deployment for me :). You'll first need to install ruby, then `gem install homesick`
 1. Clone this castle with `homesick clone rodtreweek/winbuntu`
 1. Create the symlinks with `homesick link winbuntu`
 
