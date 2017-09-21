@@ -74,13 +74,11 @@ https://github.com/junegunn/vim-plug
 1. Add a vim-plug section to your ~/.vimrc (or ~/.config/nvim/init.vim for Neovim) as suggested [here](https://github.com/junegunn/vim-plug#usage):
 1. Begin the section with `call plug#begin()`
 1. List the plugins with `Plug` commands:
-
-#### Example
-```
-" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
-Plug 'junegunn/vim-easy-align'
-```
-
+    Example:
+    ```
+    " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
+     Plug 'junegunn/vim-easy-align'
+     ```
 1. End with `call plug#end()` which updates `&runtimepath` and initializes plugin system
     - Automatically executes `filetype plugin indent on` and `syntax enable`.
       You can revert the settings after the call. e.g. `filetype indent off`, `syntax off`, etc.
