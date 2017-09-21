@@ -73,3 +73,9 @@ I've also included a .fonts directory containing a number of fonts I've found us
 1. Download and install the Awesome patched font:
   * <https://github.com/gabrielelana/awesome-terminal-fonts/raw/patching-strategy/patched/Inconsolata%2BAwesome.ttf>
 2. Again, I'm currently using ConEmu for my terminal, and although not perfectly rendered, this font can be pretty easily loaded and used without much difficulty. Frankly, I am still finding the adjustmment to using something other than iterm2 chief among my many challenges in establishing/adopting a reasonable dev workflow on Windows.  However I've only really begun exploring what's possible with ConEmu, and am always on the lookout for other interesting projects :)
+
+### Boxtarter
+
+Definitely check out Boxstarter [here](http://boxstarter.org/InstallBoxstarter). Install it with [chocalatey](https://chocolatey.org/) the awesome package manager for Windows!  Here are some links to a few gists for use with Boxstarter:
+https://gist.github.com/jessfraz/7c319b046daa101a4aaef937a20ff41f
+https://gist.github.com/NickCraver/7ebf9efbfd0c3eab72e9
