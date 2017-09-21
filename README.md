@@ -86,3 +86,10 @@ I've also included a .fonts directory containing a number of fonts I've found us
 Definitely check out Boxstarter [here](http://boxstarter.org/InstallBoxstarter). Install it with [chocalatey](https://chocolatey.org/), the awesome package manager for Windows!  Here are some links to a few gists for use with Boxstarter:
 * <https://gist.github.com/jessfraz/7c319b046daa101a4aaef937a20ff41f>
 * <https://gist.github.com/NickCraver/7ebf9efbfd0c3eab72e9>
+
+### Blogs
+
+Here are a few other blog posts I've found extremely helpful:
+
+* [Dariusz Parys's dev setup](https://medium.com/@dariuszparys/my-windows-10-dev-setup-67d7aecb63a6)
+* [David Tran's setup guide](https://davidtranscend.com/blog/windows-terminal-workflow-guide)
