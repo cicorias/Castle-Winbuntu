@@ -2,7 +2,7 @@
 
 As suggested by the title, this is my [Homesick](https://github.com/technicalpickles/homesick) Castle intended for use on the Windows Subsystem for Linux (WSL for short, aka bash/Ubuntu on Windows).
 
-Before continuing, I'd recommend that you first read this excellent blog post from former Docker/Google Engineer, now core member of Microsoft's WSL/container development team, [Jessie Frazelle](https://github.com/jessfraz), discussing the nuts and bolts of WSL: https://blog.jessfraz.com/post/windows-for-linux-nerds/  
+Before continuing, I'd recommend that you first read this excellent blog post from former Docker/Google-Engineer-turned-core-member-of-Microsoft's WSL/container development team, [Jessie Frazelle](https://github.com/jessfraz), discussing the nuts and bolts of WSL: https://blog.jessfraz.com/post/windows-for-linux-nerds/  
 
 It should also be noted that prior to getting *too* precious about using WSL exclusively as your one-and-only-personal-development-workflow-oasis, you'll want to be aware that WSL is *hightly* Windows build-dependent, meaning that certain things you might expect to "just work" in Ubuntu/Bash *may only be supported in more recent builds, or perhaps offered exclusively through the Windows Insider Program* (In my case, this was a number of unexpected limitations surrounding golang development, overlapping with Vim and some of its code-completion plugins.).
 
