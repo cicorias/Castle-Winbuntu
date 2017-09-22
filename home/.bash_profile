@@ -2,8 +2,8 @@
 stty_orig=`stty -g`
 stty -echo
 if [ -z "$SSH_AUTH_SOCK"  ] ; then
-	  eval `ssh-agent -s`
-	    ssh-add
+          eval `ssh-agent -s`
+   ssh-add
 fi
 stty $stty_orig
 
@@ -11,10 +11,10 @@ stty $stty_orig
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
 for file in ~/.{bash_prompt,aliases,functions,path,dockerfunc,extra,exports}; do
-	if [[ -r "$file" ]] && [[ -f "$file" ]]; then
-		# shellcheck source=/dev/null
-		source "$file"
-	fi
+        if [[ -r "$file" ]] && [[ -f "$file" ]]; then
+                # shellcheck source=/dev/null
+                source "$file"
+        fi
 done
 unset file
 
@@ -31,16 +31,16 @@ shopt -s cdspell
 # * `autocd`, e.g. `**/qux` will enter `./foo/bar/baz/qux`
 # * Recursive globbing, e.g. `echo **/*.txt`
 for option in autocd globstar; do
-	shopt -s "$option" 2> /dev/null
+        shopt -s "$option" 2> /dev/null
 done
 
 # Add tab completion for SSH hostnames based on ~/.ssh/config
 # ignoring wildcards
 [[ -e "$HOME/.ssh/config" ]] && complete -o "default" \
-	-o "nospace" \
-	-W "$(grep "^Host" ~/.ssh/config | \
-	grep -v "[?*]" | cut -d " " -f2 | \
-	tr ' ' '\n')" scp sftp ssh
+        -o "nospace" \
+        -W "$(grep "^Host" ~/.ssh/config | \
+        grep -v "[?*]" | cut -d " " -f2 | \
+        tr ' ' '\n')" scp sftp ssh
 
 # print a fortune when the terminal opens
 #fortune -a -s | lolcat
@@ -50,7 +50,7 @@ export BASH_IT="$HOME/bash-it"
 
 # Lock and Load a custom theme file
 # location /.bash_it/themes/
-export BASH_IT_THEME='powerline-multiline'
+export BASH_IT_THEME='minimal'
 
 # (Advanced): Change this to the name of your remote repo if you
 # cloned bash-it with a remote other than origin such as `bash-it`.
@@ -65,10 +65,6 @@ export BASH_IT_THEME='powerline-multiline'
 # Set this to the command you use for todo.txt-cli
 #export TODO="t"
 
-# Set this to false to turn off version control status checking within the prompt for all themes
-#export SCM_CHECK=true
-# Virtualenv
-
 # Load Bash It
 source "$BASH_IT"/bash_it.sh
 
@@ -76,7 +72,5 @@ source "$BASH_IT"/bash_it.sh
 #WORKON_HOME=~/Envs
 #source /usr/local/bin/virtualenvwrapper.sh
 
-# Golang
-export PATH=$PATH:/usr/local/go/bin
-export GOPATH=$HOME/goprojects
-export PATH=$PATH:$GOPATH/bin
+# GVM
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
