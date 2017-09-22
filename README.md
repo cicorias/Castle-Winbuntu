@@ -89,14 +89,13 @@ https://github.com/junegunn/vim-plug
 
 ### Fonts
 
-I've also included a .fonts directory that contains a number of fonts I've found useful. You might also be interested in using a patched Inconsalata Awesome font for better terminal compatibility with vim-airline:
+I've also included a .fonts directory that contains a number of fonts I've found useful. You might also be interested in using a patched Inconsalata Awesome font for better terminal compatibility with vim-airline, or choose from several other patched fonts that also work well here: https://github.com/powerline/fonts (If you are using the w0rp/ale vim plugin, I'd recommend trying out the `Meslo LG M DZ for Powerline` font as well, as it seems to offer the best sign compatibility.).
 
 1. Download and install the Awesome patched font from here:
   * <https://github.com/gabrielelana/awesome-terminal-fonts/raw/patching-strategy/patched/Inconsolata%2BAwesome.ttf>
-2. Again, I'm currently using ConEmu for my terminal, and although still imperfectly rendered, it can be selected and used used without much difficulty. 
+2. As I'm currently using ConEmu for my terminal, although it's still imperfectly rendered, this font works ok for me.
 
 <img src="https://raw.githubusercontent.com/rodtreweek/i/master/castle-winbuntu/change_font_in_conemu.gif" height="450">
-
 
 Frankly, I am still finding the adjustment to using something other than Iterm2 chief among my challenges in establishing a reasonable dev workflow on Windows.  However I've only really begun exploring what's possible with ConEmu, and am always on the lookout for other interesting projects :)
 
