@@ -6,7 +6,7 @@ Before continuing, I'd recommend that you first read this excellent blog post fr
 
 It should also be noted that prior to getting *too* precious about using WSL exclusively as your one-and-only-personal-development-workflow-oasis, you'll want to be aware that WSL is *highly* Windows build-dependent, - meaning that certain things you might expect to "just work" in Ubuntu/Bash *may only be supported in more recent builds, or perhaps offered exclusively through the Windows Insider Program*. In my case, the full realization of which arrived less swiftly than I would have preferred, in the form of repeated `go build <command-line-arguments>: read |0: interrupted system call` errors that would appear randomly, regardless of version, and overlap with frequent, ultimately insurmountable Vim code-completion plugin errors.).
 
-To avoid this pain, you can easily check your Windows build version by simply hitting the Windows key on your keyboard, typing "winver", then checking the version against [the release notes here](https://msdn.microsoft.com/en-us/commandline/wsl/release_notes)).
+To avoid this pain, you can easily check your Windows build version by simply hitting the Windows key on your keyboard, typing "winver", then checking the version against [the release notes here](https://msdn.microsoft.com/en-us/commandline/wsl/release_notes).
 
 Generally speaking, you'll likely want to be on at least [build 14905](https://msdn.microsoft.com/en-us/commandline/wsl/release_notes#build-14905) which supports restartable system calls (thus avoiding the dreaded `read |0: interrupted system call` errors mentioned above, and of which thorough discussion can be found [here](https://github.com/Microsoft/BashOnWindows/issues/1198))
 
