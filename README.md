@@ -73,8 +73,7 @@ https://github.com/junegunn/vim-plug
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim`
 1. Add a vim-plug section to your ~/.vimrc (or ~/.config/nvim/init.vim for Neovim) as suggested [here](https://github.com/junegunn/vim-plug#usage):
 1. Begin the section with `call plug#begin()`
-1. List the plugins with `Plug` commands:
-    Example:
+1. List the plugins with `Plug` commands, for example:
     ```
     " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
      Plug 'junegunn/vim-easy-align'
@@ -84,17 +83,17 @@ https://github.com/junegunn/vim-plug
       You can revert the settings after the call. e.g. `filetype indent off`, `syntax off`, etc.
 1. Reload .vimrc and `:PlugInstall` to install plugins.
 
-1. Setting up YouCompleteMe natively to support code-completion in WSL is unfortunately still a WIP for me, and tbth, a mostly failed experiment :( This appears to be mainly due to the limitations with my Windows/WSL build, although the dated versions of vim packaged with both Ubuntu Trusty and Xenial certainly haven't helped matters. If you want Vim 8 (generally preferred) then you'll need to build it from source by following the instructions here: https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source . --Be careful to heed the warning for python2 vs. 3 when building your config, as there are issues when attempting to use both. 
+1. Setting up YouCompleteMe natively to support code-completion in WSL is ~unfortunately still a WIP for me, and~ tbth, a ~mostly~ failed experiment:( This appears to be mainly due to the limitations with my Windows/WSL build, although the dated versions of Vim packaged with both Ubuntu Trusty and Xenial certainly haven't helped matters. If you want Vim 8 (generally preferred) then you can follow the instructions here: https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source  - to build it from source (be careful to heed the warning for python 2 vs. 3 when building your config, as there are issues when attempting to use both.). 
 
-***Update*** - I've since moved on from YCM, and am now using [vim-mucomplete](https://github.com/lifepillar/vim-mucomplete) for (fast!) tab-based code-completion and [vim-polyglot](https://github.com/sheerun/vim-polyglot) for syntax highlighting - a combo I'm extremely happy with :)
+***Update*** - I've since moved on from YCM, and am now using [vim-mucomplete](https://github.com/lifepillar/vim-mucomplete) for (fast!) tab-based code-completion and [vim-polyglot](https://github.com/sheerun/vim-polyglot) for syntax highlighting - a combo I've been extremely happy with! :)
 
 ### Fonts
 
-I've also included a .fonts directory containing a number of fonts I've found useful. Here's also a link to a patched Inconsalata Awesome font that works particularly well with vim-airline:
+I've also included a .fonts directory that contains a number of fonts I've found useful. Here's also a link to a patched Inconsalata Awesome font and installation instructions that works particularly well with vim-airline:
 
-1. Download and install the Awesome patched font:
+1. Download and install the Awesome patched font from here:
   * <https://github.com/gabrielelana/awesome-terminal-fonts/raw/patching-strategy/patched/Inconsolata%2BAwesome.ttf>
-2. Again, I'm currently using ConEmu for my terminal, and although not perfectly rendered, this font can be pretty easily loaded and used without much difficulty. Frankly, I am still finding the adjustment to using something other than Iterm2 chief among my challenges in establishing a reasonable dev workflow on Windows.  However I've only really begun exploring what's possible with ConEmu, and am always on the lookout for other interesting projects :)
+2. Again, I'm currently using ConEmu for my terminal, and although still imperfectly rendered, it can be selected and used used without much difficulty. Frankly, I am still finding the adjustment to using something other than Iterm2 chief among my challenges in establishing a reasonable dev workflow on Windows.  However I've only really begun exploring what's possible with ConEmu, and am always on the lookout for other interesting projects :)
 
 ### Boxstarter
 
@@ -104,9 +103,9 @@ Definitely check out Boxstarter [here](http://boxstarter.org/InstallBoxstarter).
 
 ### Blogs
 
-Here are a few other blog posts I've found extremely helpful:
+Here are a few other blog posts I've also found extremely helpful:
 
 * [Dariusz Parys's dev setup](https://medium.com/@dariuszparys/my-windows-10-dev-setup-67d7aecb63a6)
 * [David Tran's setup guide](https://davidtranscend.com/blog/windows-terminal-workflow-guide)
 
-I'll be continuing to frequently add/remove/edit items contained within this project (perhaps until I more suitably author a proper blog post elsewhere, limiting the scope of what's contained here to just the relevant installation and deployment details ;)
+I'll be continuing to frequently add/remove/edit items contained within this project (perhaps until I author a proper blog post elsewhere, and make what's here a bit more conventional, i.e. much lighter on editorial, heavier emphasis on clear/concise list of installation/configuration steps ;)
