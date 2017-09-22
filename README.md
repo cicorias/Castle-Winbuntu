@@ -89,7 +89,7 @@ https://github.com/junegunn/vim-plug
 
 ### Fonts
 
-I've also included a .fonts directory that contains a number of fonts I've found useful. Here's also a link to a patched Inconsalata Awesome font and installation instructions that works particularly well with vim-airline:
+I've also included a .fonts directory that contains a number of fonts I've found useful. You might also be interested in using a patched Inconsalata Awesome font for better terminal compatibility with vim-airline:
 
 1. Download and install the Awesome patched font from here:
   * <https://github.com/gabrielelana/awesome-terminal-fonts/raw/patching-strategy/patched/Inconsolata%2BAwesome.ttf>
