@@ -1,6 +1,6 @@
-# Castle Winbuntu
+<img src="https://raw.githubusercontent.com/rodtreweek/i/master/castle-winbuntu/castle_winbuntu_welcome.png" height="75">
 
-As suggested by the title, this is my [Homesick](https://github.com/technicalpickles/homesick) Castle intended for use on the Windows Subsystem for Linux (WSL for short, aka bash/Ubuntu on Windows).
+This is my [Homesick](https://github.com/technicalpickles/homesick) Castle intended for use on the Windows Subsystem for Linux (WSL, aka bash/Ubuntu on Windows).
 
 Before continuing, I'd recommend that you first read this excellent blog post from former Docker/Google-Engineer-turned-core-member-of-Microsoft's WSL/container development team, [Jessie Frazelle](https://github.com/jessfraz), discussing the nuts and bolts of WSL: https://blog.jessfraz.com/post/windows-for-linux-nerds/  
 
