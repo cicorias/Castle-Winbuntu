@@ -33,6 +33,7 @@ wget http://mirrors.kernel.org/ubuntu/pool/main/s/sudo/sudo_1.8.9p5-1ubuntu1.1_a
 wget http://mirrors.kernel.org/ubuntu/pool/main/p/procps/procps_3.3.9-1ubuntu2_amd64.deb
 wget http://mirrors.kernel.org/ubuntu/pool/main/s/strace/stradpkg -i sudo_1.8.9p5-1ubuntu1.1_amd64.deb
 ce_4.8-1ubuntu5_amd64.deb
+dpkg -i sudo_1.8.9p5-1ubuntu1_amd64.deb
 dpkg -i procps_3.3.9-1ubuntu2_amd64.deb
 dpkg -i strace_4.8-1ubuntu5_amd64.deb
 ```
