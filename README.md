@@ -108,6 +108,7 @@ Frankly, I am still finding the adjustment to using something other than Iterm2 
 
 #### Colors
 
+1. Some themes I found for ConEmu! https://github.com/joonro/ConEmu-Color-Themes
 1. Gruvbox color scheme for ConEmu: https://gist.github.com/circleous/92c74d284db392a950d64a2b368517a1
 
 ### Boxstarter
