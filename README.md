@@ -6,7 +6,7 @@ Before continuing, I'd recommend that you first read this excellent blog post fr
 
 It should also be noted that prior to getting *too* precious about using WSL exclusively as your "one-and-only-personal-development-workflow-asis", you'll want to be aware that WSL is *highly* Windows build-dependent, - meaning that certain things you might expect to "just work" in Ubuntu/Bash *may only be supported in more recent builds, or perhaps offered exclusively through the Windows Insider Program*. 
 
-In my case, the full realization of this uncomfortable fact arrived less swiftly than I would have preferred, in the form of repeated `go build <command-line-arguments>: read |0: interrupted system call` errors that would appear randomly regardless of version, overlapping with frequent (and ultimately insurmountable) Vim code-completion plugin errors.
+In my case, the full realization of this uncomfortable fact arrived much less swiftly than I would have preferred, in the form of repeated `go build <command-line-arguments>: read |0: interrupted system call` errors that would appear randomly regardless of version, overlapping with frequent (and ultimately insurmountable) Vim code-completion plugin errors.
 
 To avoid this pain, you can easily check your Windows build version by simply hitting the Windows key on your keyboard, typing "winver", then checking the version against [the release notes here](https://msdn.microsoft.com/en-us/commandline/wsl/release_notes).
 
@@ -68,7 +68,7 @@ Moving on now...
 ### Homesick
 
 1. I'm also a big fan of managing my dotfiles across different distributions with [Homesick](https://github.com/technicalpickles/homesick). Homesick limits the stuff I have to keep track of in my head, - ultimately a more sustainable method of organization and deployment for me:). You'll first need to install ruby, then `gem install homesick`
-1. Clone this castle with `homesick clone rodtreweek/winbuntu`
+1. Clone this castle with `homesick clone rodtreweek/castle-winbuntu`
 1. Create the symlinks with `homesick link winbuntu`
 
 ### Vim plugins
@@ -96,11 +96,10 @@ https://github.com/junegunn/vim-plug
 
 #### Fonts
 
-I've also included a .fonts directory that contains a number of fonts I've found useful. You might also be interested in using a patched Inconsalata Awesome font for better terminal compatibility with vim-airline, or choose from several other patched fonts that also work well here: https://github.com/powerline/fonts (If you are using the w0rp/ale vim plugin, I'd recommend trying out the `Meslo LG M DZ for Powerline` font as well, as it seems to offer the best sign compatibility.).
+I've also included a .fonts directory that contains a number of fonts I've found useful. You might also be interested in using a patched Inconsalata Awesome font for better terminal compatibility with vim-airline, or you might be interested in having a look at what's offered here: https://github.com/powerline/fonts .
 
-1. Download and install the Awesome patched font from here:
+1. Download and install the Inconsolata Awesome patched font from here:
   * <https://github.com/gabrielelana/awesome-terminal-fonts/raw/patching-strategy/patched/Inconsolata%2BAwesome.ttf>
-2. As I'm currently using ConEmu for my terminal, although it's still imperfectly rendered, this font works ok for me.
 
 <img src="https://raw.githubusercontent.com/rodtreweek/i/master/castle-winbuntu/change_font_in_conemu.gif" height="450">
 
