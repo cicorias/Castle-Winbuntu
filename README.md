@@ -94,7 +94,7 @@ https://github.com/junegunn/vim-plug
 
 ***Update*** - I've since moved on from YCM, and am now using [vim-mucomplete](https://github.com/lifepillar/vim-mucomplete) for (fast!) tab-based code-completion and [vim-polyglot](https://github.com/sheerun/vim-polyglot) for syntax highlighting - a combo I've been extremely happy with! :)
 
-### Fonts
+#### Fonts
 
 I've also included a .fonts directory that contains a number of fonts I've found useful. You might also be interested in using a patched Inconsalata Awesome font for better terminal compatibility with vim-airline, or choose from several other patched fonts that also work well here: https://github.com/powerline/fonts (If you are using the w0rp/ale vim plugin, I'd recommend trying out the `Meslo LG M DZ for Powerline` font as well, as it seems to offer the best sign compatibility.).
 
@@ -105,6 +105,10 @@ I've also included a .fonts directory that contains a number of fonts I've found
 <img src="https://raw.githubusercontent.com/rodtreweek/i/master/castle-winbuntu/change_font_in_conemu.gif" height="450">
 
 Frankly, I am still finding the adjustment to using something other than Iterm2 chief among my challenges in establishing a reasonable dev workflow on Windows.  However I've only really begun exploring what's possible with ConEmu, and am always on the lookout for other interesting projects :)
+
+#### Colors
+
+1. Gruvbox color scheme for ConEmu: https://gist.github.com/circleous/92c74d284db392a950d64a2b368517a1
 
 ### Boxstarter
 
