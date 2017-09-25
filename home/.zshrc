@@ -2,10 +2,10 @@ export ZSH=$HOME/.oh-my-zsh
 export TERM="xterm-256color"
 
 # Set name of the theme to load.
-#ZSH_THEME='powerlevel9k'
+#ZSH_THEME='powerlevel9k' # I've had to turn this off for now. Too slow :(
 ZSH_THEME="robbyrussell"
 
-# PowerLevel9K options
+# PowerLevel9K options. Off for now.
 #DEFAULT_USER=$USER
 #POWERLEVEL9K_MODE='awesome-patched'
 #POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
@@ -25,6 +25,7 @@ COMPLETION_WAITING_DOTS=true
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Hurray for ssh-agent plugin!!
 plugins=(git osx ruby rbenv gem vagrant ssh-agent tmux zsh-syntax-highlighting docker docker-compose)
 
 # Color correct paths rather than underlining them.
