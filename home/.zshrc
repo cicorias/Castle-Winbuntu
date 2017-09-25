@@ -4,9 +4,9 @@ export TERM="xterm-256color"
 # Set name of the theme to load.
 #ZSH_THEME='powerlevel9k' # I've had to turn this off for now. Too slow :(
 ZSH_THEME="robbyrussell"
+DEFAULT_USER=$USER
 
-# PowerLevel9K options. Off for now.
-#DEFAULT_USER=$USER
+# PowerLevel9K options. # These will remain off for now, since this is pretty busted on early WSL builds :(
 #POWERLEVEL9K_MODE='awesome-patched'
 #POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
 #POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status rbenv background_jobs)
