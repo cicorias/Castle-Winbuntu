@@ -84,7 +84,7 @@ https://github.com/junegunn/vim-plug
 
 1. Vim-plug Install: `curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim`
-1. Add a vim-plug section to your ~/.vimrc (or ~/.config/nvim/init.vim for Neovim) as suggested [here](https://github.com/junegunn/vim-plug#usage):
+1. Add a vim-plug section to your ~/.vimrc (or ~/.config/nvim/init.vim for Neovim). Complete instructions can be found [here](https://github.com/junegunn/vim-plug#usage), but to summarize:
 1. Begin the section with `call plug#begin()`
 1. List the plugins with `Plug` commands, for example:
     ```
