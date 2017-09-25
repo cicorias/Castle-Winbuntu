@@ -1,27 +1,29 @@
 #!/usr/bin/env bash
+# I'm not really using a .bashrc in WSL, as my early efforts to make it actually work proved
+# pretty fruitless :) Keeping it here for historical/incidental interest.
 
 # Path to the bash it configuration
-export BASH_IT="$HOME/bash-it"
+#export BASH_IT="$HOME/bash-it"
 
 # Lock and Load a custom theme file
 # location /.bash_it/themes/
-export BASH_IT_THEME='powerline-multiline'
+#export BASH_IT_THEME='powerline-multiline'
 
 # (Advanced): Change this to the name of your remote repo if you
 # cloned bash-it with a remote other than origin such as `bash-it`.
 # export BASH_IT_REMOTE='bash-it'
 
 # Don't check mail when opening terminal.
-unset MAILCHECK
+#unset MAILCHECK
 
 # Change this to your console based IRC client of choice.
-export IRC_CLIENT='irssi'
+#export IRC_CLIENT='irssi'
 
 # Set this to the command you use for todo.txt-cli
-export TODO="t"
+#export TODO="t"
 
 # Set this to false to turn off version control status checking within the prompt for all themes
-export SCM_CHECK=true
+#export SCM_CHECK=true
 
 # Set Xterm/screen/Tmux title with only a short hostname.
 # Uncomment this (or set SHORT_HOSTNAME to something else),
