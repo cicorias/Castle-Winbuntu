@@ -1,11 +1,12 @@
 #!/bin/bash
-stty_orig=`stty -g`
-stty -echo
-if [ -z "$SSH_AUTH_SOCK"  ] ; then
-          eval `ssh-agent -s`
-   ssh-add
-fi
-stty $stty_orig
+#SSH-agent config (I'm currently using an oh-my-zsh plugin for this, hence the comments...)
+#stty_orig=`stty -g`
+#stty -echo
+#if [ -z "$SSH_AUTH_SOCK"  ] ; then
+#          eval `ssh-agent -s`
+#   ssh-add
+#fi
+#stty $stty_orig
 
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
@@ -48,9 +49,9 @@ done
 # Path to the bash it configuration
 export BASH_IT="$HOME/bash-it"
 
-# Lock and Load a custom theme file
+# Lock and Load a custom theme file (this is currently tooo slow on WSL...)
 # location /.bash_it/themes/
-export BASH_IT_THEME='minimal'
+#export BASH_IT_THEME='minimal'
 
 # (Advanced): Change this to the name of your remote repo if you
 # cloned bash-it with a remote other than origin such as `bash-it`.
