@@ -2,7 +2,7 @@
 # Bash wrappers for docker run commands. Most of this is rather shamelessly copy/pasted from jessfraz's dot/docker files 
 # (who is awesome. you should follow her...).
 
-export DOCKER_REPO_PREFIX=rtreweek
+#export DOCKER_REPO_PREFIX=rtreweek
 
 #
 # Helper Functions
