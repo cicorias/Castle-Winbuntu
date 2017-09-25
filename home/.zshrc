@@ -56,6 +56,9 @@ if which rbenv >/dev/null ; then
 fi
 fi
 
+#Initialize GVM
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+
 # Source my external alias config
 # NOTE about 'ls': If coreutils is installed, oh-my-zsh will alias ls to gls, but
 # something about it is broken which breaks ls. not sure...
