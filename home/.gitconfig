@@ -181,12 +181,12 @@
 #[remote "origin"]
 	#fetch = +refs/pull/*/head:refs/remotes/origin/pull/*
 
-[commit]
-	gpgsign = true
-[user]
-	name = Rod Treweek
-	email = rtreweek@gmail.com
-	name = Rod Treweek
+#[commit]
+#	gpgsign = true
+#[user]
+#	name = Rod Treweek
+#	email = rtreweek@gmail.com
+#	name = Rod Treweek
 	
-[github]
-	user = rodtreweek
+#[github]
+#	user = rodtreweek
