@@ -46,8 +46,8 @@ done
 # print a fortune when the terminal opens
 #fortune -a -s | lolcat
 
-# Path to the bash it configuration
-export BASH_IT="$HOME/bash-it"
+# Path to the bash it configuration # --Turned off for now while I explore oh-my-zsh :)
+#export BASH_IT="$HOME/bash-it"
 
 # Lock and Load a custom theme file (this is currently tooo slow on WSL...)
 # location /.bash_it/themes/
@@ -63,15 +63,8 @@ export BASH_IT="$HOME/bash-it"
 # Change this to your console based IRC client of choice.
 #export IRC_CLIENT='irssi'
 
-# Set this to the command you use for todo.txt-cli
-#export TODO="t"
-
 # Load Bash It (currently disabled as I try out oh-my-zsh)
 # source "$BASH_IT"/bash_it.sh
 
-# Virtualenv
-#WORKON_HOME=~/Envs
-#source /usr/local/bin/virtualenvwrapper.sh
-
-# GVM
+# GVM (like ruby's rbenv but for golang...)
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
