@@ -14,7 +14,7 @@ alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
 # Shortcuts
-alias dl="cd /mnt/c/Users/rtreweex/Downloads"
+alias dl="cd /mnt/c/Users/$USER/Downloads"
 alias g="git"
 alias h="history"
 alias gc=". /usr/local/bin/gitdate && git commit -v "
