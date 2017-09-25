@@ -66,8 +66,8 @@ export BASH_IT="$HOME/bash-it"
 # Set this to the command you use for todo.txt-cli
 #export TODO="t"
 
-# Load Bash It
-source "$BASH_IT"/bash_it.sh
+# Load Bash It (currently disabled as I try out oh-my-zsh)
+# source "$BASH_IT"/bash_it.sh
 
 # Virtualenv
 #WORKON_HOME=~/Envs
