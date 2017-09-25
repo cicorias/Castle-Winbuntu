@@ -8,7 +8,7 @@ It should also be noted that prior to getting *too* precious about using WSL exc
 
 In my case, the full realization of this uncomfortable fact arrived much less swiftly than I would have preferred, in the form of repeated `go build <command-line-arguments>: read |0: interrupted system call` errors that would appear randomly regardless of version, overlapping with frequent (and ultimately insurmountable) Vim code-completion plugin errors.
 
-To avoid this pain, you can easily check your Windows build version by simply hitting the Windows key on your keyboard, typing "winver", then checking the version against [the release notes here](https://msdn.microsoft.com/en-us/commandline/wsl/release_notes).
+To avoid this pain, you can easily check your Windows build version by simply hitting the Windows key on your keyboard, typing `winver`, then checking the version against [the release notes here](https://msdn.microsoft.com/en-us/commandline/wsl/release_notes).
 
 Generally speaking, you'll likely want to be on at least [build 14905](https://msdn.microsoft.com/en-us/commandline/wsl/release_notes#build-14905) which supports restartable system calls (thus avoiding the dreaded `read |0: interrupted system call` errors mentioned above, and of which a thorough discussion can be found [here](https://github.com/Microsoft/BashOnWindows/issues/1198))
 
@@ -103,7 +103,8 @@ I've also included a .fonts directory that contains a number of fonts I've found
 
 <img src="https://raw.githubusercontent.com/rodtreweek/i/master/castle-winbuntu/change_font_in_conemu.gif" height="450">
 
-Frankly, I am still finding the adjustment to using something other than Iterm2 chief among my challenges in establishing a reasonable dev workflow on Windows.  However I've only really begun exploring what's possible with ConEmu, and am always on the lookout for other interesting projects :)
+Frankly, I am still finding the adjustment to using something other than Iterm2 chief among my challenges in establishing a reasonable dev workflow on Windows.  For example, I was frustrated to learn that there is no real equivalent/approximate method for copying from Vim to the system clipboard via the usual `"*y"` then `command + p` method familiar to those on a Mac. After literally hours of experimenting, each subsequent attempt seeming to add yet another cumbersome layer of abstraction, ("Do I *really* need to setup an X server for this??") I finally threw in the towel, opting to do a `L shift + mouse select`, or for larger copy selections, a `cat <filename>`, then selecting the text with the mouse/touchpad, and using `ctrl + p` to paste.
+
 
 #### Colors
 
