@@ -1,4 +1,7 @@
+# Path to your oh-my-zsh configuration
 export ZSH=$HOME/.oh-my-zsh
+
+# Let's try using 256 Colors.
 export TERM="xterm-256color"
 
 # Set name of the theme to load.
