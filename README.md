@@ -1,8 +1,8 @@
 <img src="https://raw.githubusercontent.com/rodtreweek/i/master/castle-winbuntu/castle_winbuntu_welcome.png" height="250" alt="castle-winbuntu">
 
-This is my [Homesick](https://github.com/technicalpickles/homesick) Castle intended for use on the Windows Subsystem for Linux (WSL, aka Bash/Ubuntu on Windows).
+This is my [Homesick](https://github.com/technicalpickles/homesick) Castle intended for use on the Windows Subsystem for Linux (aka "WSL", or Bash/Ubuntu on Windows).
 
-Before continuing, I'd recommend that you first read this excellent blog post from former Docker/Google-Engineer-turned-core-member-of-Microsoft's WSL/container development team, [Jessie Frazelle](https://github.com/jessfraz), discussing the nuts and bolts of WSL: https://blog.jessfraz.com/post/windows-for-linux-nerds/  
+If your search for guidance on setting up a dev environment on the Windows Subsystem for Linux (aka "WSL", or Bash/Ubuntu on Windows) has somehow lead you here, welcome!  I hope that through this rather opinionated example configuration, along with the deploayable ease as offered through Homesick, you may have found what you seek, oh weary Internet traveler :) But first, as initial preparation, I'd recommend that you read this excellent blog post from former Docker/Google-Engineer-turned-core-member-of-Microsoft's WSL/container development team, [Jessie Frazelle](https://github.com/jessfraz), discussing the nuts and bolts of WSL: https://blog.jessfraz.com/post/windows-for-linux-nerds/  
 
 It should also be noted that prior to getting *too* precious about using WSL exclusively as your "one-and-only-personal-development-workflow-asis", you'll want to be aware that WSL is *highly* Windows build-dependent, - meaning that certain things you might expect to "just work" in Ubuntu/Bash *may only be supported in more recent builds, or perhaps offered exclusively through the Windows Insider Program*. 
 
