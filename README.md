@@ -58,15 +58,16 @@ Moving on now...
 
 ### Bash
 
-1. I'm a pretty big fan of both Bash-it and oh-my-zsh, and have been using both interchangeably lately. Despite a few missing/broken items, they both work pretty well on WSL:)  Install Bash-it with: `sh -c "$(curl -fsSL https://raw.githubusercontent.com/Bash-it/bash-it/master/install.sh)"` 
-
-*Note that currently running a special theme in Bash-it, i.e. powerline-multiline slows things down intolerably, - I'd recommend limiting your customization if speed is important to you.
+1. I'm a pretty big fan of both [Bash-it](https://github.com/Bash-it/bash-it) and [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh), and have been using both somewhat interchangeably lately. Despite a few missing/broken items, they both work pretty well on WSL:)  Install Bash-it with: `sh -c "$(curl -fsSL https://raw.githubusercontent.com/Bash-it/bash-it/master/install.sh)"` 
 
 ### Zsh
 
 1. oh-my-zsh: `sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"`
 1. `mkdir ~/src`
 1. You'll want this excellent theme. Clone it with: `git clone https://github.com/bhilburn/powerlevel9k.git ~/src/powerlevel9k`
+
+*Note that for older builds (I believe this is fixed on recent builds but I haven't been able to check yet), currently running a special theme in Bash-it *and* oh-my-zsh, i.e. powerline-multiline/powerlevel9k slows things down pretty intolerably, - If you're on an older build, I'd recommend limiting your customizations if speed is important to you.
+
 
 ### Homesick
 
