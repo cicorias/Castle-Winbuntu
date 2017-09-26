@@ -77,8 +77,7 @@ Moving on now...
 ### Zsh
 
 1. Install oh-my-zsh: `sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"`
-1. `mkdir ~/src`
-1. You may also want to try out the excellent powerlevel9k theme: `git clone https://github.com/bhilburn/powerlevel9k.git ~/src/powerlevel9k` then symlink to `/$HOME/.oh-my-zsh/custom/themes/powerlevel9k.zsh-theme`
+1. You may also want to try out the excellent powerlevel9k theme: First, `mkdir ~/src` then `git clone https://github.com/bhilburn/powerlevel9k.git ~/src/powerlevel9k`, and symlink with `ln -s ~/src/powerlevel9k ~/.oh-my-zsh/custom/themes/powerlevel9k.zsh-theme`.
 
 *Note that for older builds (I believe this is fixed on recent builds but I haven't been able to check yet), currently running a special theme in Bash-it *or* oh-my-zsh, i.e. powerline-multiline/powerlevel9k slows things down pretty intolerably, - If you're on an older build, I'd recommend limiting your customizations if speed is important to you.
 
