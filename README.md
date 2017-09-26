@@ -72,7 +72,7 @@ Moving on now...
 1. `mkdir ~/src`
 1. You'll want this excellent theme. Clone it with: `git clone https://github.com/bhilburn/powerlevel9k.git ~/src/powerlevel9k`
 
-*Note that for older builds (I believe this is fixed on recent builds but I haven't been able to check yet), currently running a special theme in Bash-it *and* oh-my-zsh, i.e. powerline-multiline/powerlevel9k slows things down pretty intolerably, - If you're on an older build, I'd recommend limiting your customizations if speed is important to you.
+*Note that for older builds (I believe this is fixed on recent builds but I haven't been able to check yet), currently running a special theme in Bash-it *or* oh-my-zsh, i.e. powerline-multiline/powerlevel9k slows things down pretty intolerably, - If you're on an older build, I'd recommend limiting your customizations if speed is important to you.
 
 
 ### Homesick
