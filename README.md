@@ -13,7 +13,7 @@ But first, as initial preparation for this journey, I'd recommend that you read 
 
 ## Some additional background and observations...
 
-It should also be noted that prior to getting *too* precious about using WSL exclusively as your all-inclusive, "personal development-workflow-asis", you'll want to be aware that WSL is *highly* Windows build-dependent, - meaning that certain things you might expect to "just work" in Ubuntu/Bash *may only be supported in more recent builds, or perhaps offered exclusively through the Windows Insider Program*. 
+It should also be noted that prior to getting *too* precious about using WSL exclusively as your all-inclusive, "personal development-workflow-*asis*", you'll want to be aware that WSL is *highly* Windows build-dependent, - meaning that certain things you might expect to "just work" in Ubuntu/Bash *may only be supported in more recent builds, or perhaps offered exclusively through the Windows Insider Program*. 
 
 In my case, the full realization of this uncomfortable fact arrived much less swiftly than I would have preferred, in the form of repeated `go build <command-line-arguments>: read |0: interrupted system call` errors that would appear randomly regardless of version, overlapping with frequent (and ultimately insurmountable) Vim code-completion plugin errors.
 
