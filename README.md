@@ -6,7 +6,7 @@
 
 This is my [Homesick](https://github.com/technicalpickles/homesick) Castle intended for use on the Windows Subsystem for Linux (aka "WSL", or Bash/Ubuntu on Windows).
 
-If your search for guidance on setting up a reasonable dev environment on WSL has lead you here, welcome!  I hope that through this rather opinionated example configuration, along with the deploayable ease offered through the use of Homesick, you may find what it is you seek :) 
+If your search for guidance on setting up a reasonable dev environment on WSL has lead you here, again welcome, and I hope that through offering this rather opinionated example configuration/"editorial" journal, along with the deploayable ease offered through the use of Homesick, you may find what it is you seek :) 
 
 But first, as initial preparation for this journey, I'd recommend that you read this excellent blog post from former Docker/Google-Engineer-turned-core-member-of-Microsoft's WSL/Container Development Team, [Jessie Frazelle](https://github.com/jessfraz), discussing the nuts and bolts of WSL: https://blog.jessfraz.com/post/windows-for-linux-nerds/  
 
