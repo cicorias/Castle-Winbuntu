@@ -124,8 +124,9 @@ I've also included a .fonts directory that contains a number of fonts I've found
 
 Frankly, I am still finding the adjustment to using something other than Iterm2 chief among my challenges in establishing a reasonable dev workflow on Windows.  For example, I was frustrated to learn that there is no real equivalent/approximate method for copying from Vim to the system clipboard via the usual `"*y` then `command + v` method familiar to those who previously used Vim to develop on a Mac. After literally hours of experimenting, each subsequent attempt seeming to add yet another cumbersome layer of abstraction, ("Do I *really* need to setup an X server for this??") I finally threw in the towel, opting to do an `L shift + mouse select`, or for larger copy selections, a `cat <filename>`, then selecting the text with the mouse/touchpad, and `ctrl + c`, `ctrl + v` to copy/paste.
 
+## Additional/Optional items...
 
-#### Colors
+### Colors
 
 1. Some themes I found for ConEmu! https://github.com/joonro/ConEmu-Color-Themes
 1. Gruvbox color scheme for ConEmu: https://gist.github.com/circleous/92c74d284db392a950d64a2b368517a1
