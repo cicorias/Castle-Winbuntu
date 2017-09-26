@@ -27,7 +27,7 @@ Presently, I'm also using [ConEmu](https://conemu.github.io) as my terminal appl
 
 ## Upgrading WSL's Ubuntu to 16.04
 
-One additional observation that I should note is that while simply removing and reinstalling WSL is *supposed to* upgrade you from Ubuntu 14.04 to 16.04, this was not true for me, despite what I was pretty sure was a supported build (it simply hung indefinitely at the command line, even after I fully uninstalled, rebooted, then repeated the lxrun install..I finally had to manually kill it, - and was still left with 14.04 in the end...) 
+One additional observation that I should note is that [while simply removing and reinstalling WSL](https://www.howtogeek.com/278152/how-to-update-the-windows-bash-shell/) is *supposed to* upgrade you from Ubuntu 14.04 to 16.04, this was not true for me, despite what I was pretty sure was a supported build (it simply hung indefinitely at the command line, even after I fully uninstalled, rebooted, then repeated the lxrun install..I finally had to manually kill it, - and was still left with 14.04 in the end...) 
 
 I was finally able to upgrade to 16.04 using the following set of commands:
 
