@@ -2,11 +2,16 @@
 
 <img src="https://raw.githubusercontent.com/rodtreweek/i/master/castle-winbuntu/castle-winbuntu-action.gif" height="450">
 
+## Welcome!
+
 This is my [Homesick](https://github.com/technicalpickles/homesick) Castle intended for use on the Windows Subsystem for Linux (aka "WSL", or Bash/Ubuntu on Windows).
 
 If your search for guidance on setting up a reasonable dev environment on WSL has lead you here, welcome!  I hope that through this rather opinionated example configuration, along with the deploayable ease offered through the use of Homesick, you may find what it is you seek :) 
 
 But first, as initial preparation for this journey, I'd recommend that you read this excellent blog post from former Docker/Google-Engineer-turned-core-member-of-Microsoft's WSL/Container Development Team, [Jessie Frazelle](https://github.com/jessfraz), discussing the nuts and bolts of WSL: https://blog.jessfraz.com/post/windows-for-linux-nerds/  
+
+
+## Some Background and Observations...
 
 It should also be noted that prior to getting *too* precious about using WSL exclusively as your all-inclusive, "personal development-workflow-asis", you'll want to be aware that WSL is *highly* Windows build-dependent, - meaning that certain things you might expect to "just work" in Ubuntu/Bash *may only be supported in more recent builds, or perhaps offered exclusively through the Windows Insider Program*. 
 
@@ -15,7 +20,6 @@ In my case, the full realization of this uncomfortable fact arrived much less sw
 To avoid this pain, you can easily check your Windows build version by simply hitting the Windows key on your keyboard, typing `winver`, then checking the version against [the release notes here](https://msdn.microsoft.com/en-us/commandline/wsl/release_notes).
 
 Generally speaking, you'll likely want to be on at least [build 14905](https://msdn.microsoft.com/en-us/commandline/wsl/release_notes#build-14905) which supports restartable system calls (thus avoiding the dreaded `read |0: interrupted system call` errors mentioned above, and of which a thorough discussion can be found [here](https://github.com/Microsoft/BashOnWindows/issues/1198))
-
 
 Presently, I'm also using [ConEmu](https://conemu.github.io) as my terminal application, as it feels most similiar to Iterm2, which I had grown quite fond of. Having now tried Hyper.js, wsltty, and a few others, the names of which I'm now forgetting, ConEmu - while an imperfect replacement for Iterm2 - has been the most stable, configurable, and fully-featured among them, while also unique in offering tabbed-sessions, ~which I can't really live without~ which up to this point has been a firm requirement for me, even as I warm slightly to the exclusive use of tmux to boundary my sessions ;) 
 
@@ -57,7 +61,9 @@ b) The routine difficulty I was having with getting sudo to work predictably/rel
 
 While upgrading was perhaps the right decision for several other reasons, it really didn't resolve either of the issues I'd sought to remedy initially; the YCM plugin still complained about the version of Vim, and `sudo apt-get install` now seemed even more busted than ever, having now added a decorative new `tty error` to it's limited output. I finally resolved this by downgrading several packages (--see the `wget`, `dpkg -i` commands and `/dev/tty` permissions changes noted above...), however each time I was subsequently tempted to run `sudo apt-get update`, I reflexively hesitated, - wondering if doing so might upset the seemingly fragile balance I'd worked to achieve. Again, in retrospect these issues were highly build/environment specific, (and I'll admit due in part to my misunderstanding of how sudo/root actually works with environment variables in WSL), and would seem comparitively rare, especially for those who have already checked their build version for known issues ;) In any case, since this was a much less straightforward and time-consuming process than I had anticipated, I'm including this information in case it might be useful to those as impetuous/impatient as myself :)
 
-On that note, I'd also like to send a super-appreciative shout-out for all those who so generously share their time and effort on Github assisting others in building and shaping rapidly deployable configurations. The bulk of my dotfiles are really just a curation of extremely useful things I've either lightly iterated on, --or simply lifted outright from others. Several are sourced from [Jessie Frazelle](https://github.com/jessfraz/dotfiles), who through her work with Docker, Google, (and now Microsoft!), continues to impressively shape many notable innovations while still promoting OSS and remaining unfailingly generous in sharing her collected functions, aliases, and remarkably empathic and insightful guidance on a range of engineering/development issues, -- and also [Nate Mccurdy](https://github.com/natemccurdy/dotfiles) from Puppet, who - in addition to providing the principal inspiration for this repo - continues to generously offer his elegantly tailored, thoughtfully maintained and rigorously "customer-prem battle-tested" configuration for a rapidly deployable Ruby/Puppet development workflow  --- *You constantly inspire me through your intelligence and generosity* --- *Thank you both!*
+## Acknowledgements!
+
+I'd also like to send a super-appreciative shout-out to all those who so generously share their time and effort on Github assisting others in building and shaping rapidly deployable configurations. The bulk of my dotfiles are really just a curation of extremely useful things I've either lightly iterated on, --or simply lifted outright from others. Several are sourced from [Jessie Frazelle](https://github.com/jessfraz/dotfiles), who through her work with Docker, Google, (and now Microsoft!), continues to impressively shape many notable innovations while still promoting OSS and remaining unfailingly generous in sharing her collected functions, aliases, and remarkably empathic and insightful guidance on a range of engineering/development issues, -- and also [Nate Mccurdy](https://github.com/natemccurdy/dotfiles) from Puppet, who - in addition to providing the principal inspiration for this repo - continues to generously offer his elegantly tailored, thoughtfully maintained and rigorously "customer-prem battle-tested" configuration for a rapidly deployable Ruby/Puppet development workflow  --- *You constantly inspire me through your intelligence and generosity* --- *Thank you both!*
 
 
 Moving on now...
