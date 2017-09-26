@@ -11,7 +11,7 @@ If your search for guidance on setting up a reasonable dev environment on WSL ha
 But first, as initial preparation for this journey, I'd recommend that you read this excellent blog post from former Docker/Google-Engineer-turned-core-member-of-Microsoft's WSL/Container Development Team, [Jessie Frazelle](https://github.com/jessfraz), discussing the nuts and bolts of WSL: https://blog.jessfraz.com/post/windows-for-linux-nerds/  
 
 
-## Some Background and Observations...
+## Some additional background and observations...
 
 It should also be noted that prior to getting *too* precious about using WSL exclusively as your all-inclusive, "personal development-workflow-asis", you'll want to be aware that WSL is *highly* Windows build-dependent, - meaning that certain things you might expect to "just work" in Ubuntu/Bash *may only be supported in more recent builds, or perhaps offered exclusively through the Windows Insider Program*. 
 
