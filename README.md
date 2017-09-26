@@ -1,5 +1,7 @@
 <img src="https://raw.githubusercontent.com/rodtreweek/i/master/castle-winbuntu/castle_winbuntu_welcome.png" height="250" alt="castle-winbuntu">
 
+<img src="https://raw.githubusercontent.com/rodtreweek/i/master/castle-winbuntu/castle-winbuntu-action.gif" height="450">
+
 This is my [Homesick](https://github.com/technicalpickles/homesick) Castle intended for use on the Windows Subsystem for Linux (aka "WSL", or Bash/Ubuntu on Windows).
 
 If your search for guidance on setting up a reasonable dev environment on WSL has lead you here, welcome!  I hope that through this rather opinionated example configuration, along with the deploayable ease offered through the use of Homesick, you may find what it is you seek :) 
