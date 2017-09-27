@@ -1,5 +1,4 @@
-<img src="https://raw.githubusercontent.com/rodtreweek/i/master/castle-winbuntu/castle_winbuntu_welcome.png" height="250" alt="castle-winbuntu">
-
+<img src="https://raw.githubusercontent.com/rodtreweek/i/master/castle-winbuntu/castle_winbuntu_welcome.png" height="250" alt="castle-winbuntu"> [![Travis CI](https://travis-ci.org/rodtreweek/Castle-Winbuntu.svg?branch=master)](https://travis-ci.org/rodtreweek/Castle-Winbuntu)
 ---
 
 <img src="https://raw.githubusercontent.com/rodtreweek/i/master/castle-winbuntu/castle-winbuntu-action.gif" height="450">
