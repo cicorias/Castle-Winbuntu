@@ -6,6 +6,8 @@
 
 This is my [Homesick](https://github.com/technicalpickles/homesick) Castle intended for use on the Windows Subsystem for Linux (aka "WSL", or Bash/Ubuntu on Windows).
 
+[TL;DR](https://github.com/rodtreweek/Castle-Winbuntu/blob/master/README.md#tldr-meat-and-potatoes-of-deploying-the-dotfiles)
+
 If your search for guidance on setting up a reasonable dev environment on WSL has lead you here, again welcome :) and I hope that through offering this (rather opinionated) example configuration/"editorial" journal, along with the deployable ease offered through the use of Homesick, you may find what it is you seek :) 
 
 But first, as initial preparation for this journey, I'd recommend that you read this excellent blog post from former Docker/Google-Engineer-turned-core-member-of-Microsoft's WSL/Container Development Team, [Jessie Frazelle](https://github.com/jessfraz), discussing the nuts and bolts of WSL: https://blog.jessfraz.com/post/windows-for-linux-nerds/  
@@ -68,7 +70,7 @@ While upgrading was perhaps the right decision for several other reasons, it rea
 I'd also like to send a super-appreciative shout-out to all those who so generously share their time and effort on Github assisting others in building and shaping rapidly deployable configurations. The bulk of my dotfiles are really just a curation of extremely useful things I've either lightly iterated on, --or simply lifted outright from others. Several are sourced from [Jessie Frazelle](https://github.com/jessfraz/dotfiles), who through her work with Docker, Google, (and now Microsoft!), continues to impressively shape many notable innovations while still promoting OSS and remaining unfailingly generous in sharing her collected functions, aliases, and remarkably empathic and insightful guidance on a range of engineering/development issues, -- and also [Nate Mccurdy](https://github.com/natemccurdy/dotfiles) from Puppet, who - in addition to providing the principal inspiration for this repo - continues to generously offer his elegantly tailored, thoughtfully maintained and rigorously "customer-prem battle-tested" configuration for a rapidly deployable Ruby/Puppet development workflow  --- *You constantly inspire me through your intelligence and generosity* --- *Thank you both!*
 
 
-## TL;DR "Meat and Potatoes" of deploying the dotfiles...
+## TL;DR - The "Meat and Potatoes" of deploying the dotfiles...
 
 Ok, I hear ya...moving on now...
 
