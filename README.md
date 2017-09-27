@@ -90,16 +90,19 @@ Ok, I hear ya...moving on now...
 ### Zsh
 
 1. Install oh-my-zsh: `sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"`
-1. You may also want to try out the excellent powerlevel9k theme. First, `mkdir ~/src` then `git clone https://github.com/bhilburn/powerlevel9k.git ~/src/powerlevel9k`, and symlink with `ln -s ~/src/powerlevel9k ~/.oh-my-zsh/custom/themes/powerlevel9k.zsh-theme`.
+1. You may also want to try out the excellent powerlevel9k theme.
+  1. First, `mkdir ~/src` then `git clone https://github.com/bhilburn/powerlevel9k.git ~/src/powerlevel9k`
+  1. Create a symlink with `ln -s ~/src/powerlevel9k/powerlevel9k.zsh-theme ~/.oh-my-zsh/custom/themes/powerlevel9k.zsh-theme`.
 
-*Note that for older builds (I believe this is fixed on recent builds but I haven't been able to check yet), currently running a special theme in Bash-it *or* oh-my-zsh, i.e. powerline-multiline/powerlevel9k slows things down pretty intolerably, - If you're on an older build, I'd recommend limiting your customizations if speed is important to you.
+*Note that for older builds (I believe this may be fixed on recent builds but haven't confirmed this yet...), currently running a special theme in *either Bash-it or oh-my-zsh*, i.e. powerline-multiline for Bash-it or powerlevel9k for oh-my-zsh, slows things down pretty intolerably... - If you're on an older build, I'd recommend limiting your customizations if speed is important to you.
 
 
 ### Homesick
 
-1. I'm also a big fan of managing my dotfiles across different distributions with [Homesick](https://github.com/technicalpickles/homesick). Homesick limits the stuff I have to keep track of in my head, - ultimately a more sustainable method of organization and deployment for me:). You'll first need to install ruby, then `gem install homesick`
-1. Clone this castle with `homesick clone rodtreweek/castle-winbuntu`
-1. Create the symlinks with `homesick link castle-winbuntu`
+I'm also a big fan of managing my dotfiles across different distributions with [Homesick](https://github.com/technicalpickles/homesick). While more or less a git wrapper offering a set of reasonable conventions for managing dotfile-specific repos (these repos are termed "castles" in Homesick parlance), Homesick helps me keep my configuration files logically separate based on criteria such as distribution or environment, which limits the stuff I have to keep track of in my head, - ultimately a more sustainable method of organization and deployment for me:)
+  1. You'll first need to install ruby, then `gem install homesick`
+  1. Clone this castle with `homesick clone rodtreweek/castle-winbuntu`
+  1. Create the symlinks with `homesick link castle-winbuntu`
 
 ### Vim plugins
 
@@ -133,7 +136,7 @@ I've also included a .fonts directory that contains a number of fonts I've found
 
 <img src="https://raw.githubusercontent.com/rodtreweek/i/master/castle-winbuntu/change_font_in_conemu.gif" height="450">
 
-Frankly, I am still finding the adjustment to using something other than Iterm2 chief among my challenges in establishing a reasonable dev workflow on Windows.  For example, I was frustrated to learn that there is no real equivalent/approximate method for copying from Vim to the system clipboard via the usual `"*y` then `command + v` method familiar to those who previously used Vim to develop on a Mac. After literally hours of experimenting, each subsequent attempt seeming to add yet another cumbersome layer of abstraction, ("Do I *really* need to setup an X server for this??") I finally threw in the towel, opting to do an `L shift + mouse select`, or for larger copy selections, a `cat <filename>`, then selecting the text with the mouse/touchpad, and `ctrl + c`, `ctrl + v` to copy/paste.
+Frankly, I am still finding the adjustment to using something other than Iterm2 chief among my challenges in establishing a reasonable dev workflow on Windows.  For example, I was a bit frustrated to learn that there is no real equivalent/approximate Windows method to that of the Mac yank/paste to the system clipboard via the use of the familiar `"*y` register , then pasting the captured text without restriction, system-wide with `command + v`. After literally hours of experimenting, each subsequent attempt seeming to add yet another cumbersome layer of abstraction, ("Do I *really* need to setup an X server for this??") I finally threw in the towel, opting for the clunky `L shift + mouse select`, or for larger copy selections, a `cat <filename>`, then selecting the text with the mouse/touchpad, and `ctrl + c`, `ctrl + v` to copy/paste, which has made me pretty tired of having to constantly type `:set nonu`.
 
 ## Additional/Optional items...
 
