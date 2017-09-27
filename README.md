@@ -141,7 +141,7 @@ Frankly, I am still finding the adjustment to using something other than iTerm2 
 
 **Update:** My ConEmu, vim-related copy/paste angst has been substantially diminished upon discovery of this simple checkbox in  **Settings --> Keys & Macro --> Mark/Copy:**
 
-<img src="https://raw.githubusercontent.com/rodtreweek/i/master/conemu-vim-text-select.gif" height="450">
+<img src="https://raw.githubusercontent.com/rodtreweek/i/master/castle-winbuntu/conemu-vim-text-select.gif" height="450">
 
 While I don't *love* the considerable amount of trailing whitespace that this captures, or inability to reasonably deal with line-wrapping, this still makes me **a lot** happier now that I don't have to turn off line numbering, or constantly remove leading white space when pasting, for example, into this readme here on Github, etc. :)
 
