@@ -19,9 +19,13 @@ It should also be noted that prior to getting *too* precious about using WSL exc
 
 In my case, the full realization of this uncomfortable fact arrived much less swiftly than I would have preferred, in the form of repeated `go build <command-line-arguments>: read |0: interrupted system call` errors that would appear randomly regardless of version, overlapping with frequent (and ultimately insurmountable) Vim code-completion plugin errors.
 
+### Check your Windows build version.
+
 To avoid this pain, you can easily check your Windows build version by simply hitting the Windows key on your keyboard, typing `winver`, then checking the version against [the release notes here](https://msdn.microsoft.com/en-us/commandline/wsl/release_notes).
 
 Generally speaking, you'll likely want to be on at least [build 14905](https://msdn.microsoft.com/en-us/commandline/wsl/release_notes#build-14905) which supports restartable system calls (thus avoiding the dreaded `read |0: interrupted system call` errors mentioned above, and of which a thorough discussion can be found [here](https://github.com/Microsoft/BashOnWindows/issues/1198))
+
+### Choosing a terminal application.
 
 Presently, I'm also using [ConEmu](https://conemu.github.io) as my terminal application, as it feels most similiar to Iterm2, which I had grown quite fond of.  Having now tried Hyper.js, wsltty and a few others (the names of which I'm now forgetting) ConEmu - while not an absolutely perfect replacement for Iterm2 - has emerged as the most stable, configurable, and fully-featured of those I have tried, also offering tabbed-sessions, ~which I can't really live without~ which up to this point has been a firm requirement for me, even as I warm slightly to the exclusive use of tmux to boundary my sessions ;) 
 
@@ -60,8 +64,8 @@ sudo chmod 0666 /dev/tty
 
 Again, my decision to upgrade was prompted mainly by a pair of *really* frustrating issues that I *thought* would be resolved by upgrading to Ubuntu 16.04: 
 
-a) Several of my Vim plugins didn't work with the stock version of Vim that ships with Ubuntu 14.04 (In the end, I actually wound up just building Vim 8 from source due to problems I encountered with compiling the Vim YouCompleteMe plugin, so this was ultimately a moot consideration.).
-b) The routine difficulty I was having with getting sudo to work predictably/reliably, i.e. `sudo apt-get install` would typically hang, and I was constantly having to exit my shell to perform trivial tasks as root.
+  a) Several of my Vim plugins didn't work with the stock version of Vim that ships with Ubuntu 14.04 (In the end, I actually wound up just building Vim 8 from source due to problems I encountered with compiling the Vim YouCompleteMe plugin, so this was ultimately a moot consideration.).
+  b) The routine difficulty I was having with getting sudo to work predictably/reliably, i.e. `sudo apt-get install` would typically hang, and I was constantly having to exit my shell to perform trivial tasks as root.
 
 While upgrading was perhaps the right decision for several other reasons, it really didn't resolve either of the issues I'd sought to remedy initially; the YCM plugin still complained about the version of Vim, and `sudo apt-get install` now seemed even more busted than ever, having now added a decorative new `tty error` to it's limited output. I finally resolved this by downgrading several packages (--see the `wget`, `dpkg -i` commands and `/dev/tty` permissions changes noted above...), however each time I was subsequently tempted to run `sudo apt-get update`, I reflexively hesitated, - wondering if doing so might upset the seemingly fragile balance I'd worked to achieve. Again, in retrospect these issues were highly build/environment specific, (and I'll admit due in part to my misunderstanding of how sudo/root actually works with environment variables in WSL), and would seem comparitively rare, especially for those who have already checked their build version for known issues ;) In any case, since this was a much less straightforward and time-consuming process than I had anticipated, I'm including this information in case it might be useful to those as impetuous/impatient as myself :)
 
