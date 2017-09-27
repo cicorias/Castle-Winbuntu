@@ -6,7 +6,7 @@
 
 This is my [Homesick](https://github.com/technicalpickles/homesick) Castle intended for use on the Windows Subsystem for Linux (aka "WSL", or Bash/Ubuntu on Windows).
 
-[tl;dr](Castle-Winbuntu/blob/master/README.md#tldr-meat-and-potatoes-of-deploying-the-dotfiles):fast_forward::checkered_flag:
+:checkered_flag: [TL;DR](Castle-Winbuntu/blob/master/README.md#tldr-meat-and-potatoes-of-deploying-the-dotfiles) :checkered_flag:
 
 If your search for guidance on setting up a reasonable dev environment on WSL has lead you here, again welcome :) and I hope that through offering this (rather opinionated) example configuration/"editorial" journal, along with the deployable ease offered through the use of Homesick, you may find what it is you seek :) 
 
