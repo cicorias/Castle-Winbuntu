@@ -1,7 +1,7 @@
 <img src="https://raw.githubusercontent.com/rodtreweek/i/master/castle-winbuntu/castle_winbuntu_welcome.png" height="250" alt="castle-winbuntu">
-
+---
 <img src="https://raw.githubusercontent.com/rodtreweek/i/master/castle-winbuntu/castle-winbuntu-action.gif" height="450">
-___________________________________________
+
 ## Welcome!
 
 This is my [Homesick](https://github.com/technicalpickles/homesick) Castle intended for use on the Windows Subsystem for Linux (aka "WSL", or Bash/Ubuntu on Windows).
