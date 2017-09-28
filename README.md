@@ -9,7 +9,7 @@ This is my [Homesick](https://github.com/technicalpickles/homesick) Castle inten
 
 :watch: [TL;DR](#tldr---the-meat-and-potatoes-of-deploying-the-dotfiles) :fast_forward: :checkered_flag:
 
-If your search for guidance on setting up a reasonable dev environment on WSL has lead you here, I hope that through offering this (fairly opinionated) example configuration/journal and by leveraging the deployable ease available with Homesick, you may find what you seek :) 
+If your search for guidance on setting up a reasonable dev environment on WSL has lead you here, I hope that through offering this (fairly opinionated) example configuration/journal and by leveraging the deployable ease available through Homesick, you may find what you seek :) 
 
 But first, as initial preparation for your journey, I'd recommend that you read this excellent blog post from former Docker/Google-Engineer-turned-core-member-of-Microsoft's WSL/Container Development Team, [Jessie Frazelle](https://github.com/jessfraz), discussing the nuts and bolts of WSL: https://blog.jessfraz.com/post/windows-for-linux-nerds/  
 
