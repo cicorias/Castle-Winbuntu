@@ -143,13 +143,13 @@ I've also included a .fonts directory that contains a number of fonts I've found
 
 <img src="https://raw.githubusercontent.com/rodtreweek/i/master/castle-winbuntu/change_font_in_conemu.gif" height="450">
 
-Frankly, I am still finding the adjustment to using something other than iTerm2 chief among my challenges in establishing a reasonable dev workflow on Windows.  For example, I was a bit frustrated to learn that there is no real equivalent/approximate Windows method to that of the Mac yank/paste to the system clipboard via the use of the familiar `"*y` register , then pasting the captured text without restriction, system-wide with `command + v`. After literally hours of experimenting, each subsequent attempt seeming to add yet another cumbersome layer of abstraction, (aka "Do I *really* need to setup an X server for this??") I finally threw in the towel ~, opting for the clunky `L shift + mouse select`, or for larger copy selections, a `cat <filename>`, then selecting the text with the mouse/touchpad, and `ctrl + c`, `ctrl + v` respectively to copy/paste, which has made me pretty tired of having to constantly type `:set nonu` in vim.~
+Frankly, I am still finding the adjustment to using something other than iTerm2 chief among my challenges in establishing a reasonable dev workflow on Windows.  For example, I was a bit frustrated to learn that there is no real WSL equivalent to using `"*y` within Vim on a Mac to copy to the system clipboard, then pasting *without restriction, system-wide* with `command + v`. After literally hours of experimenting, and with each suggested workaround featuring the same/similarly cumbersome layer of abstraction, (aka "Do I *really* need to setup an X server for this??") I finally threw in the towel ~, opting for the clunky `L shift + mouse select`, or for larger copy selections, a `cat <filename>`, then selecting the text with the mouse/touchpad, and `ctrl + c`, `ctrl + v` respectively to copy/paste, which has made me pretty tired of having to constantly type `:set nonu` in vim.~
 
 **Update:** My ConEmu, vim-related copy/paste angst has been substantially diminished upon discovery of this simple checkbox in  **Settings --> Keys & Macro --> Mark/Copy:**
 
 <img src="https://raw.githubusercontent.com/rodtreweek/i/master/castle-winbuntu/conemu-vim-text-select.gif" height="450">
 
-While I don't *love* the considerable amount of trailing whitespace that this captures, or inability to reasonably deal with line-wrapping, this still makes me **a lot** happier now that I don't have to turn off line numbering, or constantly remove leading white space when pasting, for example, into this readme here on Github, etc. :)
+While I don't *love* the considerable amount of trailing whitespace that this captures, or despite what's advertised, the inability to reasonably deal with line-wrapping, this still makes me **a lot** happier now that I don't have to turn off line numbering, or constantly remove leading white space when pasting, for example, into this readme here on Github, etc. :)
 
 
 ## Additional/Optional items...
@@ -167,7 +167,7 @@ Definitely check out Boxstarter [here](http://boxstarter.org/InstallBoxstarter).
 
 ### Blogs
 
-Here are a few other blog posts I've also found extremely helpful:
+Here are a few other blog posts I've also found helpful:
 
 * [Dariusz Parys's dev setup](https://medium.com/@dariuszparys/my-windows-10-dev-setup-67d7aecb63a6)
 * [David Tran's setup guide](https://davidtranscend.com/blog/windows-terminal-workflow-guide)
