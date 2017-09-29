@@ -55,7 +55,7 @@ lxrun /setdefaultuser root
 ```
 *From bash as root:*
 ```
-sudo do-release-upgrade
+do-release-upgrade
 ```
 *Then:*
 ```
