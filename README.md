@@ -106,7 +106,9 @@ Ok, I hear ya...moving on now...
 
 ### Homesick
 
-I'm also a big fan of managing my dotfiles across different distributions with [Homesick](https://github.com/technicalpickles/homesick). While more or less a git wrapper offering a set of reasonable conventions for managing dotfile-specific repos (these repos are termed "castles" in Homesick parlance), Homesick helps me keep my configuration files logically separate based on criteria such as distribution or environment, which limits the stuff I have to keep track of in my head, - ultimately a more sustainable method of organization and deployment for me:)
+I'm also a big fan of managing my dotfiles across different distributions with [Homesick](https://github.com/technicalpickles/homesick). While more or less a git wrapper abstracting a subset of core functions and mapping these to a set of reasonable conventions for managing user-specific configuration files (aka "dotfiles" or "castles" in Homesick parlance), I was initially pretty skeptical as to the relative appeal in using such a seemingly redundant, "travel-sized, git translator/symlink-er" for essentially the same/similar task I'd been fine with having plain 'ol git handle up to this point. 
+
+I was however immediately struck by the economy offered by this "less is more" approach once I experienced the intuitive ease "baked-in" to logically creating/maintaining my "castles", and "orchestrating" these according to simple criteria such as distribution or environment. Things like cross-platform maintenance/duplication/refactoring of installation scripts or hooks, rebasing or resolving conflicts - much less likely to enter the problem space in the context of such limited distribution, are essentially handled by Homesick by not handling them at all; effectively enforcing a simple boundary in this absence, and underscoring the "right-sized" use case for this tool (of course git is always right there, doing the real work behind the scenes if you need to access its power directly..). I now consider it an indispensible tool in managing my configuratons, and am happy to recommend it as an alternative to managing the complexities typical of other approaches. To install it:
   1. You'll first need to install ruby, then `gem install homesick`
   1. Clone this castle with `homesick clone rodtreweek/castle-winbuntu`
   1. Create the symlinks with `homesick link castle-winbuntu`
@@ -172,6 +174,6 @@ Here are a few other blog posts I've also found helpful:
 * [Dariusz Parys's dev setup](https://medium.com/@dariuszparys/my-windows-10-dev-setup-67d7aecb63a6)
 * [David Tran's setup guide](https://davidtranscend.com/blog/windows-terminal-workflow-guide)
 * [Andreas Johansson's terminal setup guide](https://medium.com/@Andreas_cmj/how-to-setup-a-nice-looking-terminal-with-wsl-in-windows-10-creators-update-2b468ed7c326)
-* ~[(Microsoft's) Brian Ketelsen offers a look at his dev setup](https://brianketelsen.com/my-cross-platform-dev-setup-on-surface-laptop/)~ *looks like he took it down now...however [this](https://brianketelsen.com/i3-windows/) is still up.*
+* ~[(Microsoft's) Brian Ketelsen offers a look at his dev setup](https://brianketelsen.com/my-cross-platform-dev-setup-on-surface-laptop/)~ *looks like he took it down now...however [this is similar](https://brianketelsen.com/i3-windows/) and still available.*
 
 I'll be continuing to frequently add/remove/edit items contained within this project (perhaps until I author a proper blog post elsewhere, and make what's here a bit more conventional, i.e. much lighter on editorial, heavier emphasis on clear/concise list of installation/configuration steps ;)
