@@ -160,6 +160,7 @@ While I don't *love* the considerable amount of trailing whitespace that this ca
 
 1. Some themes I found for ConEmu! https://github.com/joonro/ConEmu-Color-Themes
 1. Gruvbox color scheme for ConEmu: https://gist.github.com/circleous/92c74d284db392a950d64a2b368517a1
+1. Solarized-dark color scheme for ConEmu: https://github.com/mattcan/solarized-gedit/blob/master/solarized-dark.xml
 
 ### Boxstarter
 
