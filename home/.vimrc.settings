@@ -5,12 +5,13 @@ augroup configgroup
   autocmd BufEnter Rakefile set filetype=ruby
   autocmd BufEnter Vagrantfile set filetype=ruby
   autocmd BufEnter Gemfile set filetype=ruby
+  autocmd ColorScheme * highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 augroup end
 
 " }}}
 " COLORS {{{
 
-" Enable syntax highlighting
+" Enable syntax highlightingF
 syntax enable
 
 "Set colorscheme
@@ -139,9 +140,17 @@ set signcolumn=yes
 " }}}
 " SEARCHING {{{
 
-" Enable highlight search and highlight when searching
+" Enable highlight search and highlight when searching. 
 set hlsearch
 set incsearch
+
+" **Note: matching trailing whitespace has a dependency on setting hlsearch
+" since this is the actual function it uses for any matching.
+" Make sure any settings that rely on this function are set *after* hlsearch
+" has been set set, or they won't work :(
+
+" Highlight Trailing Whitespace
+match ExtraWhitespace /\s\+$/
 
 " Ignore case when searching
 set ignorecase
