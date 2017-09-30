@@ -6,6 +6,7 @@ augroup configgroup
   autocmd BufEnter Vagrantfile set filetype=ruby
   autocmd BufEnter Gemfile set filetype=ruby
   autocmd ColorScheme * highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
+  autocmd ColorScheme * highlight LiteralTabs ctermbg=darkred guibg=darkred
 augroup end
 
 " }}}
@@ -136,24 +137,20 @@ set signcolumn=yes
 set hlsearch
 set incsearch
 
-" **Note: matching trailing whitespace has a dependency on setting hlsearch
-" since this is the actual function it uses for any matching.
+" **Note: hlsearch needs to be set first *before* matches will work,
+" since that's the actual function thats used for matching.
 " Make sure any settings that rely on this function are set *after* hlsearch
-" has been set set, or they won't work :(
+" has been set, or they won't work :(
 
 " Highlight Trailing Whitespace
 match ExtraWhitespace /\s\+$/
 
 " Highlight Literal Tabs
-highlight LiteralTabs ctermbg=darkred guibg=darkred
 match LiteralTabs / /
 
 " Ignore case when searching
 set ignorecase
 set smartcase
-
-" Turn off search highlight with <leader><space>
-" nnoremap <leader><space> :nohlsearch<CR>
 
 " }}}
 " FOLDING {{{
