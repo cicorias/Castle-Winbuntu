@@ -6,7 +6,6 @@ augroup configgroup
   autocmd BufEnter Vagrantfile set filetype=ruby
   autocmd BufEnter Gemfile set filetype=ruby
   autocmd ColorScheme * highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
-  autocmd ColorScheme * highlight LiteralTabs ctermbg=darkred guibg=darkred
 augroup end
 
 " }}}
@@ -142,11 +141,8 @@ set incsearch
 " Make sure any settings that rely on this function are set *after* hlsearch
 " has been set, or they won't work :(
 
-" Highlight Trailing Whitespace
-match ExtraWhitespace /\s\+$/
-
-" Highlight Literal Tabs
-match LiteralTabs / /
+" Show trailing whitespace and spaces before a tab:
+match ExtraWhitespace /\s\+$\| \+\ze\t/
 
 " Ignore case when searching
 set ignorecase
