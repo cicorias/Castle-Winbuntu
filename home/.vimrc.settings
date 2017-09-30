@@ -11,7 +11,7 @@ augroup end
 " }}}
 " COLORS {{{
 
-" Enable syntax highlightingF
+" Enable syntax highlighting
 syntax enable
 
 "Set colorscheme
