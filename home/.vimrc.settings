@@ -113,10 +113,6 @@ set showmatch
 " saving them first.
 set hidden
 
-" Highlight Trailing Whitespace
-highlight ExtraWhitespace ctermbg=darkred guibg=darkred
-match ExtraWhitespace /\s\+$/
-
 " Highlight Literal Tabs
 highlight LiteralTabs ctermbg=darkred guibg=darkred
 match LiteralTabs /     /
@@ -197,7 +193,17 @@ autocmd BufReadPost *  if line("'\"") > 1 && line("'\"") <= line("$")
 " SHORTCUTS {{{
 
 " Clear whitespace at end of line with '_$'
-nmap _$ :call Preserve("%s/\\s\\+$//e")<CR>
+"nmap _$ :call Preserve("%s/\\s\\+$//e")<CR>
+
+" With the following mapping a user can press F5 to delete all trailing
+" whitespace. The variable _s is used to save and restore the last search
+" pattern register (so next time the user presses n they will continue their
+" last search), and :nohl is used to switch off search highlighting (so
+" trailing spaces will not be highlighted while the user types). The e flag is
+" used in the substitute command so no error is shown if trailing whitespace
+" is not found. Unlike before, the substitution text must be specified in
+" order to use the required flag.
+nnoremap <silent> <F5> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
 
 " Quote words and lines with \q', \q", \qd
 :nnoremap <Leader>q" ciw""<Esc>P
