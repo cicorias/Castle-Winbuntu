@@ -158,8 +158,7 @@ While I don't *love* the considerable amount of trailing whitespace that this ca
 " Show trailing whitespace and spaces before a tab:
 match ExtraWhitespace /\s\+$\| \+\ze\t/
 ``` 
-- which highlights all whitespace in dark red,
-And:
+- which highlights all whitespace in dark red, and:
 ```
 " With the following mapping a user can press F5 to delete all trailing
 " whitespace. The variable _s is used to save and restore the last search
@@ -171,7 +170,8 @@ And:
 " order to use the required flag.
 nnoremap <silent> <F5> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
 ```
- - Which you can then press the F5 key to remove all the useless whitespace in your file like so:
+ - Which allows you to press the F5 key to remove all the useless whitespace in your file like so:
+ 
  
  <img src="https://raw.githubusercontent.com/rodtreweek/i/master/castle-winbuntu/whitespace_removal.gif" height="450">
 
