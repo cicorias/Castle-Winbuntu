@@ -151,14 +151,18 @@ Frankly, I am still finding the adjustment to using something other than iTerm2 
 
 <img src="https://raw.githubusercontent.com/rodtreweek/i/master/castle-winbuntu/conemu-vim-text-select.gif" height="450">
 
-While I don't *love* the considerable amount of trailing whitespace that this captures, or despite what's advertised, the inability to reasonably deal with line-wrapping, this still makes me **a lot** happier now that I don't have to turn off line numbering, or constantly remove *leading* white space when pasting, for example, into this readme here on Github, etc. :)
+While I don't *love* the considerable amount of trailing whitespace that this captures, or (despite what seems to be advertised in the ConEmu config options), the inability to reasonably deal with line-wrapping, this still makes me **a lot** happier now that I don't have to turn off line numbering, or constantly remove *leading* white space when pasting, for example, into this readme here on Github, etc. :)
 
-**Update:** I've been able to work around the *trailing* whitespace issue by adding a couple of entries to my .vimrc.settings file:
+**Update:** I've been able to work around the *trailing* whitespace issue by adding a few entries to my .vimrc.settings file:
+```
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=darkred guibg=darkred
+```
+- Added to the `AUTOGROUPS` section under `augroup configgroup`, and then under the `SEARCHING` section:
 ```
 " Show trailing whitespace and spaces before a tab:
 match ExtraWhitespace /\s\+$\| \+\ze\t/
 ``` 
-- which highlights all whitespace in dark red, and:
+- Which highlights all whitespace in dark red, then:
 ```
 " With the following mapping a user can press F5 to delete all trailing
 " whitespace. The variable _s is used to save and restore the last search
