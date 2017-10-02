@@ -153,6 +153,22 @@ Frankly, I am still finding the adjustment to using something other than iTerm2 
 
 While I don't *love* the considerable amount of trailing whitespace that this captures, or despite what's advertised, the inability to reasonably deal with line-wrapping, this still makes me **a lot** happier now that I don't have to turn off line numbering, or constantly remove leading white space when pasting, for example, into this readme here on Github, etc. :)
 
+**Update:** I've been able to work around the whitespace issue by adding a couple of items to my .vimrc.settings file:
+```" Show trailing whitespace and spaces before a tab:
+match ExtraWhitespace /\s\+$\| \+\ze\t/``` - which highlights all whitespace in dark red,
+And:
+``` " With the following mapping a user can press F5 to delete all trailing                               
+ " whitespace. The variable _s is used to save and restore the last search                             
+ " pattern register (so next time the user presses n they will continue their                          
+ " last search), and :nohl is used to switch off search highlighting (so                               
+ " trailing spaces will not be highlighted while the user types). The e flag is                        
+ " used in the substitute command so no error is shown if trailing whitespace                          
+ " is not found. Unlike before, the substitution text must be specified in                             
+ " order to use the required flag.                                                                     
+ nnoremap <silent> <F5> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
+ ```
+ - Which removes *all* whitespace from the file by pressing the F5 key :)
+
 
 ## Additional/Optional items...
 
