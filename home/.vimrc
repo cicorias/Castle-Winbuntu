@@ -11,6 +11,12 @@ Plug 'PProvost/vim-ps1'
 Plug 'tpope/vim-fugitive'
 Plug 'sheerun/vim-polyglot'
 Plug 'w0rp/ale'
+Plug 'fatih/vim-go'
+Plug 'davidhalter/jedi-vim'
+Plug 'ekalinin/dockerfile.vim'
+Plug 'docker/docker'
+Plug 'vim-scripts/bash-support.vim'
+Plug 'tpope/vim-commentary'
 
 call plug#end()
 
