@@ -151,9 +151,9 @@ Frankly, I am still finding the adjustment to using something other than iTerm2 
 
 <img src="https://raw.githubusercontent.com/rodtreweek/i/master/castle-winbuntu/conemu-vim-text-select.gif" height="450">
 
-While I don't *love* the considerable amount of trailing whitespace that this captures, or despite what's advertised, the inability to reasonably deal with line-wrapping, this still makes me **a lot** happier now that I don't have to turn off line numbering, or constantly remove leading white space when pasting, for example, into this readme here on Github, etc. :)
+While I don't *love* the considerable amount of trailing whitespace that this captures, or despite what's advertised, the inability to reasonably deal with line-wrapping, this still makes me **a lot** happier now that I don't have to turn off line numbering, or constantly remove *leading* white space when pasting, for example, into this readme here on Github, etc. :)
 
-**Update:** I've been able to work around the whitespace issue by adding a couple of items to my .vimrc.settings file:
+**Update:** I've been able to work around the *trailing* whitespace issue by adding a couple of entries to my .vimrc.settings file:
 ```
 " Show trailing whitespace and spaces before a tab:
 match ExtraWhitespace /\s\+$\| \+\ze\t/
