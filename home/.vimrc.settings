@@ -5,7 +5,7 @@ augroup configgroup
   autocmd BufEnter Rakefile set filetype=ruby
   autocmd BufEnter Vagrantfile set filetype=ruby
   autocmd BufEnter Gemfile set filetype=ruby
-  autocmd ColorScheme * highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
+  autocmd ColorScheme * highlight ExtraWhitespace ctermbg=darkred guibg=darkred
 augroup end
 
 " }}}
