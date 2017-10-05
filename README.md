@@ -202,6 +202,24 @@ Definitely check out Boxstarter [here](http://boxstarter.org/InstallBoxstarter).
 * <https://gist.github.com/jessfraz/7c319b046daa101a4aaef937a20ff41f>
 * <https://gist.github.com/NickCraver/7ebf9efbfd0c3eab72e9>
 
+### Install GVM (Go Version Manager)
+1. Github repo (and basic instructions) are available [here](https://github.com/moovweb/gvm). First, run the installer with:
+- `zsh < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)` - or if you're using bash as your shell, substitute `bash` for `zsh`.
+2. Before you'll be able to install and use more recent golang versions, you'll first need to "bootstrap" gvm by installing, then using go1.4:
+- `gvm install go1.4`
+- `gvm use go1.4`
+3. Then, you can do a `gvm listall` to show all versions up to the most recent.
+- For example, install version go1.9.1 with:
+- `gvm install go1.9.1`
+- Upon completion, it should display:
+```
+Installing go1.9.1...
+ * Compiling...
+go1.9.1 successfully installed!
+```
+4. You will now be able to easily switch among different golang versions :)
+
+
 ### Blogs
 
 Here are a few other blog posts I've also found helpful:
