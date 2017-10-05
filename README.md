@@ -145,15 +145,15 @@ I've also included a .fonts directory that contains a number of fonts I've found
 
 <img src="https://raw.githubusercontent.com/rodtreweek/i/master/castle-winbuntu/change_font_in_conemu.gif" height="450">
 
-Frankly, I am still finding the adjustment to using something other than iTerm2 chief among my challenges in establishing a reasonable dev workflow on Windows.  For example, I was a bit frustrated to learn that there is no real WSL equivalent to using `"*y` within Vim on a Mac to copy to the system clipboard, then pasting *without restriction, system-wide* with `command + v`. After literally hours of experimenting, and with each suggested workaround featuring the same/similarly cumbersome layer of abstraction, (aka "Do I *really* need to setup an X server for this??") I finally threw in the towel ~, opting for the clunky `L shift + mouse select`, or for larger copy selections, a `cat <filename>`, then selecting the text with the mouse/touchpad, and `ctrl + c`, `ctrl + v` respectively to copy/paste, which has made me pretty tired of having to constantly type `:set nonu` in vim.~
+Frankly, I am still finding the adjustment to using something other than iTerm2 chief among my challenges in establishing a reasonable dev workflow on Windows.  For example, I was a bit frustrated to learn that there is no real WSL equivalent to using `"*y` within Vim on a Mac to copy to the system clipboard, then pasting *without restriction, system-wide* with `command + v`. After literally hours of experimenting, and with each suggested workaround ~featuring the same/similarly cumbersome layer of abstraction, (aka "Do I *really* need to setup an X server for this??")~ Note: *This isn't abstraction. It's really a natural boundary between two distinct operating systems. In trying to get any form of seamless copy/paste behavior to happen between the two (or perhaps three, if we're talking about ssh'ing to a remote host...), you're essentially going to have to build a bridge between the clipboard on one OS to the other, and translate the corresponding registers between these distinct buffers. Obviously, on a Mac your only really dealing with a single OS/clipboard buffer so this is more straightforward. Soooo the answer is "Yes, you'll probably need to install an X server of some sort if you want to share a clipboard b/w Linux and Windows - even when they reside within the same host."*). I finally threw in the towel ~, opting for the clunky `L shift + mouse select`, or~ for larger copy selections, a `cat <filename>`, then selecting the text with the mouse/touchpad, and `ctrl + c`, `ctrl + v` ~respectively to copy/paste, which has made me pretty tired of having to constantly type `:set nonu` in vim.~
 
 **Update:** My ConEmu, vim-related copy/paste angst has been substantially diminished upon discovery of this simple checkbox in  **Settings --> Keys & Macro --> Mark/Copy:**
 
 <img src="https://raw.githubusercontent.com/rodtreweek/i/master/castle-winbuntu/conemu-vim-text-select.gif" height="450">
 
-While I don't *love* the considerable amount of trailing whitespace that this captures, or (despite what seems to be advertised in the ConEmu config options), the inability to reasonably deal with line-wrapping (note: this is really less an issue with ConEmu, and more to do with really what will always be the inherent challenges of sharing a clipboard between two distinct OS's...) , this still makes me **a lot** happier now that I don't have to turn off line numbering, or constantly remove *leading* white space when pasting, for example, into this readme here on Github. :)
+While I don't *love* the considerable amount of trailing whitespace that this captures, or ~(despite what seems to be advertised in the ConEmu config options),~ the inability to reasonably deal with line-wrapping (**note:** again, this is really less an issue with ConEmu, and more to do with crossing the inherent boundary b/w OS's as mentioned above...) , this still makes me **a lot** happier now that I don't have to turn off line numbering, or constantly remove leading white space when pasting - for example, into this readme here on Github. :)
 
-**Update:** I've been able to work around the trailing whitespace issue as well as identify/reduce spaces before a tab by adding a few entries to my .vimrc.settings file:
+**Update:** I've been able to work around the trailing/leading whitespace issue as well as identify/reduce spaces before a tab by adding a few entries to my .vimrc.settings file:
 ```
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=darkred guibg=darkred
 ```
@@ -217,7 +217,7 @@ Installing go1.9.1...
  * Compiling...
 go1.9.1 successfully installed!
 ```
-4. You will now be able to easily switch among different golang versions :)
+4. You will now be able to swiftly and easily switch among different golang versions :)
 
 
 ### Blogs
