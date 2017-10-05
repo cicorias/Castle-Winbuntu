@@ -88,7 +88,7 @@ I'd also like to send a super-appreciative shout-out to all those who so generou
 
 ## TL;DR - The "Meat and Potatoes" of deploying the dotfiles...
 
-Ok, I hear ya...moving on now...
+Ok, I hear ya...sounds like you're hungry. Here's how to deploy:
 
 ### Bash
 
@@ -134,7 +134,7 @@ https://github.com/junegunn/vim-plug
 
 1. Setting up YouCompleteMe natively to support code-completion in WSL is ~unfortunately still a WIP for me, and~ tbth, a ~mostly~ failed experiment:( This appears to be mainly due to the limitations with my Windows/WSL build, although the dated versions of Vim packaged with both Ubuntu Trusty and Xenial certainly haven't helped matters. If you want Vim 8 (generally preferred) then you can follow the instructions here to build it from source: https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source  - be careful to heed the warning for python 2 vs. 3 when building your config, as there are issues when attempting to use both...).
 
-***Update*** - I've since moved on from YCM, and am now using [vim-mucomplete](https://github.com/lifepillar/vim-mucomplete) for (fast!) tab-based code-completion and [vim-polyglot](https://github.com/sheerun/vim-polyglot) for syntax highlighting - a combo I've been extremely happy with! :) Also, if you are wanting to build Vim 8 from source, have a look at this gist [here](https://gist.github.com/rodtreweek/894f02a23bbc7e3691fa1a0f954e3a40), which uses [checkinstall](https://debian-administration.org/article/147/Installing_packages_from_source_code_with_checkinstall) and the amazing [fpm](https://github.com/jordansissel/fpm) package builder to create a .deb package and install it :)
+***Update*** - I've since moved on from YCM, and am now using [vim-mucomplete](https://github.com/lifepillar/vim-mucomplete) for (fast!) tab-based code-completion and [vim-polyglot](https://github.com/sheerun/vim-polyglot) for syntax highlighting - a combo I've been extremely happy with! :) Also, if you are wanting to build Vim 8 from source, **have a look at this gist [here](https://gist.github.com/rodtreweek/894f02a23bbc7e3691fa1a0f954e3a40)**, which uses [checkinstall](https://debian-administration.org/article/147/Installing_packages_from_source_code_with_checkinstall) and **the [amazing fpm](https://github.com/jordansissel/fpm) package builder** to first create a .deb package, then safely/sanely install it :)
 
 #### Fonts
 
@@ -151,9 +151,9 @@ Frankly, I am still finding the adjustment to using something other than iTerm2 
 
 <img src="https://raw.githubusercontent.com/rodtreweek/i/master/castle-winbuntu/conemu-vim-text-select.gif" height="450">
 
-While I don't *love* the considerable amount of trailing whitespace that this captures, or (despite what seems to be advertised in the ConEmu config options), the inability to reasonably deal with line-wrapping, this still makes me **a lot** happier now that I don't have to turn off line numbering, or constantly remove *leading* white space when pasting, for example, into this readme here on Github, etc. :)
+While I don't *love* the considerable amount of trailing whitespace that this captures, or (despite what seems to be advertised in the ConEmu config options), the inability to reasonably deal with line-wrapping (note: this is really less an issue with ConEmu, and more to do with really what will always be the inherent challenges of sharing a clipboard between two distinct OS's...) , this still makes me **a lot** happier now that I don't have to turn off line numbering, or constantly remove *leading* white space when pasting, for example, into this readme here on Github. :)
 
-**Update:** I've been able to work around the *trailing* whitespace issue by adding a few entries to my .vimrc.settings file:
+**Update:** I've been able to work around the trailing whitespace issue as well as identify/reduce spaces before a tab by adding a few entries to my .vimrc.settings file:
 ```
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=darkred guibg=darkred
 ```
@@ -180,6 +180,13 @@ nnoremap <silent> <F5> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :noh
  <img src="https://raw.githubusercontent.com/rodtreweek/i/master/castle-winbuntu/whitespace_removal.gif" height="450">
 
 Again, not *ideal*, but it at least provides some form of remedy without having to install/configure another "proxy" layer to translate various registers, and logically handle shared clipboard buffers between what are essentially two distinct OS's, i.e. Windows and Linux (note: you may have to hit the `Esc` key after you do your `ctrl-v` in order to get it to "let go" of the text you've selected and get it copied to the clipboard...).
+
+I've also configured `F2` to toggle `:set paste`, allowing for quick and precictable `ctrl-v` behavior (make sure you have also set the "multiline paste" option for ctrl-v in the settings for ConEmu...):
+```
+" Press F2 to toggle set paste:
+set pastetoggle=<F2>
+```
+
 
 ## Additional/Optional items...
 
