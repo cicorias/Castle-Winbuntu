@@ -16,9 +16,9 @@ But first, as initial preparation for your journey, I'd recommend that you read 
 
 ## Additional background and some observations...
 
-It should also be noted that prior to getting *too* precious about using WSL exclusively as your all-inclusive, "personal development-workflow-*asis*", you'll want to be aware that WSL is *highly* Windows build-dependent - meaning that certain things you might expect to "just work" in Ubuntu/Bash *may only be supported in more recent builds, or perhaps offered exclusively through the Windows Insider Program*. 
+It should also be noted that prior to getting *too* precious about using WSL exclusively as your seamless "personal development-workflow-*asis*", you'll want to be aware that WSL is *highly* Windows build-dependent - meaning that certain things you might expect to "just work" in Ubuntu/Bash *may only be supported in more recent builds, or perhaps offered exclusively through the Windows Insider Program*. 
 
-In my case, the full realization of this uncomfortable fact arrived much less swiftly than I would have preferred, in the form of repeated `go build <command-line-arguments>: read |0: interrupted system call` errors that would appear randomly regardless of version, overlapping with frequent (and ultimately insurmountable) Vim code-completion plugin errors.
+In my case, the full realization of this uncomfortable fact arrived much less swiftly than I would have preferred, in the form of repeated `go build <command-line-arguments>: read |0: interrupted system call` errors that would appear randomly regardless of version, then overlap with frequent (and ultimately insurmountable) Vim code-completion plugin errors.
 
 
 ### Check your Windows build version...
@@ -26,7 +26,7 @@ In my case, the full realization of this uncomfortable fact arrived much less sw
 
 To avoid this pain, you can easily check your Windows build version by simply hitting the Windows key on your keyboard, typing `winver`, then checking the version against [the release notes here](https://msdn.microsoft.com/en-us/commandline/wsl/release_notes).
 
-Generally speaking, you'll likely want to be on at least [build 14905](https://msdn.microsoft.com/en-us/commandline/wsl/release_notes#build-14905) which supports restartable system calls (thus avoiding the dreaded `read |0: interrupted system call` errors mentioned above, and of which a thorough discussion can be found [here](https://github.com/Microsoft/BashOnWindows/issues/1198))
+Generally speaking, you'll likely want to be on at least [build 14905](https://msdn.microsoft.com/en-us/commandline/wsl/release_notes#build-14905) which supports restartable system calls (thus avoiding the dreaded `read |0: interrupted system call` errors mentioned above, of which a thorough discussion can be found [here](https://github.com/Microsoft/BashOnWindows/issues/1198))
 
 
 ### Choosing a terminal application...
@@ -36,9 +36,9 @@ Presently, I'm also using [ConEmu](https://conemu.github.io) as my terminal appl
 
 **Update:** I'm now recalling more completely why tabbed-sessions had previously held such appeal for me. While a local tmux config is great for partitioning *local* session boundaries, even if you are careful to detach from them, they are still tethered to a *local* process, -- meaning that the now-in-progress compile of Vim 8 you just kicked-off on a remote host isn't going to withstand the incoming forced-reboot naturally triggered by Windows Update minutes later ;) 
 
-To avoid this potential calamity you *still* need some mechanism by which to automatically start/create or re-attach to existing sessions on remote hosts (and subsequently boundary these sessions).  This is where tabbed-sessions is particulary useful, since each remote connection is represented in it's own tab, more intuitively corresponding in a 1-to-1 manner to a single tmux session on the remote host.  
+To avoid this potential calamity you *still* need some mechanism by which to automatically start/create or re-attach to existing sessions on remote hosts (and subsequently boundary these sessions).  This is where tabbed-sessions is particulary useful, since each remote connection can then be represented in *it's own tab* and by logical extension much more intuitively mapped in a 1-to-1 manner to *its own individual tmux session - initiated and maintained on the remote host*.
 
-In the past I had used a specific combination of conditional logic in my tmux.conf and precisely configured `autossh` command to establish and maintain essentially a "close the lid on laptop, drive home, open lid on laptop, trigger vpn connection, wait for sessions to be restored in each tab" - method of persistance (similar to that offered [here](https://github.com/PinkPosixPXE/iterm-auto-ssh)). While automation at this level may not be of interest to everyone, and certainly should be balanced against any potential security implications (for example, at a minimum great care should be taken in preventing ssh-agent process sprawl, etc.), it's hard not to appreciate the friction-free convenience of this configuration  - especially at 3am when the increasing frequency of CRITICAL alerts has converged to form a singular, uninterrupted tone, announcing the arrival of a 48 hour work marathon ;)
+In the past, since it was common that I might be connected to several remote systems at any given time, it was necessary for me to use this method of tabbed-sessions, along with some conditional logic in both my local and remote .tmux.conf files and precisely configured `autossh` command to establish and maintain essentially a "close the lid on laptop, drive home, open lid on laptop, trigger vpn connection, wait for sessions to be restored in each tab" - method of persistance (similar to that represented [here](https://github.com/PinkPosixPXE/iterm-auto-ssh)),. While "automation" at this level may not be of interest to everyone, and certainly should be balanced against any potential security implications (for example, at a minimum great care should be taken in preventing ssh-agent process-sprawl, etc.), it's hard not to appreciate the friction-free convenience of this configuration  - especially at 3am when the increasing frequency of CRITICAL alerts has converged to form a singular, uninterrupted tone, announcing the arrival of a 48 hour work marathon ;)
 
 
 ### Upgrading WSL's Ubuntu to 16.04
