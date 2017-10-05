@@ -103,7 +103,7 @@ set scrolloff=14
 " Visual autocomplete for command menu
 set wildmenu
 
-" Redraw only when we ned to
+" Redraw only when we need to
 set lazyredraw
 
 " Highlight matching brackets
@@ -184,17 +184,17 @@ autocmd BufReadPost *  if line("'\"") > 1 && line("'\"") <= line("$")
 " }}}
 " SHORTCUTS {{{
 
-" Clear whitespace at end of line with '_$'
-" nmap _$ :call Preserve("%s/\\s\\+$//e")<CR> " Haven't been able to make this work.
+" Clear whitespace at end of line with '_$' " Pretty sure I had this working on Mac...Not working on WSL/CentOS.
+" nmap _$ :call Preserve("%s/\\s\\+$//e")<CR> " -- Not working on WSL/CentOS.
 
-" With the following mapping a user can press F5 to delete all trailing
-" whitespace. The variable _s is used to save and restore the last search
-" pattern register (so next time the user presses n they will continue their
-" last search), and :nohl is used to switch off search highlighting (so
-" trailing spaces will not be highlighted while the user types). The e flag is
-" used in the substitute command so no error is shown if trailing whitespace
-" is not found. Unlike before, the substitution text must be specified in
-" order to use the required flag.
+" Since I wasn't able to get the above mapping to work, I discovered that with
+" the following a user can press F5 to delete all trailing whitespace. 
+" The variable _s is used to save and restore the last search pattern register
+" (so next time the user presses n they will continue their last search),
+" and :nohl is used to switch off search highlighting (so trailing spaces will 
+" not be highlighted while the user types). The e flag is used in the substitute
+" command so no error is shown if trailing whitespace is not found. Unlike before, 
+" the substitution text must be specified in order to use the required flag.
 nnoremap <silent> <F5> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
 
 " Quote words and lines with \q', \q", \qd
