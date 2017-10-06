@@ -179,7 +179,7 @@ nnoremap <silent> <F5> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :noh
  
  <img src="https://raw.githubusercontent.com/rodtreweek/i/master/castle-winbuntu/whitespace_removal.gif" height="450">
 
-Again, not *ideal*, but it at least provides some form of remedy without having to install/configure another "proxy" layer to translate various registers, and logically handle shared clipboard buffers between what are essentially two distinct OS's, i.e. Windows and Linux (note: you may have to hit the `Esc` key after you do your `ctrl-v` in order to get it to "let go" of the text you've selected and get it copied to the clipboard...).
+Again, not *ideal*, but it at least provides some form of remedy without having to install/configure another "proxy" layer to translate various registers, and logically handle shared clipboard buffers between what again are essentially two distinct OS's, using different registers for their copy/paste behavior (note: you may have to hit the `Esc` key in order to get it to "let go"  of the text you have mouse highlighted/selected, subsequently passing it along to the clipboard buffer and `ctrl-v` pasting).
 
 I've also configured `F2` to toggle `:set paste`, allowing for quick and precictable `ctrl-v` behavior (make sure you have also set the "multiline paste" option for ctrl-v in the settings for ConEmu...):
 ```
