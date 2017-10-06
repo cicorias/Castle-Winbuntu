@@ -187,6 +187,13 @@ I've also configured `F2` to toggle `:set paste`, allowing for quick and precict
 set pastetoggle=<F2>
 ```
 
+#### SSH on WSL
+SSH can sometimes be a bit problematic on WSL. I've had issues where after I've gotten a number of things to work pretty predictably including ssh tunneling or scp'ing files to localhost, I'll get the "host key verification failed" message, where after checking things out, nothing has changed. Even removing *everything* from the known_hosts file -- and even deleting it entirely, then rebooting doesn't prompt me in the usual/expected way to add it back.  In order to work around the issue I had to do the following (I actually created an alias for this called `fixssh` in my .aliases file...):
+```
+$ ssh -o StrictHostKeyChecking=no <your_user>@remote_host uptime
+```
+SSH port forwarding/tunneling also seems pretty broken on WSL (...or at least on the builds that I've tested, at the very least it doesn't seem to be able to integrate with any real mechanism for name to number resolution, i.e. simply reading the contents of `/etc/hosts`, etc, which means you will need to use ip addresses instead of hostnames, including the use of `127.0.0.1` rather than `localhost`). Any attempt at creating an alias/function for this purpose will at the very least require the use of sudo/sudo -E when scripting any commands specific to "privileged ports". In fact, I was never really able to get this to work natively on WSL -- and perhaps collaterly why I started seeing the "host key" error mentioned above -- so you might be better served by using something like PuTTY (I can report that this works quite well, if a little less intuitively in terms of initial setup...). I won't document it here, but be on the lookout for another setup guide here on Github featuring my transparent, muti-hop solution featuring ConEmu/PuTTY/Pageant and oh-my-zsh plugins to create a session "index" for several different types of encrypted tunnels/port mappings :) 
+
 
 ## Additional/Optional items...
 
