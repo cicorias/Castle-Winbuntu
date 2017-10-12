@@ -243,5 +243,6 @@ Here are a few other blog posts I've also found helpful:
 * [(Microsoft's) Brian Ketelsen offers a look at his dev setup here](https://brianketelsen.com/my-cross-platform-dev-setup-on-surface-laptop/) and also [here](https://brianketelsen.com/i3-windows/)
 * [Mike Lindegarde's powerlevel9k theme setup on Windows 10](http://mikelindegarde.com/post/2016/03/10/feeling-like-a-real-developer)
 * [Rushi Agrawal's guide to Tmux copy/pasting](http://www.rushiagr.com/blog/2016/06/16/everything-you-need-to-know-about-tmux-copy-pasting-ubuntu/)
+* [Scott Hanselman's setup](https://www.hanselman.com/blog/SettingUpAShinyDevelopmentEnvironmentWithinLinuxOnWindows10.aspx)
 
 I'll be continuing to frequently add/remove/edit items contained within this project (perhaps until I author a proper blog post elsewhere, and make what's here a bit more conventional, i.e. much lighter on editorial, heavier emphasis on clear/concise list of installation/configuration steps ;)
