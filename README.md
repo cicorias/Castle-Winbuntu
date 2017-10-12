@@ -233,7 +233,13 @@ go1.9.1 successfully installed!
 5. You will now be able to swiftly and easily switch among different golang versions :)
 
 ### Install pyenv
-1. Install pyenv with:
+1. First, you'll probably need to install this stuff:
+```
+sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
+libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
+xz-utils tk-dev
+```
+2. Install pyenv with:
 ```
 zsh < <(curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer)
 ```
@@ -241,7 +247,7 @@ or:
 ```
 bash < <(curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer)
 ```
-2. Add this to your .zshrc/.bash_profile, etc.:
+3. Add this to your .zshrc/.bash_profile, etc.:
 ```
 # Load pyenv automatically by adding                
                                            
@@ -249,17 +255,24 @@ export PATH="${HOME}/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"                     
 eval "$(pyenv virtualenv-init -)"      
 ```
-3. You may need to remove these three lines from your .bashrc:
+4. You may need to remove these three lines from your .bashrc:
 ```
 export PATH="~/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 ```
-4. Update pyenv:
+5. Update pyenv:
 ```
 pyenv update
 ```
-5. Party.
+6. Install some pythons:
+```
+# You can list available versions with:
+pyenv install -l
+# Then install with:
+pyenv install 3.5.2
+```
+7. Party.
 
 
 ### Blogs
