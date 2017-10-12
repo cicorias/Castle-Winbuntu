@@ -233,7 +233,7 @@ go1.9.1 successfully installed!
 5. You will now be able to swiftly and easily switch among different golang versions :)
 
 ### Install pyenv
-1. First, you'll probably need to install this stuff:
+1. First, you'll probably need to install this stuff (so that things like bzip2 and sqlite work correctly):
 ```
 sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
 libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
