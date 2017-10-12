@@ -214,14 +214,14 @@ Definitely check out Boxstarter [here](http://boxstarter.org/InstallBoxstarter).
 ### Install GVM (Go Version Manager)
 1. Github repo (and basic instructions) are available [here](https://github.com/moovweb/gvm). First, run the installer with:
 - `zsh < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)` - or if you're using bash as your shell, substitute `bash` for `zsh`.
-1. I had to also install the following dependencies:
+2. I had to also install the following dependencies:
 ```
 sudo apt-get install binutils bison gcc make
 ```
-1. Before you'll be able to install and use more recent golang versions, you'll first need to "bootstrap" gvm by installing, then using go1.4:
+3. Before you'll be able to install and use more recent golang versions, you'll first need to "bootstrap" gvm by installing, then using go1.4:
 - `gvm install go1.4`
 - `gvm use go1.4`
-1. Then, you can do a `gvm listall` to show all versions up to the most recent.
+4. Then, you can do a `gvm listall` to show all versions up to the most recent.
 - For example, install version go1.9.1 with:
 - `gvm install go1.9.1`
 - Upon completion, it should display:
@@ -230,7 +230,7 @@ Installing go1.9.1...
  * Compiling...
 go1.9.1 successfully installed!
 ```
-1. You will now be able to swiftly and easily switch among different golang versions :)
+5. You will now be able to swiftly and easily switch among different golang versions :)
 
 ### Install pyenv
 1. Install pyenv with:
@@ -241,7 +241,7 @@ or:
 ```
 bash < <(curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer)
 ```
-1. Add this to your .zshrc/.bash_profile, etc.:
+2. Add this to your .zshrc/.bash_profile, etc.:
 ```
 # Load pyenv automatically by adding                
                                            
@@ -249,17 +249,17 @@ export PATH="${HOME}/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"                     
 eval "$(pyenv virtualenv-init -)"      
 ```
-1. You may need to remove these three lines from your .bashrc:
+3. You may need to remove these three lines from your .bashrc:
 ```
 export PATH="~/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 ```
-1. Update pyenv:
+4. Update pyenv:
 ```
 pyenv update
 ```
-1. Party.
+5. Party.
 
 
 ### Blogs
