@@ -232,6 +232,35 @@ go1.9.1 successfully installed!
 ```
 1. You will now be able to swiftly and easily switch among different golang versions :)
 
+### Install pyenv
+1. Install pyenv with:
+```
+zsh < <(curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer)
+```
+or:
+```
+bash < <(curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer)
+```
+1. Add this to your .zshrc/.bash_profile, etc.:
+```
+# Load pyenv automatically by adding                
+                                           
+export PATH="${HOME}/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"                     
+eval "$(pyenv virtualenv-init -)"      
+```
+1. You may need to remove these three lines from your .bashrc:
+```
+export PATH="~/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+```
+1. Update pyenv:
+```
+pyenv update
+```
+1. Party.
+
 
 ### Blogs
 
