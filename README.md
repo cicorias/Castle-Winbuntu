@@ -188,7 +188,7 @@ set pastetoggle=<F2>
 ```
 
 #### SSH on WSL
-I've found that using SSH in the familiar Mac/CentOS ways I'm familiar with can be problematic to duplicate on WSL. I've had issues where after I'd gotten what I thought was a reasonable handle on things, only to suddenly be confronted with a "host key verification failed" message, when certainly nothing obvious had changed in terms of the host key I was using, permissions on any presumably relevant files, hostnames or ip addresses. Even removing individual entries from the `known_hosts` file, followed later by removing *everything*, then finally deleting the file itself and rebooting the machine I was never prompted in the usual/expected way to re-add the host key. I finally had to do the following to force host-key prompting, and re-establish ssh connectivy to my remote host:
+I've found that using SSH in the familiar Mac/CentOS way can be a bit problematic to duplicate on WSL. I've had issues where after I'd gotten what I thought was a reasonable handle on things, only to suddenly be confronted with a "host key verification failed" message, when certainly nothing obvious had changed in terms of the host key I was using, permissions on any presumably relevant files, hostnames or ip addresses. Even removing individual entries from the `known_hosts` file, followed later by removing *everything*, then finally deleting the file itself and rebooting the machine I was never prompted in the usual/expected way to re-add the host key. I finally had to do the following to force host-key prompting, and re-establish ssh connectivy to my remote host:
 ```
 $ ssh -o StrictHostKeyChecking=no <your_user>@remote_host uptime
 ```
@@ -232,7 +232,7 @@ go1.9.1 successfully installed!
 ```
 5. You will now be able to swiftly and easily switch among different golang versions :)
 
-### Install pyenv
+### Install [pyenv](https://github.com/pyenv/pyenv)
 1. First, you'll probably need to install this stuff (so that things like bzip2 and sqlite work correctly):
 ```
 sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
@@ -272,7 +272,7 @@ pyenv install -l
 # Then install with:
 pyenv install 3.5.2
 ```
-7. Party.
+7. Once you have installed the versions of python you want, have a look at the docs here: https://github.com/pyenv/pyenv#choosing-the-python-version . In a nutshell, you'll need to use the `pyenv local` and `pyenv global` commands to set which versions of python you will want available to different projects.
 
 
 ### Blogs
