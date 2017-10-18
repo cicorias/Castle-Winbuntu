@@ -202,11 +202,11 @@ Since I'm constantly forgetting how these differ, and I suspect I'm not the only
 
 
 |   Command     |     HOME=/root     |     Uses root's PATH       | corrupted by user's env vars |
-| ------------- | ------------------ | -------------------------- | ---------------------------- |
-| sudo -i       |         Y          |      Y (#2 below)          |            **N**             |
-| sudo -s       |         N          |      Y (#2 below)          |              Y               |
-| sudo bash     |         N          |      Y (#2 below)          |              Y               |
-| sudo su       |         Y          |      N (#1 below)          |              Y               |
+| :-----------: | :----------------: | :------------------------: | :--------------------------: |
+| `sudo -i`       |         Y          |      Y (#2 below)          |            **N**             |
+| `sudo -s`       |         N          |      Y (#2 below)          |              Y               |
+| `sudo bash`     |         N          |      Y (#2 below)          |              Y               |
+| `sudo su`       |         Y          |      N (#1 below)          |              Y               |
 
 
 1. PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games probably set by /etc/environment
