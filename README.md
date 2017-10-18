@@ -79,7 +79,7 @@ Again, my decision to upgrade was prompted mainly by a pair of *really* frustrat
 
 While upgrading was perhaps the right decision for several other reasons, it really didn't resolve either of the issues I'd sought to remedy initially; the YCM plugin still complained about the version of Vim, and `sudo apt-get install` now seemed even more busted than ever, having added a decorative new `sudo: no tty present and no askpass program specified` error to it's limited output. I finally resolved this by downgrading several packages (--see the `wget`, `dpkg -i` commands and `/dev/tty` permissions changes noted above...), however each time I was subsequently tempted to run `sudo apt-get update`, I reflexively hesitated, - wondering if doing so might upset the seemingly fragile balance I'd worked to achieve. 
 
-In retrospect these issues were highly build/environment specific, (and I'll admit ~due in part to my misunderstanding of how sudo/su actually works with environment variables in WSL~ *how sudo really just works in general* - see my table [below](#another-quick-note-on-sudo/su/root...)), and would seem comparatively rare, especially for those who have already carefully checked their build version for any surprises ;) In any case, since this was a much less straightforward and time-consuming process than I had anticipated, I'm including this information in case it might be useful to the similarly impetuous :)
+In retrospect these issues were highly build/environment specific, (and I'll admit ~due in part to my misunderstanding of how sudo/su actually works with environment variables in WSL~ *how sudo really just works in general* - see my table [below](#another-quick-note-on-sudo)), and would seem comparatively rare, especially for those who have already carefully checked their build version for any surprises ;) In any case, since this was a much less straightforward and time-consuming process than I had anticipated, I'm including this information in case it might be useful to the similarly impetuous :)
 
 ### Acknowledgements!
 
@@ -196,7 +196,7 @@ I actually created an alias for this called `fixssh` in my .aliases file, since 
 
 SSH port forwarding/tunneling also seems pretty broken on WSL (at the very least it doesn't seem able to integrate with any real mechanism for name to number resolution, i.e. simply reading the contents of `/etc/hosts` doesn't seem to happen, meaning that you will need to use ip addresses instead of hostnames, including `127.0.0.1` instead of `localhost`). Any attempt at creating an alias/function for this purpose will likely require the use of sudo/sudo -E preceding any commands specific to "privileged ports". In fact, I was never *really* able to get this to work natively on WSL - and perhaps collaterly why I started seeing the host key verification failures mentioned above - so you might be better served by using a native Windows app like PuTTY to accomplish this (I can report that this works quite well, if a little less intuitively in terms of initial setup than I expected...). I won't document it here, but be on the lookout for another setup guide here on Github featuring my transparent, muti-hop solution featuring ConEmu/PuTTY/Pageant and oh-my-zsh plugins to create a session "index" for several different types of encrypted tunnels/port mappings :) 
 
-## Another quick note on sudo/su/root...
+## Another quick note on `sudo`
 
 Since I'm constantly forgetting how these differ, and I suspect I'm not the only one who could use a decent reminder:
 
