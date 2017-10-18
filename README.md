@@ -11,12 +11,12 @@ This is my [Homesick](https://github.com/technicalpickles/homesick) Castle inten
 
 If your search for guidance on setting up a reasonable dev environment on WSL has lead you here, I hope that through offering this (fairly opinionated) example configuration/journal and by leveraging the deployable ease available through Homesick, you may find what you seek :) 
 
-But first, as initial preparation for your journey, I'd recommend that you read this excellent blog post from former Docker/Google-Engineer-turned-core-member-of-Microsoft's WSL/Container Development Team, [Jessie Frazelle](https://github.com/jessfraz), discussing the nuts and bolts of WSL: https://blog.jessfraz.com/post/windows-for-linux-nerds/  
+But first, before you so eagerly throw your support behind Microsoft's (at least in the opinion of this writer *extremely welcome*) efforts to be *much more* open-source inclusive, I'd recommend as initial preparation reading [this excellent blog post](https://github.com/jessfraz) from former Docker/Google-Engineer-turned-core-member-of-Microsoft's WSL/Container Development Team, [Jessie Frazelle](http://redmonk.com/jgovernor/2017/09/06/on-hiring-jessie-frazelle-microsofts-developer-advocacy-hot-streak-continues/) discussing the nuts and bolts of WSL.
 
 
 ## Additional background and some observations...
 
-It should also be noted that prior to getting *too* precious about using WSL exclusively as your seamless "personal development-workflow-*asis*", you'll want to be aware that WSL is *highly* Windows build-dependent - meaning that certain things you might expect to "just work" in Ubuntu/Bash *may only be supported in more recent builds, or perhaps offered exclusively through the Windows Insider Program*. 
+It should also be noted that prior to getting *too* precious about the idea of using WSL exclusively as your seamless "personal development-workflow-*asis*", you'll want to be aware that WSL is *highly* Windows build-dependent - meaning that certain things you might expect to "just work" in Ubuntu/Bash *may only be supported in more recent builds, or perhaps offered exclusively through the Windows Insider Program*. 
 
 In my case, the full realization of this uncomfortable fact arrived much less swiftly than I would have preferred, in the form of repeated `go build <command-line-arguments>: read |0: interrupted system call` errors that would appear randomly regardless of version, then overlap with frequent (and ultimately insurmountable) Vim code-completion plugin errors.
 
@@ -79,7 +79,7 @@ Again, my decision to upgrade was prompted mainly by a pair of *really* frustrat
 
 While upgrading was perhaps the right decision for several other reasons, it really didn't resolve either of the issues I'd sought to remedy initially; the YCM plugin still complained about the version of Vim, and `sudo apt-get install` now seemed even more busted than ever, having added a decorative new `sudo: no tty present and no askpass program specified` error to it's limited output. I finally resolved this by downgrading several packages (--see the `wget`, `dpkg -i` commands and `/dev/tty` permissions changes noted above...), however each time I was subsequently tempted to run `sudo apt-get update`, I reflexively hesitated, - wondering if doing so might upset the seemingly fragile balance I'd worked to achieve. 
 
-Again, in retrospect these issues were highly build/environment specific, (and I'll admit due in part to my misunderstanding of how sudo/root actually works with environment variables in WSL), and would seem comparatively rare, especially for those who have already checked their build version for any surprises ;) In any case, since this was a much less straightforward and time-consuming process than I had anticipated, I'm including this information in case it might be useful to the similarly impetuous :)
+Again, in retrospect these issues were highly build/environment specific, (and I'll admit ~due in part to my misunderstanding of how sudo/su actually works with environment variables in WSL~ *how sudo/su really just work in general* - see my table [below](#Another quick note on sudo/su/root)), and would seem comparatively rare, especially for those who have already checked their build version for any surprises ;) In any case, since this was a much less straightforward and time-consuming process than I had anticipated, I'm including this information in case it might be useful to the similarly impetuous :)
 
 ### Acknowledgements!
 
