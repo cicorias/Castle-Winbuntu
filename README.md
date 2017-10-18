@@ -198,16 +198,19 @@ SSH port forwarding/tunneling also seems pretty broken on WSL (at the very least
 
 ## Another quick note on sudo/su/root...
 
-Since I am constantly forgetting how these differ, and I'm pretty sure I'm not the only one who could use a decent reminder:
+Since I'm constantly forgetting how these differ, and I suspect I'm not the only one who could use a decent reminder:
 
-To summarize,
 
-                                     corrupted by user's 
-        HOME=/root  uses root's PATH     env vars
-sudo -i     Y       Y[2]                 N
-sudo -s     N       Y[2]                 Y
-sudo bash   N       Y[2]                 Y
-sudo su     Y       N[1]                 Y
+|   Command     |     HOME=/root     |     Uses root's PATH       | corrupted by user's env vars |
+| ------------- | ------------------ | -------------------------- | ---------------------------- |
+| sudo -i       |         Y          |      Y (#2 below)          |            **N**             |
+| sudo -s       |         N          |      Y (#2 below)          |              Y               |
+| sudo bash     |         N          |      Y (#2 below)          |              Y               |
+| sudo su       |         Y          |      N (#1 below)          |              Y               |
+
+
+#1 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games probably set by /etc/environment
+#2 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/X11R6/bin
 
 In short, you probably want `sudo -i` most of the time.
 
