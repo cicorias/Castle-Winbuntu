@@ -212,7 +212,7 @@ Since I'm constantly forgetting how these differ, and I suspect I'm not the only
 1. PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games probably set by /etc/environment
 1. PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/X11R6/bin
 
-In short, you probably want `sudo -i` most of the time.
+In short, you probably want `sudo -i` most of the time - or the exact opposite (i.e. take all your environment variables with you) which is `sudo -E`.
 
 ## Additional/Optional items...
 
