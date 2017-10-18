@@ -196,6 +196,20 @@ I actually created an alias for this called `fixssh` in my .aliases file, since 
 
 SSH port forwarding/tunneling also seems pretty broken on WSL (at the very least it doesn't seem able to integrate with any real mechanism for name to number resolution, i.e. simply reading the contents of `/etc/hosts` doesn't seem to happen, meaning that you will need to use ip addresses instead of hostnames, including `127.0.0.1` instead of `localhost`). Any attempt at creating an alias/function for this purpose will likely require the use of sudo/sudo -E preceding any commands specific to "privileged ports". In fact, I was never *really* able to get this to work natively on WSL - and perhaps collaterly why I started seeing the host key verification failures mentioned above - so you might be better served by using a native Windows app like PuTTY to accomplish this (I can report that this works quite well, if a little less intuitively in terms of initial setup than I expected...). I won't document it here, but be on the lookout for another setup guide here on Github featuring my transparent, muti-hop solution featuring ConEmu/PuTTY/Pageant and oh-my-zsh plugins to create a session "index" for several different types of encrypted tunnels/port mappings :) 
 
+## Another quick note on sudo/su/root...
+
+Since I am constantly forgetting how these differ, and I'm pretty sure I'm not the only one who could use a decent reminder:
+
+To summarize,
+
+                                     corrupted by user's 
+        HOME=/root  uses root's PATH     env vars
+sudo -i     Y       Y[2]                 N
+sudo -s     N       Y[2]                 Y
+sudo bash   N       Y[2]                 Y
+sudo su     Y       N[1]                 Y
+
+In short, you probably want `sudo -i` most of the time.
 
 ## Additional/Optional items...
 
