@@ -201,7 +201,7 @@ SSH port forwarding/tunneling also seems pretty broken on WSL (at the very least
 Since I'm constantly forgetting how these differ, and I suspect I'm not the only one who could use a decent reminder:
 
 
-|   Command     |     HOME=/root     |     Uses root's PATH       | corrupted by user's env vars |
+|   Command     |     HOME=/root     |     Uses root's PATH       | Corrupted by user's env vars |
 | :-----------: | :----------------: | :------------------------: | :--------------------------: |
 | `sudo -i`       |         Y          |      Y (#2 below)          |            **N**             |
 | `sudo -s`       |         N          |      Y (#2 below)          |              Y               |
