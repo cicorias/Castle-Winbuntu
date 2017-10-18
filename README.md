@@ -70,7 +70,7 @@ dpkg -i strace_4.8-1ubuntu5_amd64.deb
 
 *Then I had to do this to get ssh to work again:*
 ```
-sudo chmod 0666 /dev/tty
+chmod 0666 /dev/tty
 ```
 
 Again, my decision to upgrade was prompted mainly by a pair of *really* frustrating issues that I *thought* would be resolved by upgrading to Ubuntu 16.04: 
@@ -79,7 +79,7 @@ Again, my decision to upgrade was prompted mainly by a pair of *really* frustrat
 
 While upgrading was perhaps the right decision for several other reasons, it really didn't resolve either of the issues I'd sought to remedy initially; the YCM plugin still complained about the version of Vim, and `sudo apt-get install` now seemed even more busted than ever, having added a decorative new `sudo: no tty present and no askpass program specified` error to it's limited output. I finally resolved this by downgrading several packages (--see the `wget`, `dpkg -i` commands and `/dev/tty` permissions changes noted above...), however each time I was subsequently tempted to run `sudo apt-get update`, I reflexively hesitated, - wondering if doing so might upset the seemingly fragile balance I'd worked to achieve. 
 
-Again, in retrospect these issues were highly build/environment specific, (and I'll admit ~due in part to my misunderstanding of how sudo/su actually works with environment variables in WSL~ *how sudo really just works in general* - see my table [below](#another-quick-note-on-sudo-su-root)), and would seem comparatively rare, especially for those who have already checked their build version for any surprises ;) In any case, since this was a much less straightforward and time-consuming process than I had anticipated, I'm including this information in case it might be useful to the similarly impetuous :)
+Again, in retrospect these issues were highly build/environment specific, (and I'll admit ~due in part to my misunderstanding of how sudo/su actually works with environment variables in WSL~ *how sudo really just works in general* - see my table [below](#another-quick note-on-sudo/su/root...)), and would seem comparatively rare, especially for those who have already checked their build version for any surprises ;) In any case, since this was a much less straightforward and time-consuming process than I had anticipated, I'm including this information in case it might be useful to the similarly impetuous :)
 
 ### Acknowledgements!
 
