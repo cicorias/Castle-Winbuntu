@@ -32,7 +32,11 @@ Generally speaking, you'll likely want to be on at least [build 14905](https://m
 ### Choosing a terminal application...
 
 
-Presently, I'm also using [ConEmu](https://conemu.github.io) as my terminal application, as it feels most similiar to iTerm2, a Mac-specific mainstay that I had grown quite fond of.  Having now tried Hyper.js, wsltty and a few others (the names of which I'm now forgetting), ConEmu - while not an absolutely perfect replacement for iTerm2 - has emerged as the most stable, configurable, and fully-featured of those I have tried. It also offers tabbed-sessions, ~which I can't really live without~ which up to this point has been a firm requirement for me, even as I warm slightly to the exclusive use of tmux to boundary my sessions ;) 
+Presently, I'm also using [ConEmu](https://conemu.github.io) as my terminal application, as it feels most similiar to iTerm2, a Mac-specific mainstay that I had grown quite fond of.  Having now tried Hyper.js, wsltty and a few others (the names of which I'm now forgetting), ConEmu - while not an absolutely perfect replacement for iTerm2 - has emerged as the most stable, configurable, and fully-featured of those I have tried. It also offers tabbed-sessions, ~which I can't really live without~ which up to this point has been a firm requirement for me, even as I warm slightly to the exclusive use of tmux to boundary my sessions ;) Whichever terminal application you choose, you will want it configured to run as an administrator - which I quickly learned when I initially tried to use the `ping` command, and got a "Permission denied" error.  To configure this in ConEmu, open up Settings-->Startup-->Tasks, and add the `-new_consule:a` flag to your executable string for your Bash task so that it looks like `%windir%\system32\bash.exe ~ -new_console:a` 
+
+<img src="https://raw.githubusercontent.com/rodtreweek/i/master/castle-winbuntu/conemu_admin_bash.png" height="450">
+
+Click `Save settings` and Bash should no longer complain about permissions/privileges.
 
 **Update:** I'm now recalling more completely why tabbed-sessions had previously held such appeal for me. While a local tmux config is great for partitioning *local* session boundaries, even if you are careful to detach from them, they are still tethered to a *local* process, -- meaning that the now-in-progress compile of Vim 8 you just kicked-off on a remote host isn't going to withstand the incoming forced-reboot naturally triggered by Windows Update minutes later ;) 
 
