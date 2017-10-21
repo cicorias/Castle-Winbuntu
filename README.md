@@ -232,7 +232,16 @@ In short, you probably want `sudo -i` most of the time - or the exact opposite (
 
 Definitely check out Boxstarter [here](http://boxstarter.org/InstallBoxstarter). Install it with [chocalatey](https://chocolatey.org/), the awesome package manager for Windows!  Here are some links to a few gists for use with Boxstarter:
 * <https://gist.github.com/jessfraz/7c319b046daa101a4aaef937a20ff41f>
-* <https://gist.github.com/NickCraver/7ebf9efbfd0c3eab72e9>
+* <https://gist.github.com/NickCraver/7ebf9efbfd0c3eab72e9>Enable-WindowsOptionalFeature -Online -FeatureName:Microsoft-Hyper-V -All
+
+
+### Docker for Windows
+
+1. In addition to installing [Docker for Windows](https://www.docker.com/docker-windows) I also had to open up Powershell and run this:
+```
+Enable-WindowsOptionalFeature -Online -FeatureName:Microsoft-Hyper-V -All
+```
+-To get Hyper-V fully installed.
 
 ### Install GVM (Go Version Manager)
 1. Github repo (and basic instructions) are available [here](https://github.com/moovweb/gvm). First, run the installer with:
