@@ -28,5 +28,5 @@ export GDK_SCALE=2
 export GDK_DPI_SCALE=0.5
 export QT_DEVICE_PIXEL_RATIO=2
 
-# Set trust level (Needed to do docker pulls on docker hub...)
+# Set trust level (Needed to set this to 0 to do docker pulls on docker hub...do so at your own risk)
 export DOCKER_CONTENT_TRUST=1
