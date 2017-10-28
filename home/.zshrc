@@ -29,7 +29,7 @@ COMPLETION_WAITING_DOTS=true
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Hurray for ssh-agent plugin!!
-plugins=(git osx ruby rbenv gem vagrant ssh-agent tmux zsh-syntax-highlighting docker docker-compose)
+plugins=(git ruby rbenv gem vagrant ssh-agent tmux zsh-syntax-highlighting docker docker-compose)
 
 # Color correct paths rather than underlining them.
 typeset -A ZSH_HIGHLIGHT_STYLES
@@ -59,7 +59,12 @@ fi
 #Initialize GVM
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 
-# Source my external alias config
-# NOTE about 'ls': If coreutils is installed, oh-my-zsh will alias ls to gls, but
-# something about it is broken which breaks ls. not sure...
-source $HOME/.aliases
+# Load the shell dotfiles, and then some:
+# * ~/.path can be used to extend `$PATH`.
+# * ~/.extra can be used for other settings you don’t want to commit.
+for file in ~/.{aliases,functions,path,dockerfunc,extra,exports}; do
+        if [[ -r "$file" ]] && [[ -f "$file" ]]; then
+                source "$file"
+        fi
+done
+unset file
