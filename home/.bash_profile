@@ -67,4 +67,4 @@ done
 # source "$BASH_IT"/bash_it.sh
 
 # GVM (like ruby's rbenv but for golang...)
-[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+#[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
