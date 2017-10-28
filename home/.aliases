@@ -102,7 +102,7 @@ done
 alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
 
 # Lock the screen (when going AFK)
-alias afk="i3lock -c 000000"
+#alias afk="i3lock -c 000000"
 
 # vhosts
 alias hosts='sudo vim /etc/hosts'
@@ -118,6 +118,7 @@ alias mv='mv -i'
 
 # untar
 alias untar='tar xvf'
+alias untarz='tar xzvf'
 
 # Pipe my public key to my clipboard.
 alias pubkey="more ~/.ssh/id_rsa.pub | xclip -selection clipboard | echo '=> Public key copied to pasteboard.'"
