@@ -332,5 +332,6 @@ Here are a few other blog posts I've also found helpful:
 * [Rushi Agrawal's guide to Tmux copy/pasting](http://www.rushiagr.com/blog/2016/06/16/everything-you-need-to-know-about-tmux-copy-pasting-ubuntu/)
 * [Scott Hanselman's setup](https://www.hanselman.com/blog/SettingUpAShinyDevelopmentEnvironmentWithinLinuxOnWindows10.aspx)
 * [Jeff Geerling's guide to using Ansible on WSL](https://www.jeffgeerling.com/blog/2017/using-ansible-through-windows-10s-subsystem-linux)
+* [More fonts...](http://input.fontbureau.com/)
 
 I'll be continuing to frequently add/remove/edit items contained within this project (perhaps until I author a proper blog post elsewhere, and make what's here a bit more conventional, i.e. much lighter on editorial, heavier emphasis on clear/concise list of installation/configuration steps ;)
