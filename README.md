@@ -7,32 +7,32 @@
 
 This is my [Homesick](https://github.com/technicalpickles/homesick) Castle intended for use on the Windows Subsystem for Linux (aka "WSL", or Bash/Ubuntu on Windows).
 
+If your search for guidance on setting up a reasonable dev environment on WSL has lead you here, I hope that through offering this (fairly opinionated) example configuration/journal and leveraging Homesick for deployable ease, you may find what you seek :) However, the usual "ymmv", - No warranty either express or implied - "use of this repo may totally break your sh\*t" - rules governing personal responsibility apply here, and you should certainly be weighing the associated risks before simply cloning some random dotfiles (or really any) project off Github before proceeding :)
+
 :watch: [TL;DR](#tldr---the-meat-and-potatoes-of-deploying-the-dotfiles) :fast_forward: :checkered_flag:
 
-If your search for guidance on setting up a reasonable dev environment on WSL has lead you here, I hope that through offering this (fairly opinionated) example configuration/journal and by leveraging the deployable ease available through Homesick, you may find what you seek :) 
-
-But first, before you so eagerly throw your support behind Microsoft's (at least in the opinion of this writer *extremely welcome*) efforts to be *much more* open-source inclusive, I'd recommend as initial preparation reading [this excellent blog post](https://github.com/jessfraz) from former Docker/Google-Engineer-turned-core-member-of-Microsoft's WSL/Container Development Team, [Jessie Frazelle](http://redmonk.com/jgovernor/2017/09/06/on-hiring-jessie-frazelle-microsofts-developer-advocacy-hot-streak-continues/) discussing the nuts and bolts of WSL.
+But first, before you so eagerly throw your support behind Microsoft's (at least in the opinion of this writer *extremely welcome*) efforts to be much more open-source interested/inclusive, I'd recommend as initial preparation reading [this excellent blog post](https://github.com/jessfraz) from former Docker/Google-Engineer-turned-core-member-of-Microsoft's WSL/Container Development Team, [Jessie Frazelle](http://redmonk.com/jgovernor/2017/09/06/on-hiring-jessie-frazelle-microsofts-developer-advocacy-hot-streak-continues/) discussing the nuts and bolts of WSL.
 
 
 ## Additional background and some observations...
 
-It should also be noted that prior to getting *too* precious about the idea of using WSL exclusively as your seamless "personal development-workflow-*asis*", you'll want to be aware that WSL is *highly* Windows build-dependent - meaning that certain things you might expect to "just work" in Ubuntu/Bash *may only be supported in more recent builds, or perhaps offered exclusively through the Windows Insider Program*. 
+It should also be noted that prior to getting *too* precious about the idea of using WSL exclusively as your seamless "personal development-workflow-*asis*", you'll want to be aware that WSL is *highly* Windows build-dependent - meaning that certain things you might expect to "just work" in Ubuntu/Bash *may only be supported in more recent builds, or perhaps offered exclusively through the Windows Insider Program*.
 
-In my case, the full realization of this uncomfortable fact arrived much less swiftly than I would have preferred, in the form of repeated `go build <command-line-arguments>: read |0: interrupted system call` errors that would appear randomly regardless of version, then overlap with frequent (and ultimately insurmountable) Vim code-completion plugin errors.
+In fact, after spending *a lot* of time in pretty rigorous comparison over the last several months - *and if your build-version would seem to support it* - I might even suggest skipping the rest of this guide, and heading straight over to https://blog.ropnop.com/configuring-a-pretty-and-usable-terminal-emulator-for-wsl - and configuring WSL along similiarly X-server-based lines, since having I believe now enough time to form an opinion, I'll just come right out and say that: *There are currently **no** terminal applications for Windows that rival either those offered natively for Linux or iTerm2 for Mac*.
 
+Again, your Windows build version will be the *single-most important factor* in determining which path your WSL configuration is likely to take.
+
+Unfortunately, in my case (and perhaps those continuing to read), the full realization of this uncomfortable fact arrived much less swiftly than I would have preferred, in the form of repeated `go build <command-line-arguments>: read |0: interrupted system call` errors that would appear randomly regardless of version, then overlap with frequent (and ultimately insurmountable) Vim code-completion plugin errors - or more recently while trying to go the "VcXsrv/Terminator" route as suggested in the above link,` Client failed to connect to the D-BUS daemon:` errors.  If you're on an earlier build-version (prior to 15046, aka "Windows Creator Update"), aren't able to upgrade for reasons outside your control, and are hitting some of these same snags described above, then you may want to keep reading :)
 
 ### Check your Windows build version...
 
+You can easily check your Windows build version by simply hitting the Windows key on your keyboard, typing `winver`, then checking the version against [the release notes here](https://msdn.microsoft.com/en-us/commandline/wsl/release_notes).
 
-To avoid this pain, you can easily check your Windows build version by simply hitting the Windows key on your keyboard, typing `winver`, then checking the version against [the release notes here](https://msdn.microsoft.com/en-us/commandline/wsl/release_notes).
-
-Generally speaking, you'll likely want to be on at least [build 14905](https://msdn.microsoft.com/en-us/commandline/wsl/release_notes#build-14905) which supports restartable system calls (thus avoiding the dreaded `read |0: interrupted system call` errors mentioned above, of which a thorough discussion can be found [here](https://github.com/Microsoft/BashOnWindows/issues/1198))
-
+Generally speaking, if you are planning to write golang code in WSL, you'll likely want to be on at least [build 14905](https://msdn.microsoft.com/en-us/commandline/wsl/release_notes#build-14905) which supports restartable system calls (thus avoiding the dreaded `read |0: interrupted system call` errors mentioned above, and of which a thorough discussion can be found [here](https://github.com/Microsoft/BashOnWindows/issues/1198)).
 
 ### Choosing a terminal application...
 
-
-Presently, I'm also using [ConEmu](https://conemu.github.io) as my terminal application, as it feels most similiar to iTerm2, a Mac-specific mainstay that I had grown quite fond of.  Having now tried Hyper.js, wsltty and a few others (the names of which I'm now forgetting), ConEmu - while not an absolutely perfect replacement for iTerm2 - has emerged as the most stable, configurable, and fully-featured of those I have tried. It also offers tabbed-sessions, ~which I can't really live without~ which up to this point has been a firm requirement for me, even as I warm slightly to the exclusive use of tmux to boundary my sessions ;) Whichever terminal application you choose, you will want it configured to run as an administrator - which I quickly learned when I initially tried to use the `ping` command, and got a "Permission denied" error.  To configure this in ConEmu, open up Settings --> Startup --> Tasks, and add the `-new_consule:a` flag to your executable string for your Bash task so that it looks like `%windir%\system32\bash.exe ~ -new_console:a` when you're finished. 
+Presently, I'm using [ConEmu](https://conemu.github.io) as my terminal application, as it feels most similiar to iTerm2, a Mac-specific mainstay that I had grown quite fond of.  Having now tried Hyper.js, wsltty and a few others (the names of which I'm now forgetting), ConEmu - while not an absolutely perfect replacement for iTerm2 - has emerged as the most stable, configurable, and fully-featured of those I have tried. It also offers tabbed-sessions, ~which I can't really live without~ which up to this point has been a firm requirement for me, even as I warm slightly to the exclusive use of tmux to boundary my sessions ;) Whichever terminal application you choose, you will want it configured to run as an administrator - which I quickly learned when I initially tried to use the `ping` command, and got a "Permission denied" error.  To configure this in ConEmu, open up Settings --> Startup --> Tasks, and add the `-new_consule:a` flag to your executable string for your Bash task so that it looks like `%windir%\system32\bash.exe ~ -new_console:a` when you're finished. 
 
 <img src="https://raw.githubusercontent.com/rodtreweek/i/master/castle-winbuntu/conemu_bash_admin.png" height="450">
 
@@ -333,6 +333,6 @@ Here are a few other blog posts I've also found helpful:
 * [Scott Hanselman's setup](https://www.hanselman.com/blog/SettingUpAShinyDevelopmentEnvironmentWithinLinuxOnWindows10.aspx)
 * [Jeff Geerling's guide to using Ansible on WSL](https://www.jeffgeerling.com/blog/2017/using-ansible-through-windows-10s-subsystem-linux)
 * [More fonts...](http://input.fontbureau.com/)
-* I'll probably just be doing this soon: https://blog.ropnop.com/configuring-a-pretty-and-usable-terminal-emulator-for-wsl/
+* Although unfortunately this hasn't worked for me yet, (see 'build version' discussion above...) and after what I'd consider a pretty game effort to purposefully avoid installing something like VcXsrv and running a terminal app like Terminator/Konsole, etc., *and* for those assumed to be running supported build versions (not me), I'm happy to endorse the approach offered by "ropnop" here: https://blog.ropnop.com/configuring-a-pretty-and-usable-terminal-emulator-for-wsl/
 
 I'll be continuing to frequently add/remove/edit items contained within this project (perhaps until I author a proper blog post elsewhere, and make what's here a bit more conventional, i.e. much lighter on editorial, heavier emphasis on clear/concise list of installation/configuration steps ;)
