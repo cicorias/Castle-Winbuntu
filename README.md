@@ -159,7 +159,9 @@ Frankly, I am still finding the adjustment to using something other than iTerm2 
 
 After literally hours of experimenting, and with each suggested workaround ~featuring the same/similarly cumbersome layer of abstraction, (aka "Do I *really* need to setup an X server for this??")~ Note: *This isn't abstraction. It's really just dealing with the natural boundary between what are really two distinct operating systems. In trying to get any form of "seamless" copy/paste behavior to happen between the two (or perhaps even three, if we're talking about ssh'ing to a remote host...), you're essentially going to have to build a "bridge" between the clipboard on one OS to the other, and translate the corresponding registers between these distinct buffers. Obviously, on a Mac your only really dealing with a single OS/clipboard buffer so this is more straightforward/transparent - and more or less taken for granted when using a terminal application like Terminal/iTerm2 on a Mac. 
 
-Soooo the answer is "Yes, you'll need to install an X-server of some sort if you want to share a clipboard b/w Linux and Windows - even when they reside within the same host."*). Having now tried every available avenue with my build version, I finally threw in the towel, opting ~for the clunky `L shift + mouse select`, or~ for larger copy selections, a `cat <filename>`, then selecting the text with the mouse/touchpad, and `ctrl + c`, `ctrl + v` respectively to copy/paste~, which has made me pretty tired of having to constantly type `:set nonu` in vim~.
+Soooo the short answer is: *"Yes, you'll need to install an X-server of some sort (Xming/VcXsrv) if you want to share a clipboard b/w Linux and Windows - even when they reside within the same host."*. 
+
+Having now tried every available avenue with my build version, I finally threw in the towel, opting for the rather clunky `L shift + mouse select`, or for larger copy selections, a `cat <filename>`, then selecting the text with the mouse/touchpad, and `ctrl + c`, `ctrl + v` respectively to copy/paste ~, which has made me pretty tired of having to constantly type `:set nonu` in vim~.
 
 **Update:** My ConEmu, vim-related copy/paste angst has been substantially diminished upon discovery of this simple checkbox in  **Settings --> Keys & Macro --> Mark/Copy:**
 
@@ -274,8 +276,8 @@ Enable-WindowsOptionalFeature -Online -FeatureName:Microsoft-Hyper-V -All
 - which was necessary to get Hyper-V fully installed.
 
 ### Install GVM (Go Version Manager)
-1. Although I ultimately didn't get very far with golang on my build, I did have success with this on a more recent build.
-Github repo (and basic instructions) are available [here](https://github.com/moovweb/gvm). 
+1. Although I ultimately didn't get very far with golang on my initial build, I have had success with it on a more recent build.
+The Github repo and basic instructions are available [here](https://github.com/moovweb/gvm). 
 First, run the installer with:
 - `zsh < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)` - or if you're using bash as your shell, substitute `bash` for `zsh`.
 2. I had to also install the following dependencies:
