@@ -20,6 +20,8 @@ It should also be noted that prior to getting *too* precious about the idea of u
 
 In fact, after spending *a lot* of time in pretty rigorous comparison over the last several months - *and if your build-version would seem to support it* - I might even suggest skipping the rest of this guide, and heading straight over to https://blog.ropnop.com/configuring-a-pretty-and-usable-terminal-emulator-for-wsl - and configuring WSL along similarly X-server-based lines as opposed to the "ConEmu-centric" approach roughly-outlined here (*Note:* You may additionally need to do as instructed [here](https://www.reddit.com/r/Windows10/comments/4rsmzp/bash_on_windows_getting_dbus_and_x_server_working/?st=jbilzojq&sh=30f063d5) in order to get your X-server/Linux terminal app to work properly under WSL.).
 
+**Update**: I'm currently attempting to use the xfce terminal app as suggested [here](https://askubuntu.com/questions/827952/a-better-terminal-experience-for-windows-subsystem-for-linuxwsl) - which I've managed to make some relative progress in configuring :)
+
 Since I now believe I've spent enough time experimenting with Windows/WSL to form a reasonably credible opinion on this, and given how crucial I feel this is to minimizing any substantial impact to personal productivity/expected rate of contribution when transitioning to a Windows-based workflow, (arguably even persisting throughout a project's term depending upon the specific character/requirements), and by incremental extension, likely obstructing (at least) any "bottom-up" notion of process-engineering as related to DevOps/Continuous Improvement/Continuous Delivery (CI/CD)...
 
 - *I'll just come right out and say that: There are currently **no** terminal applications for Windows that rival either those offered natively for Linux or iTerm2 for Mac*
@@ -355,5 +357,6 @@ Here are a few other blog posts I've also found helpful:
 * [Jeff Geerling's guide to using Ansible on WSL](https://www.jeffgeerling.com/blog/2017/using-ansible-through-windows-10s-subsystem-linux)
 * [More fonts...](http://input.fontbureau.com/)
 * Although unfortunately this hasn't worked for me yet, (see 'build version' discussion above...) I'm quite happy to endorse the approach offered by "ropnop" here: https://blog.ropnop.com/configuring-a-pretty-and-usable-terminal-emulator-for-wsl/. This approach features the installation of an X-server to facilitate the use of the Terminator app.
+* I'm currently trying out the xfce terminal app as suggested here: https://askubuntu.com/questions/827952/a-better-terminal-experience-for-windows-subsystem-for-linuxwsl - which, despite a bit of initial "noise", and some pretty annoying VcXsrv crashes, does seem to be more like what I want...I'll offer more insights as I experiment with this.
 
 I'll be continuing to frequently add/remove/edit items contained within this project (perhaps until I author a proper blog post elsewhere, and make what's here a bit more conventional, i.e. much lighter on editorial, heavier emphasis on clear/concise list of installation/configuration steps ;)
