@@ -113,7 +113,7 @@ Ok, I hear ya...sounds like you're hungry. Here's how to deploy:
   * First, `mkdir ~/src` then `git clone https://github.com/bhilburn/powerlevel9k.git ~/src/powerlevel9k`
   * Create a symlink with `ln -s ~/src/powerlevel9k/powerlevel9k.zsh-theme ~/.oh-my-zsh/custom/themes/powerlevel9k.zsh-theme`.
 
-*Note that for older Windows builds (I believe this may be fixed on recent builds but haven't confirmed this yet...), currently running a special theme in *either Bash-it or oh-my-zsh*, i.e. powerline-multiline for Bash-it or powerlevel9k for oh-my-zsh, slows things down pretty intolerably... - If you're on an older build, I'd recommend limiting your customizations if speed is important to you.
+*Note that for older Windows builds (I believe this may be fixed on recent builds but haven't confirmed this yet...), currently running a large number of plugins or a special theme in *either Bash-it or oh-my-zsh*, i.e. powerline-multiline for Bash-it or powerlevel9k for oh-my-zsh, slows things down pretty intolerably... - If you're on an older build, I'd recommend limiting your customizations if speed is important to you.
 
 
 ### Homesick
@@ -161,11 +161,11 @@ Frankly, I am still finding the adjustment to using something other than iTerm2 
 
 After literally hours of experimenting, and with each suggested workaround ~featuring the same/similarly cumbersome layer of abstraction, (aka "Do I *really* need to setup an X server for this??")~ Note: *This isn't abstraction. It's really just dealing with the natural boundary between what are really two distinct operating systems.* 
 
-In trying to get any form of "seamless" copy/paste behavior to happen between the two (or perhaps even three, if we're talking about ssh'ing to a remote host...), you're essentially going to have to build a "bridge" between the clipboard on one OS to the other, and translate the corresponding registers between these distinct buffers. Obviously, on a Mac your only really dealing with a single OS/clipboard buffer - so this is a much more straightforward/transparent operation - and more or less taken for granted when using a terminal application like Terminal/iTerm2 on a Mac. 
+In trying to get any form of "seamless" copy/paste behavior to happen between the two (or perhaps even three, if we're talking about ssh'ing to a remote host...), you're essentially going to have to build a "bridge" between the clipboard on one OS to the other, and translate the corresponding registers between these distinct buffers. Obviously, on a Mac you're only really dealing with a single OS/clipboard buffer - so this is a much more straightforward/transparent operation - and more or less taken for granted when using a terminal application like the built-in Mac Terminal app/iTerm2. 
 
 Soooo the short answer is: *"Yes, you'll need to install an X-server of some sort (xming/VcXsrv) if you want to share a clipboard b/w Linux and Windows - even when one (WSL) would appear to reside within the same host OS."*. 
 
-Having now tried every available avenue with my build version, I finally threw in the towel (although I've since started using xfce4 Terminal with VcXsrv, additionally requiring the installation of **a bunch** of other stuff to satisfy various dependencies, i.e. the (huge) ubuntu-gnome-desktop package to fill the various "gaps" in my build version, etc. - so if you do decide to go this route make sure you have enough disk space...).
+Having now tried every available avenue with my build version, I finally threw in the towel (although I've since started using xfce4 Terminal with VcXsrv, additionally requiring the installation of **a bunch** of other stuff to satisfy various dependencies, i.e. I ended up installing the (huge) ubuntu-gnome-desktop package to fill the various "gaps" in my build version, etc. - so if you do decide to go this route make sure you have enough disk space...).
 
  My ConEmu, vim-related copy/paste angst has however been substantially diminished upon discovery of this simple checkbox in  **Settings --> Keys & Macro --> Mark/Copy:** 
 <img src="https://raw.githubusercontent.com/rodtreweek/i/master/castle-winbuntu/conemu-vim-text-select.gif" height="450">
@@ -230,7 +230,7 @@ $ ssh -o StrictHostKeyChecking=no <your_user>@remote_host uptime
 ##### **Make sure you are either using the `ssh-copy-id` utility, or doing a `cat id_rsa.pub >> authorized_keys` from the original .pub file and NOT simply copy/pasting from Outlook, etc.**  
 Even after *painstakingly* examining the output of `ssh user@host -vvvvvvvvvvvvvvvvv` for clues, I was unable to figure out where Outlook had seemingly done it's "smart" formatting on an ssh public key that an end-user had copy/pasted into an email. Unless you want to go through the unnecessary motions of checking every link in this particular chain, I'd recommend you *insist* (gently, of course) that any public keys you intend on placing on a host arrive in a "tamper-resistant" `.pub` file ;)
 ##### **Oh, also, as of OpenSSH 7.0 ssh-dss keys don't work anymore. 
-This has apparently been the case for at least a couple years now. Oddly, I have only really found this modest article discussing it here: https://meyering.net/nuke-your-DSA-keys/ - which was written 7 years ago in 2010 - indicating the presence of an underlying vulnerability, and a *full five years before the release of OpenSSH 7.0* (released August, 2015) where DSA support was finally dropped entirely.
+This has apparently been the case for at least a couple years now. Oddly, I have only really found this slender "article" discussing the issue here: https://meyering.net/nuke-your-DSA-keys/ - which was written 7 years ago in 2010 - indicating the presence of an underlying vulnerability, and a *full five years before the release of OpenSSH 7.0* (released August, 2015) where DSA support was finally dropped entirely.
 
 SSH port forwarding/tunneling also seems pretty broken on WSL (at the very least it doesn't seem able to integrate with any real mechanism for name to number resolution, i.e. the `/etc/hosts` seems as though it just gets ignored completely - or is perhaps less "authoritative"/susceptible to "interference" from the Windows-native "hosts" file. 
 
@@ -238,7 +238,7 @@ in terms of initial setup than I expected...). ~I won't document it here, but be
 
 In fact, I was never *really* able to get this to work natively on WSL - and perhaps collaterly why I started seeing the host key verification failures mentioned above - so you might be better served by using a native Windows app like PuTTY to accomplish this (I can report that this works quite well, if a little less intuitively in terms of initial setup than I expected...). ~I won't document it here, but be on the lookout for another setup guide here on Github featuring my transparent, muti-hop solution featuring ConEmu/PuTTY/Pageant and oh-my-zsh plugins to create a session "index" for several different types of encrypted tunnels/port mappings :)~ 
 
-**Update:** I was *finally* able to get **ssh multiplexing** to work, which has *all but completely eliminated a massive number of obstacles for me*... I'd describe this particular discovery as really the Sysadmin equivalent of feeling an immediate surge of supernatural power after being bitten by some weird glowing orange spider, or a sudden shirt-shredding green pectoral-enormity after having absorbed the entire radioactive payload of some oddly experimental, highly-concentrated mix of weapons-grade plutonium, fish oil supplements, wheatgrass and Human Growth Hormone :)
+**Update:** I was *finally* able to get **ssh multiplexing** to work, which has *all but completely eliminated a massive number of obstacles for me*... I'd describe this particular discovery as really the Sysadmin equivalent of feeling an immediate surge of supernatural power after being bitten by some weird glowing orange spider, or a sudden shirt-shredding green pectoral enormity after having absorbed the entire radioactive payload of some oddly experimental, highly-concentrated mix of weapons-grade plutonium, fish oil supplements, wheatgrass and Human Growth Hormone :)
 
 
 ## Another quick note on sudo...
@@ -262,7 +262,7 @@ In short, you probably want `sudo -i` most of the time (which is the same as `su
 
 ### Colors
 
-1. Some themes I found for ConEmu! https://github.com/joonro/ConEmu-Color-Themes
+1. Some themes I found for ConEmu: https://github.com/joonro/ConEmu-Color-Themes
 1. Gruvbox color scheme for ConEmu: https://gist.github.com/circleous/92c74d284db392a950d64a2b368517a1
 1. Solarized-dark color scheme for ConEmu: https://github.com/mattcan/solarized-gedit/blob/master/solarized-dark.xml
 
@@ -282,7 +282,7 @@ Enable-WindowsOptionalFeature -Online -FeatureName:Microsoft-Hyper-V -All
 - which was necessary to get Hyper-V fully installed.
 
 ### Install GVM (Go Version Manager)
-1. Although I ultimately didn't get very far with golang on my initial build, I have had success with it on a more recent build.
+1. Although I ultimately didn't get very far with golang on my initial build, I have had success with it on a more recent Windows 10 build, so ymmv.
 The Github repo and basic instructions are available [here](https://github.com/moovweb/gvm). 
 First, run the installer with:
 - `zsh < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)` - or if you're using bash as your shell, substitute `bash` for `zsh`.
