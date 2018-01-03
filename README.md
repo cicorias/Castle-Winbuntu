@@ -309,10 +309,6 @@ xz-utils tk-dev
 ```
 2. Install pyenv with:
 ```
-zsh < <(curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer)
-```
-or:
-```
 bash < <(curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer)
 ```
 3. Add this to your .zshrc/.bash_profile, etc.:
