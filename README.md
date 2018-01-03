@@ -266,7 +266,7 @@ In short, you probably want `sudo -i` most of the time (which is the same as `su
 
 Definitely check out Boxstarter [here](http://boxstarter.org/InstallBoxstarter). Install it with [chocalatey](https://chocolatey.org/), the awesome package manager for Windows!  Here are some links to a few gists for use with Boxstarter:
 * <https://gist.github.com/jessfraz/7c319b046daa101a4aaef937a20ff41f>
-* <https://gist.github.com/NickCraver/7ebf9efbfd0c3eab72e9>Enable-WindowsOptionalFeature -Online -FeatureName:Microsoft-Hyper-V -All
+* <https://gist.github.com/NickCraver/7ebf9efbfd0c3eab72e9>
 
 
 ### Docker for Windows
@@ -319,24 +319,18 @@ export PATH="${HOME}/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"                     
 eval "$(pyenv virtualenv-init -)"      
 ```
-4. You may need to remove these three lines from your .bashrc:
-```
-export PATH="~/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-```
-5. Update pyenv:
+4. Update pyenv:
 ```
 pyenv update
 ```
-6. Install some pythons:
+5. Install some pythons:
 ```
 # You can list available versions with:
 pyenv install -l
 # Then install with:
 pyenv install 3.5.2
 ```
-7. Once you have installed the versions of python you want, have a look at the docs here: https://github.com/pyenv/pyenv#choosing-the-python-version . In a nutshell, you'll need to use the `pyenv local` and `pyenv global` commands to set which versions of python you will want available to different projects.
+6. Once you have installed the versions of python you want, have a look at the docs here: https://github.com/pyenv/pyenv#choosing-the-python-version . In a nutshell, you'll need to use the `pyenv local` and `pyenv global` commands to set which versions of python you will want available to different projects.
 
 
 ### Blogs
