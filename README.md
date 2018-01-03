@@ -159,17 +159,20 @@ I've also included a .fonts directory that contains a number of fonts I've found
 
 Frankly, I am still finding the adjustment to using something other than iTerm2 chief among my challenges in establishing a reasonable dev workflow on Windows.  For example, I was a bit frustrated to learn that there is no real WSL equivalent to using `"*y` within Vim on a Mac to copy to the system clipboard, then pasting *without restriction, system-wide* with `command + v`. 
 
-After literally hours of experimenting, and with each suggested workaround ~featuring the same/similarly cumbersome layer of abstraction, (aka "Do I *really* need to setup an X server for this??")~ Note: *This isn't abstraction. It's really just dealing with the natural boundary between what are really two distinct operating systems. In trying to get any form of "seamless" copy/paste behavior to happen between the two (or perhaps even three, if we're talking about ssh'ing to a remote host...), you're essentially going to have to build a "bridge" between the clipboard on one OS to the other, and translate the corresponding registers between these distinct buffers. Obviously, on a Mac your only really dealing with a single OS/clipboard buffer so this is more straightforward/transparent - and more or less taken for granted when using a terminal application like Terminal/iTerm2 on a Mac. 
+After literally hours of experimenting, and with each suggested workaround ~featuring the same/similarly cumbersome layer of abstraction, (aka "Do I *really* need to setup an X server for this??")~ Note: *This isn't abstraction. It's really just dealing with the natural boundary between what are really two distinct operating systems.* 
 
-Soooo the short answer is: *"Yes, you'll need to install an X-server of some sort (Xming/VcXsrv) if you want to share a clipboard b/w Linux and Windows - even when they reside within the same host."*. 
+In trying to get any form of "seamless" copy/paste behavior to happen between the two (or perhaps even three, if we're talking about ssh'ing to a remote host...), you're essentially going to have to build a "bridge" between the clipboard on one OS to the other, and translate the corresponding registers between these distinct buffers. Obviously, on a Mac your only really dealing with a single OS/clipboard buffer - so this is a much more straightforward/transparent operation - and more or less taken for granted when using a terminal application like Terminal/iTerm2 on a Mac. 
 
-Having now tried every available avenue with my build version, I finally threw in the towel, opting for the rather clunky `L shift + mouse select`, or for larger copy selections, a `cat <filename>`, then selecting the text with the mouse/touchpad, and `ctrl + c`, `ctrl + v` respectively to copy/paste ~, which has made me pretty tired of having to constantly type `:set nonu` in vim~.
+Soooo the short answer is: *"Yes, you'll need to install an X-server of some sort (xming/VcXsrv) if you want to share a clipboard b/w Linux and Windows - even when one (WSL) would appear to reside within the same host OS."*. 
 
-**Update:** My ConEmu, vim-related copy/paste angst has been substantially diminished upon discovery of this simple checkbox in  **Settings --> Keys & Macro --> Mark/Copy:**
+Having now tried every available avenue with my build version, I finally threw in the towel (although I've since started using xfce4 Terminal with VcXsrv, additionally requiring the installation of **a bunch** of other stuff to satisfy various dependencies, i.e. the (huge) ubuntu-gnome-desktop package to fill the various "gaps" in my build version, etc. - so if you do decide to go this route make sure you have enough disk space...).
 
+ My ConEmu, vim-related copy/paste angst has however been substantially diminished upon discovery of this simple checkbox in  **Settings --> Keys & Macro --> Mark/Copy:** 
 <img src="https://raw.githubusercontent.com/rodtreweek/i/master/castle-winbuntu/conemu-vim-text-select.gif" height="450">
 
-While I don't *love* the considerable amount of trailing whitespace that this captures, or ~(despite what seems to be advertised in the ConEmu config options),~ the inability to reasonably deal with line-wrapping (**note:** again, this is really less an issue with ConEmu, and more to do with crossing the inherent boundary b/w OS's as mentioned above...) , this still makes me **a lot** happier now that I don't have to turn off line numbering, or constantly remove leading white space when pasting - for example, into this readme here on Github. :)
+- then just selecting the text with the mouse/touchpad, or for larger copy selections, first doing a `cat <filename>`, then selecting the text, and `ctrl-c`, `ctrl-v` respectively to copy/paste.
+
+While I don't *love* the *considerable* amount of trailing whitespace that this captures, or the inability to reasonably deal with line-wrapping (**note:** again, this is really less an issue with ConEmu, and more to do with crossing the inherent boundary b/w OS's as mentioned above...) , this still makes me **a lot** happier now that I don't have to turn off line numbering, or constantly remove leading white space when pasting - for example, into this readme here on Github. :)
 
 **Update:** I've been able to work around the trailing/leading whitespace issue as well as identify/reduce spaces before a tab by adding a few entries to my .vimrc.settings file:
 ```
@@ -180,7 +183,7 @@ autocmd ColorScheme * highlight ExtraWhitespace ctermbg=darkred guibg=darkred
 " Show trailing whitespace and spaces before a tab:
 match ExtraWhitespace /\s\+$\| \+\ze\t/
 ``` 
-- Which highlights all whitespace in dark red, then:
+- Which highlights all whitespace in dark red, then adding:
 ```
 " With the following mapping a user can press F5 to delete all trailing
 " whitespace. The variable _s is used to save and restore the last search
@@ -196,8 +199,9 @@ nnoremap <silent> <F5> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :noh
  
  
  <img src="https://raw.githubusercontent.com/rodtreweek/i/master/castle-winbuntu/whitespace_removal.gif" height="450">
+**Note:** you may have to hit the `Esc` key in order to get it to "let go"  of the text you have mouse highlighted/selected, subsequently passing it along to the clipboard buffer and allowing for `ctrl-v` pasting).
 
-Again, not *ideal*, but it at least provides some form of remedy without having to install/configure another "proxy" layer to translate various registers, and logically handle shared clipboard buffers between what again are essentially two distinct OS's, using different registers for their copy/paste behavior (note: you may have to hit the `Esc` key in order to get it to "let go"  of the text you have mouse highlighted/selected, subsequently passing it along to the clipboard buffer and `ctrl-v` pasting).
+Again, not *ideal*, but this method arguably does offer the least complicated remedy which for some may be preferable to having to install, configure, and maintain all the additional complexity necessary to essentially "proxy" terminal connections through a separate X-server process for translating different registers for a shared clipboard buffer - or having to troubleshoot multiple components when things go wrong, or tweak multiple configuration files spanning multiple locations just to perform simple adjustments, etc.
 
 I've also configured `F2` to toggle `:set paste`, allowing for quick and precictable `ctrl-v` behavior (make sure you have also set the "multiline paste" option for ctrl-v in the settings for ConEmu...):
 ```
