@@ -64,9 +64,11 @@ In the past, since it was common that I might be connected to several remote sys
 ### Upgrading WSL's Ubuntu to 16.04
 
 
-One additional observation that I should note is that [while simply removing and reinstalling WSL](https://www.howtogeek.com/278152/how-to-update-the-windows-bash-shell/) is *supposed to* upgrade you from Ubuntu 14.04 to 16.04, this was not true for me, despite what I was pretty sure (at the time) was a supported build (it simply hung indefinitely at the command line, even after I fully uninstalled, rebooted, then repeated the lxrun install..I finally had to manually kill it, - and was still left with 14.04 in the end...).
+One additional observation that I should note is that [while simply removing and reinstalling WSL](https://www.howtogeek.com/278152/how-to-update-the-windows-bash-shell/) is *supposed to* upgrade you from Ubuntu 14.04 to 16.04, this was not true for me, despite what I was pretty sure (at the time) was a supported build (it simply hung indefinitely at the command line, even after I fully uninstalled, rebooted, then repeated the lxrun install..I finally had to manually kill it - and in the end was *still* left with an unaltered version of 14.04).
 
-However, I was finally able to upgrade to 16.04 using the following set of commands:
+However, not one to acquiesce so easily to such abruptly suspended progress, and now enticed perhaps a bit too unreasonably by the "waxy-shine" of the now "forbidden fruit" of Ubuntu 16.04 to remember giving it at least a quick rinse to dillute any caustic pesticides or cosmetic produce varnishes, I had to spend a fair bit of time mitigating the upgrade "indigestion" in WSL.
+
+Here's what I needed to do to get everything upgraded more or less successfully to 16.04:
 
 
 *From cmd:*
@@ -93,7 +95,7 @@ dpkg -i strace_4.8-1ubuntu5_amd64.deb
 chmod 0666 /dev/tty
 ```
 
-I've since come to understood that 16.04 is technically not supported on pre-"Creator" builds, so I should probably just state for the record here that for those thinking of rolling the dice, upgrading *may invite a number of other unexpected "guests to the party* who refuse to leave and break some of your fancy stuff :( The point here that you should be reasonably clear on what problem you are likely to solve by upgrading to 16.04. My decision to upgrade wasn't particularly well-articulated, but was prompted mainly by a pair of *really* frustrating issues that I *thought* would be resolved by upgrading to Ubuntu 16.04:
+I've since come to understand that 16.04 is technically not supported on pre-"Creator" builds, so I should probably just state for the record here that for those thinking of rolling the dice, upgrading *may invite a number of other unexpected "guests to the party* who then refuse to leave and break some of your fancy stuff :( The point here is that you should be reasonably clear on what problem you are looking to solve by upgrading to 16.04 and either reasonably sure as to the "fix", or at least willing to accept the risk. My decision to upgrade wasn't particularly well-articulated, but rather prompted mainly by a pair of *really* frustrating issues where i was pretty willing to experiment with fixing, but that I *thought* would be resolved by upgrading to Ubuntu 16.04:
 * Several of my Vim plugins didn't work with the stock version of Vim that ships with Ubuntu 14.04 (In the end, I actually wound up just building Vim 8 from source due to dependency problems encountered with the Vim YouCompleteMe plugin that persisted even into 16.04).
 * The routine difficulty I was having with getting sudo to work predictably/reliably, i.e. `sudo apt-get install` would typically hang, and it seemed like I was constantly having to exit my shell to perform trivial tasks as root.
 
