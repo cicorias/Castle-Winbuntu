@@ -25,7 +25,7 @@ In fact, after spending *a lot* of time in pretty rigorous comparison over the l
 **Update**: I'm currently attempting to use the xfce4 terminal app as suggested [here](https://askubuntu.com/questions/827952/a-better-terminal-experience-for-windows-subsystem-for-linuxwsl) - ~which I've managed to make some relative progress with, and am generally preferring to ConEmu:)~ Here's a screencap of what I've got going now with xcfe4's terminal:
 
 
-<img src="https://raw.githubusercontent.com/rodtreweek/i/master/castle-winbuntu/xfce4_powerlevel9k_win10.png" height="450">
+<img src="https://raw.githubusercontent.com/rodtreweek/i/master/castle-winbuntu/xfce4_powerlevel9k_win10.PNG" height="450">
 
 
 I'm definitely more comfortable recommending this type of approach now than in the past where the inclusion of an X-server seemed a vulgar contradiction to the "minimalist" orthodoxy I thought I would be honoring by limiting my terminal selection specifically to Windows-native options. While I'm still having the occassional unpleasant VcXsrv crash, which seems to happen when I drag the terminal window around just a bit too much, even considering this awkward fragility, this is still a **much** more sustainable way to get things done than trying to twist a native-Windows app to the dimming recollection of my previous Mac/iTerm2 workflow...). I will surely be either creating another Homesick castle specific to this approach, or at least in the short term adding some additional commentary here as to how to accomplish the initial setup for this type of configuration :)
