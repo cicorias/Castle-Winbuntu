@@ -24,7 +24,6 @@ In fact, after spending *a lot* of time in pretty rigorous comparison over the l
 
 
 
-<img src="https://raw.githubusercontent.com/rodtreweek/i/master/castle-winbuntu/xfce4_powerlevel9k_win10.PNG" height="450">
 
 
 I'd definitely recommend this approach (I'm still having the occassional VcXsrv crash, which seems to happen when I drag the terminal window around just a bit too much, but this is just a **much** better experience for me on the whole than trying to bend a native Windows app to my will), and will surely be updating this guide with instructions on how to accomplish this shortly :)
