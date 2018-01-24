@@ -97,6 +97,11 @@ dpkg -i strace_4.8-1ubuntu5_amd64.deb
 ```
 chmod 0666 /dev/tty
 ```
+**Update** Note: you should instead use the following set of commands when upgrading, so as to not need to reinstall packages:
+```
+$ sudo -S apt-mark hold procps strace sudo
+$ sudo -S env RELEASE_UPGRADER_NO_SCREEN=1 do-release-upgrade
+```
 
 I've since come to understand that 16.04 is technically not supported on pre-"Creator" builds, so I should probably just state for the record here that for those thinking of rolling the dice, upgrading *may invite a number of other unexpected "guests to the party* who then refuse to leave and break some of your fancy stuff :( The point here is that you should be reasonably clear on what problem you are looking to solve by upgrading to 16.04 and either pretty sure it contains the "fix", or are at least willing to accept the risk. My decision to upgrade wasn't particularly well-articulated, but rather prompted mainly by a pair of *really* frustrating issues where i was pretty willing to take my chances experimenting, but that I *thought* would be resolved by upgrading to Ubuntu 16.04:
 * Several of my Vim plugins didn't work with the stock version of Vim that ships with Ubuntu 14.04 (In the end, I actually wound up just building Vim 8 from source due to dependency problems encountered with the Vim YouCompleteMe plugin that persisted even into 16.04).
