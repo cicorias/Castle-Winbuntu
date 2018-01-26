@@ -369,5 +369,6 @@ Here are a few other blog posts I've also found helpful:
 * [Jeff Geerling's guide to using Ansible on WSL](https://www.jeffgeerling.com/blog/2017/using-ansible-through-windows-10s-subsystem-linux)
 * [More fonts...](http://input.fontbureau.com/)
 * Although unfortunately this hasn't worked for me yet, (see 'build version' discussion above...) I'm quite happy to endorse the approach offered by "ropnop" here: https://blog.ropnop.com/configuring-a-pretty-and-usable-terminal-emulator-for-wsl/. This approach features the installation of an X-server to facilitate the use of the Linux Terminator app.
+* Fixing zsh-autocomplete auto-accept: https://jee-appy.blogspot.com/2017/06/tab-completion-is-not-working-oh-my-zsh.html
 
 I'll be continuing to frequently add/remove/edit items contained within this project (perhaps until I author a proper blog post elsewhere, and make what's here a bit more conventional, i.e. much lighter on editorial, heavier emphasis on clear/concise list of installation/configuration steps ;)
