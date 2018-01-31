@@ -320,7 +320,7 @@ go1.9.1 successfully installed!
 
 ### Install [pyenv](https://github.com/pyenv/pyenv) 
 
-**Update:** Unfortunately, I've had to turn off pyenv for the moment on account of the fact that it is just punitatively, cripplingly slow, and If I also attempt to run Docker on Windows at the same time, things quickly get useless.
+**Update:** Unfortunately, I've had to turn off pyenv for the moment on account of how punitatively, cripplingly slow my system immediately gets when I enable it, and If I also attempt to run Docker on Windows at the same time, things rapidly get unrecoverably useless :(
 
 1. First, you'll probably need to install this stuff (so that things like bzip2 and sqlite work correctly):
 ```
