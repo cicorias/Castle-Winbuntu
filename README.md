@@ -318,7 +318,10 @@ go1.9.1 successfully installed!
 ```
 5. You will now be able to swiftly and easily switch among different golang versions :)
 
-### Install [pyenv](https://github.com/pyenv/pyenv)
+### Install [pyenv](https://github.com/pyenv/pyenv) 
+
+**Update:** Unfortunately, I've had to turn off pyenv for the moment on account of the fact that it is just punitatively, cripplingly slow, and If I also attempt to run Docker on Windows at the same time, things quickly get useless.
+
 1. First, you'll probably need to install this stuff (so that things like bzip2 and sqlite work correctly):
 ```
 sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
