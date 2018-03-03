@@ -7,9 +7,11 @@
 
 This is my [Homesick](https://github.com/technicalpickles/homesick) Castle intended for use on the Windows Subsystem for Linux (aka "WSL", or Bash/Ubuntu on Windows).
 
-If your search for guidance on setting up a reasonable dev environment on WSL has lead you here, I hope that through offering this fairly opinionated, occassionally solipsistic, yet well-intentioned collection of observations, example configurations/dotfiles, and earnest attempt at thoroughly detailing my experience interacting with Microsoft's optionally enabled Windows Subsystem for Linux (WSL) you may find something useful here :)
+If your search for guidance on setting up a reasonable dev environment on WSL has lead you here, I hope that through offering this fairly opinionated, occassionally solipsistic, yet well-intentioned collection of observations and example configurations/dotfiles you may find something useful here :)
 
-I also leverage the deployable ease of Homesick in distributing and managing my configuration files, which I've also included as an example Homesick "castle" which you are free to clone/download (see the instructions at the end of this readme), intended as a meaningful way to expand the descriptive dimensions of the discussion that follows. However, the usual "ymmv", "No warranty either express or implied", "Use of this repo may totally break your sh\*t" - rules governing personal responsibility most definitely apply here, and you should certainly always be weighing the associated risks of hastily cloning some random dotfiles project into your environment off Github (or really in introducing any new code obtained from anywhere on the Internet into your organization or personal workflow) :)
+I also leverage the deployable ease offered by Homesick in distributing and managing my configuration files, which I've also included as an example Homesick "castle" which you are free to clone/download (see the instructions at the end of this readme).
+
+However, the usual "ymmv", "No warranty either express or implied", "Use of this repo may totally break your sh\*t" - rules governing personal responsibility most definitely apply here, and you should certainly always be weighing the associated risks of hastily cloning some random dotfiles project into your environment :)
 
 :watch: [TL;DR](#tldr---the-meat-and-potatoes-of-deploying-the-dotfiles) :fast_forward: :checkered_flag:
 
