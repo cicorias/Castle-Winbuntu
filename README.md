@@ -11,7 +11,7 @@ If your search for guidance on setting up a reasonable dev environment on WSL ha
 
 I also leverage the deployable ease offered by Homesick in distributing and managing my configuration files, which I've also included as an example Homesick "castle" which you are free to clone/download (see the instructions at the end of this readme).
 
-However, the usual "ymmv", "No warranty either express or implied", "Use of this repo may totally break your sh\*t" - rules governing personal responsibility most definitely apply here, and you should certainly always be weighing the associated risks of hastily cloning some random dotfiles project into your environment :)
+However, the usual "ymmv", "No warranty either expressed or implied", "Use of this repo may totally break your sh\*t" - rules governing personal responsibility most definitely apply here, and you should certainly always be weighing the associated risks of hastily cloning some random dotfiles project into your environment :)
 
 :watch: [TL;DR](#tldr---the-meat-and-potatoes-of-deploying-the-dotfiles) :fast_forward: :checkered_flag:
 
