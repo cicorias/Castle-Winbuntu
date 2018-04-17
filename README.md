@@ -7,7 +7,7 @@
 
 This is my [Homesick](https://github.com/technicalpickles/homesick) Castle intended for use on the Windows Subsystem for Linux (aka "WSL", or Bash/Ubuntu on Windows).
 
-If your search for guidance on setting up a reasonable dev environment on WSL has lead you here, I hope that through offering this fairly opinionated, occassionally solipsistic, yet well-intentioned collection of observations and example configurations/dotfiles you may find something useful here :)
+If your search for guidance on setting up a reasonable dev environment on WSL has lead you here, I hope that through offering this fairly opinionated, occassionally solipsistic, yet well-intentioned collection of observations and sample configurations you may find something useful here :)
 
 I also leverage the deployable ease offered by Homesick in distributing and managing my configuration files, and have included an example Homesick "castle" in this repo which you are free to clone/download (see the instructions at the end of this readme...).
 
