@@ -376,6 +376,7 @@ As I have mentioned, I'm currently ~trying out~ using the xfce4 terminal app as 
 
 Here are a few other blog posts I've also found helpful:
 
+* Absolutely *essential* guide to configuring Tmux *so you can copy/paste between panes - even when these represent connections to different **remotely connected** systems* (i.e. specifically read the section titled "Copy from a remote server" where it discusses installing xclip on the **remote** system...): http://www.rushiagr.com/blog/2016/06/16/everything-you-need-to-know-about-tmux-copy-pasting-ubuntu/
 * Here's the official xfce4 Terminal docs page: http://docs.xfce.org/apps/terminal/start. I'll be offering more insights as I experiment with this.
 * [Dariusz Parys's dev setup](https://medium.com/@dariuszparys/my-windows-10-dev-setup-67d7aecb63a6)
 * [David Tran's setup guide](https://davidtranscend.com/blog/windows-terminal-workflow-guide)
