@@ -51,7 +51,7 @@ C:\Users\<your user>\Desktop\start-xfce4-term.vbs
 ~6. Next, click the "Bookmark settings" tab, and then click the "Create a desktop shortcut to this session", accepting the defaults. Click OK.~
 ~7. Close the MobaXterm application, and test that your shortcut opens MobaXterm (for use as your X server) and successfully launches and xfce4-terminal session.  That's it :) if you've configured things as above, you should now have a convenient shortcut for launching your X server and terminal sessions.~
 
-Ok, rather perplexingly - due to what I'm sure are some uniquely-personal environment-specific constraints - the above instructions worked exactly one time for me. Here's what finally worked:
+Ok, rather perplexingly - due to what I'm sure are some uniquely-personal environment-specific constraints - the above instructions worked *exactly* one time for me. Here's what finally worked:
 
 1. Open up MobaXterm and click on **Sessions-->New Session** at the top.
 2. A new window should open. Click on the **Shell** icon at the top of this window.
@@ -61,10 +61,10 @@ Ok, rather perplexingly - due to what I'm sure are some uniquely-personal enviro
 ```
 bash -c -l "DISPLAY=:0 xfce4-terminal"
 ```
-Click the OK button.
-6. You should see your session listed on the right-hand side of the MobaXterm window. Right-click the icon and select "Save session to a file" and save it to your Windows desktop.
-7. Exit MobaXterm completely. You should now see a new shortcut icon on your desktop.  Double-click it.
-8. If all goes well, this should open MobaXterm and then launch xfce4-terminal in a separate window (it might be hidden behind the main MobaXterm window, so you may need to minimize this first in order to see it...).  This was really the only thing that ended-up working for me - at least consistently. Anyway, ymmv.
+6. Click the `OK` button (ignoring the temptation to click on the "Bookmark settings" tab and the "Create a desktop shortcut to this session" button...).
+7. You should see your session listed on the right-hand side of the main MobaXterm window. Right-click the icon and select "Save session to a file" and save it to your Windows desktop.
+8. Exit MobaXterm completely. You should now see a new shortcut icon on your desktop.  Double-click it.
+9. If all goes well, this should open MobaXterm and then launch xfce4-terminal in a separate window (it might be hidden behind the main MobaXterm window, so you may need to minimize this first in order to see it...).  This was really the only thing that ended-up working for me - at least consistently. Anyway, ymmv.
 
 I'm definitely more comfortable recommending this sort of approach now than in the past where I naively considered any use of an X-server as contradicting some vaguely "minimalist" orthodoxy I thought I was honoring. Even considering the awkward and fairly disruptive VcXsrv crashes - which seems to happen when I drag the terminal window around just a bit *too* much (again, not an issue now that I'm using MobaXterm, which continues to be awesome...) this is hands down a **much** more sustainable way for me to get things done than trying to twist a native-Windows app into the pretzel-shaped approximation of my dimming recollection of a merely sufficient Mac/iTerm2 workflow. ~I will surely be either creating another Homesick castle specific to this approach~ (Note: I think this one still works fine as a "starter" collection...), or at least in the short term adding some additional commentary here as to how to accomplish the initial setup for this type of configuration :)
 
