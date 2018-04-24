@@ -43,13 +43,13 @@ Once I was *finally* able to completely remove ConEmu, I was able to ~pretty eas
 args = "-c" & " -l " & """DISPLAY=:0 xfce4-terminal"""
 WScript.CreateObject("Shell.Application").ShellExecute "bash", args, "", "open", 0
 ```
-4. Next, open up MobaXterm, and click on the **Session** icon. This will open another window displaying "Choose a session type...". Click the **File** icon at the top of this window.
-5. From here, in the "File/folder to open" field, enter:
+~4. Next, open up MobaXterm, and click on the **Session** icon. This will open another window displaying "Choose a session type...". Click the **File** icon at the top of this window.~
+~5. From here, in the "File/folder to open" field, enter:~
 ```
 C:\Users\<your user>\Desktop\start-xfce4-term.vbs
 ```
-6. Next, click the "Bookmark settings" tab, and then click the "Create a desktop shortcut to this session", accepting the defaults. Click OK.
-7. Close the MobaXterm application, and test that your shortcut opens MobaXterm (for use as your X server) and successfully launches and xfce4-terminal session.  That's it :) if you've configured things as above, you should now have a convenient shortcut for launching your X server and terminal sessions.
+~6. Next, click the "Bookmark settings" tab, and then click the "Create a desktop shortcut to this session", accepting the defaults. Click OK.~
+~7. Close the MobaXterm application, and test that your shortcut opens MobaXterm (for use as your X server) and successfully launches and xfce4-terminal session.  That's it :) if you've configured things as above, you should now have a convenient shortcut for launching your X server and terminal sessions.~
 
 However, I'm definitely more comfortable recommending this sort of approach now than in the past where I naively considered any use of an X-server as contradicting some vaguely "minimalist" orthodoxy I thought I was honoring. Even considering the awkward and fairly disruptive VcXsrv crashes - which seems to happen when I drag the terminal window around just a bit *too* much (again, not an issue now that I'm using MobaXterm, which continues to be awesome...) this is hands down a **much** more sustainable way for me to get things done than trying to twist a native-Windows app into the pretzel-shaped approximation of my dimming recollection of a merely sufficient Mac/iTerm2 workflow. ~I will surely be either creating another Homesick castle specific to this approach~ (Note: I think this one still works fine as a "starter" collection...), or at least in the short term adding some additional commentary here as to how to accomplish the initial setup for this type of configuration :)
 
