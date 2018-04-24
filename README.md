@@ -34,7 +34,7 @@ In fact, after spending *a lot* of time in pretty rigorous comparison over the l
 
 **Note: a word of caution if you decide to completely remove ConEmu in favor of simplifying your configuration - when choosing among the various "guides" claiming suitability for this purpose, I found several that were either totally useless, or worse, *could potentially do more harm than good*. I ended-up following this vid on YouTube: https://www.youtube.com/watch?v=-mp5Xk55q2o - which didn't completely match with everything I needed to delete from the registry, but provided a reasonable starting place...again, *make sure you have a functional backup before mucking-about in the registry...you can seriously mess things up if you're not careful...***.  
 
-Once I was *finally* able to completely remove ConEmu, I was able to ~pretty easily create a desktop shortcut to launch xfce4-terminal:~
+~Once I was *finally* able to completely remove ConEmu, I was able to pretty easily create a desktop shortcut to launch xfce4-terminal:~
 
 ~1. Note that this was **a lot** simpler than what I had been using before. First, I right-clicked on the empty space on the Windows desktop, and selected **New-->Text Document**.~
 ~2. Next, I changed the the `.txt` extension to `.vbs`.~
