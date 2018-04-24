@@ -36,9 +36,9 @@ In fact, after spending *a lot* of time in pretty rigorous comparison over the l
 
 Once I was *finally* able to completely remove ConEmu, I was able to ~pretty easily create a desktop shortcut to launch xfce4-terminal:~
 
-~1. Note that this was **a lot** simpler than what I had been using before. First, I right-clicked on the empty space on the Windows desktop, and selected **New-->Text Document**.
-2. Next, I changed the the `.txt` extension to `.vbs`.~
-3. I then right-clicked this file, and selected **Edit-->Notepad** from the menu.  Next I added the following:
+~1. Note that this was **a lot** simpler than what I had been using before. First, I right-clicked on the empty space on the Windows desktop, and selected **New-->Text Document**.~
+~2. Next, I changed the the `.txt` extension to `.vbs`.~
+~3. I then right-clicked this file, and selected **Edit-->Notepad** from the menu.  Next I added the following:~
 ```
 args = "-c" & " -l " & """DISPLAY=:0 xfce4-terminal"""
 WScript.CreateObject("Shell.Application").ShellExecute "bash", args, "", "open", 0
