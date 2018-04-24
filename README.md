@@ -37,7 +37,7 @@ In fact, after spending *a lot* of time in pretty rigorous comparison over the l
 Once I was *finally* able to completely remove ConEmu, I was able to ~pretty easily create a desktop shortcut to launch xfce4-terminal:~
 
 ~1. Note that this was **a lot** simpler than what I had been using before. First, I right-clicked on the empty space on the Windows desktop, and selected **New-->Text Document**.
-2. Next, I changed the the `.txt` extension to `.vbs`.
+2. Next, I changed the the `.txt` extension to `.vbs`.~
 3. I then right-clicked this file, and selected **Edit-->Notepad** from the menu.  Next I added the following:
 ```
 args = "-c" & " -l " & """DISPLAY=:0 xfce4-terminal"""
@@ -49,7 +49,7 @@ WScript.CreateObject("Shell.Application").ShellExecute "bash", args, "", "open",
 C:\Users\<your user>\Desktop\start-xfce4-term.vbs
 ```
 6. Next, click the "Bookmark settings" tab, and then click the "Create a desktop shortcut to this session", accepting the defaults. Click OK.
-7. Close the MobaXterm application, and test that your shortcut opens MobaXterm (for use as your X server) and successfully launches and xfce4-terminal session.  That's it :) if you've configured things as above, you should now have a convenient shortcut for launching your X server and terminal sessions.~
+7. Close the MobaXterm application, and test that your shortcut opens MobaXterm (for use as your X server) and successfully launches and xfce4-terminal session.  That's it :) if you've configured things as above, you should now have a convenient shortcut for launching your X server and terminal sessions.
 
 However, I'm definitely more comfortable recommending this sort of approach now than in the past where I naively considered any use of an X-server as contradicting some vaguely "minimalist" orthodoxy I thought I was honoring. Even considering the awkward and fairly disruptive VcXsrv crashes - which seems to happen when I drag the terminal window around just a bit *too* much (again, not an issue now that I'm using MobaXterm, which continues to be awesome...) this is hands down a **much** more sustainable way for me to get things done than trying to twist a native-Windows app into the pretzel-shaped approximation of my dimming recollection of a merely sufficient Mac/iTerm2 workflow. ~I will surely be either creating another Homesick castle specific to this approach~ (Note: I think this one still works fine as a "starter" collection...), or at least in the short term adding some additional commentary here as to how to accomplish the initial setup for this type of configuration :)
 
