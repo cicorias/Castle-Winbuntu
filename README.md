@@ -30,19 +30,19 @@ In fact, after spending *a lot* of time in pretty rigorous comparison over the l
 
 **Update**: I've now ditched VcXsrv in favor of [MobaXterm](https://mobaxterm.mobatek.net/) --which is working out *much* better for me (in fact, I've yet to see a single crash...). It has however been quite a bit more difficult for me to hack out a powershell script/shortcut that starts things up in an orderly manner, predictably launching an xfce4-terminal (although I have something working, ~it's *far* from what I would consider sufficient...essentially I'm adding an arbitrary amount of delay through the use of a "sleep" command so as to negotiate a pretty convolluted "relay" b/w MobaXterm, ConEmu, xfce4-terminal, and tmux/tmuxinator~ I have something in place that I like now. It still isn't anything slick, but it works consistently. I'll be adding a text file to the repo with what I'm using...).
 
-**Update**: I've also waved bye-bye to ConEmu after struggling to have it work properly in combination with MobaXterm as executed from my desktop shortcut  after a recent Windows update. This had previously consisted of a pretty awkward/convolluted series of Windows CMD commands, concatenated with some arbitrary "sleep x seconds" delay, which I was never fully comfortable relying on (and was ultimately justified in distrusting...). I should also note that I hadn't at all anticipated the incredible lengths I had to go to *actually uninstall ConEmu completely* - which required several fairly risky stops at locations within the Windows Registry to delete various registry keys...a definite hassle that I would have fully-expected *not* to have encountered with a piece of software that has been around as long as ConEmu - which leads me to my next important bulletin:
+**Update**: I've also **waved bye-bye to ConEmu entirely** after struggling to have it work properly after a recent Windows update. It may also be worth noting that the route to *actually uninstalling ConEmu completely* was fraught with an uncomfortable number of fairly risky stops at locations scattered throughout the Windows Registry to delete various keys...a definite hassle that I would have fully-expected *not* to have encountered with a piece of software that has been around as long as ConEmu has - which then leads me to my next important bulletin:
 
-**Note: a word of caution if you decide to completely remove ConEmu in favor of simplifying your configuration - when choosing among the various "guides" that claiming suitability for this purpose, I found several that were either totally useless, or worse, *could potentially do more harm than good*. I ended-up following this guide on YouTube here: https://www.youtube.com/watch?v=-mp5Xk55q2o - which didn't completely line-up with everything I needed to delete from the registry, but provided a reasonable starting place**.  
+**Note: a word of caution if you decide to completely remove ConEmu in favor of simplifying your configuration - when choosing among the various "guides" claiming suitability for this purpose, I found several that were either totally useless, or worse, *could potentially do more harm than good*. I ended-up following this vid on YouTube: https://www.youtube.com/watch?v=-mp5Xk55q2o - which didn't completely match with everything I needed to delete from the registry, but provided a reasonable starting place...again, *make sure you have a functional backup before mucking-about in the registry...you can seriously mess things up if you're not careful...***.  
 
-Once I was *finally* able to completely remove ConEmu, I was able to pretty easily create a desktop shortcut to launch xfce4-terminal:
+Once I was *finally* able to completely remove ConEmu, I was able to ~pretty easily create a desktop shortcut to launch xfce4-terminal:~
 
-1. Note that this was **a lot** simpler than what I had been using before. First, I right-clicked on the empty space on the Windows desktop, and selected **New-->Text Document**.
-2. Next, I changed the the `.txt` extension to `.vbs`.
-3. I then right-clicked this file, and selected **Edit-->Notepad** from the menu.  Next I added the following:
-```
+~1. Note that this was **a lot** simpler than what I had been using before. First, I right-clicked on the empty space on the Windows desktop, and selected **New-->Text Document**.~
+~2. Next, I changed the the `.txt` extension to `.vbs`.~
+~3. I then right-clicked this file, and selected **Edit-->Notepad** from the menu.  Next I added the following:~
+~```
 args = "-c" & " -l " & """DISPLAY=:0 xfce4-terminal"""
 WScript.CreateObject("Shell.Application").ShellExecute "bash", args, "", "open", 0
-```
+```~
 4. Next, open up MobaXterm, and click on the **Session** icon. This will open another window displaying "Choose a session type...". Click the **File** icon at the top of this window.
 5. From here, in the "File/folder to open" field, enter:
 ```
