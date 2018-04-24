@@ -56,7 +56,7 @@ Ok, rather perplexingly - due to what I'm sure are some uniquely-personal enviro
 1. Open up MobaXterm and click on **Sessions-->New Session** at the top.
 2. A new window should open. Click on the **Shell** icon at the top of this window.
 3. From the "Terminal shell" drop-down, select **Ubuntu Bash (WSL)**.
-4. In the "Startup directory" field, enter/select: "C:\Users\<your user>"
+4. In the "Startup directory" field, enter/select: `C:\Users\<your user>`
 5. Click the "Advanced shell settings" tab and enter:
 ```
 bash -c -l "DISPLAY=:0 xfce4-terminal"
