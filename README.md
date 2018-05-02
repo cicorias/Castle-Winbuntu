@@ -278,7 +278,7 @@ set pastetoggle=<F2>
 ```
 
 #### SSH on WSL
-I've found that using SSH in the familiar Mac/CentOS way can be a bit problematic to duplicate on WSL. I've had issues where after I'd gotten what I thought was a reasonable handle on things, to suddenly be confronted with a "host key verification failed" message, when certainly nothing obvious had changed on any relevant host keys, permissions on any presumably relevant files, hostnames or ip addresses. Even removing individual entries from the `known_hosts` file, followed later by removing *everything* within this file, then finally deleting the file entirely and rebooting never once resulted in the usual/expected prompting to re-add the host key. I finally had to do the following to force host-key prompting, and re-establish ssh connectivy to my remote host:
+I've found that using SSH in the familiar Mac/CentOS way can be a bit problematic to duplicate on WSL. I've had issues where I'd gotten what I thought was a reasonable handle on things, to suddenly be confronted with a "host key verification failed" message, when certainly nothing obvious had changed on any relevant host keys, permissions on any presumably relevant files, hostnames or ip addresses. Even removing individual entries from the `known_hosts` file, followed later by removing *everything* within this file, then finally deleting the file entirely and rebooting never once resulted in the usual/expected prompting to re-add the host key. I finally had to do the following to force host-key prompting, and re-establish ssh connectivy to my remote host:
 ```
 $ chmod 0666 /dev/tty
 $ ssh -o StrictHostKeyChecking=no <your_user>@remote_host uptime
