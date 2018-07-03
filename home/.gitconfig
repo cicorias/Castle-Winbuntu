@@ -190,3 +190,6 @@
 	
 #[github]
 #	user = rodtreweek
+[user]
+	email = rodney.treweek@escocorp.com
+	name = Rod Treweek

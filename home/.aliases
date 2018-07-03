@@ -123,6 +123,11 @@ alias untarz='tar xzvf'
 # Pipe my public key to my clipboard.
 alias pubkey="more ~/.ssh/id_rsa.pub | xclip -selection clipboard | echo '=> Public key copied to pasteboard.'"
 
+# ssh aliases
+alias rtest='ssh rtest'
+alias elsprd1='ssh -X elsprd1'
+alias elsprd2='ssh -X elsprd2'
+
 # Docker aliases                                                                                                        
 alias dklc='docker ps -l'  # List last Docker container                                                                 
 alias dklcid='docker ps -l -q'  # List last Docker container ID                                                         
