@@ -69,7 +69,7 @@ bash -c -l "DISPLAY=:0 xfce4-terminal"
 9. If all goes well, this should open MobaXterm and then launch xfce4-terminal in a separate window (it might be hidden behind the main MobaXterm window, so you may need to minimize this first in order to see it...).  This was really the only thing that ended-up working for me - at least consistently. Anyway, ymmv.
 10. One additional thing you will likely want to do to get copy/paste working properly between WSL and Windows: Go into the X11 server settings for MobaXterm, and change the clipboard behavior to "disable copy on select". Things should work as expected once you make this change :) 
 
-I'm definitely more comfortable recommending this sort of approach now than in the past where I naively considered any use of an X-server as contradicting some vaguely "minimalist" orthodoxy in constraining the terminal to a single spartan component. Personally, using MobaXterm to launch xfce4-terminal and tmuxinator is just a more sustainable way for me to get things done than trying to twist what is essentially a Windows-native ssh client into the pretzel-shaped approximation of my dimming recollection of a merely sufficient Mac/iTerm2 workflow.
+I'm definitely more comfortable recommending this sort of approach now than in the past where I naively considered any use of an X-server as contradicting some vaguely "minimalist" orthodoxy in constraining the terminal to a single spartan component. Personally, using MobaXterm to launch xfce4-terminal tmuxinator is just a more sustainable way for me to get things done than trying to twist what is essentially a Windows-native ssh client into the pretzel-shaped approximation of my dimming recollection of a merely sufficient Mac/iTerm2 workflow.
 
 Since I believe I've now spent enough time experimenting with WSL to form a reasonably credible opinion - perhaps even earning the right to express this editorially - and given just how crucial I feel it is to minimizing any substantial impact to personal productivity/expected rate of contribution when transitioning to a Windows-based workflow, *I'll just come right out and say that:* **There are currently no [terminal applications for Windows](https://raw.githubusercontent.com/rodtreweek/i/master/ansible/term_probs.gif) that can compete with those offered natively for Linux or to the (truly excellent) iTerm2 for Mac**.
 
@@ -342,6 +342,7 @@ In short, you probably want `sudo -i` most of the time (which is the same as `su
 Definitely check out Boxstarter [here](http://boxstarter.org/InstallBoxstarter). Install it with [chocalatey](https://chocolatey.org/), the awesome package manager for Windows!  Here are some links to a few gists for use with Boxstarter:
 * <https://gist.github.com/jessfraz/7c319b046daa101a4aaef937a20ff41f>
 * <https://gist.github.com/NickCraver/7ebf9efbfd0c3eab72e9>
+* <https://gist.github.com/rodtreweek/c07a1c5624728f610c56ff84c3172f8f>
 
 
 ### Docker for Windows
