@@ -344,7 +344,6 @@ Definitely check out Boxstarter [here](http://boxstarter.org/InstallBoxstarter).
 * <https://gist.github.com/NickCraver/7ebf9efbfd0c3eab72e9>
 * <https://gist.github.com/rodtreweek/c07a1c5624728f610c56ff84c3172f8f>
 
-
 ### Docker for Windows
 
 1. In addition to installing [Docker for Windows](https://www.docker.com/docker-windows) I also had to open up Powershell and run this:
