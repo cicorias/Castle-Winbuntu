@@ -9,11 +9,11 @@ This is my [Homesick](https://github.com/technicalpickles/homesick) Castle inten
 
 If your search for guidance on setting up a reasonable dev environment on WSL has lead you here, I hope that through offering this fairly opinionated, occassionally solipsistic, yet well-intentioned collection of observations and sample configurations I may be of service to you :)
 
-I also leverage the deployable ease offered by Homesick in distributing and managing my configuration files, and have included an example Homesick "castle" in this repo which you are free to clone/download (see the instructions at the end of this readme...).
+I also leverage the deployable ease offered by Homesick in distributing and managing my configuration files, and have included an example Homesick "castle" in this repo which you are free to clone/download (or skip to the instructions by clicking here: :watch: [TL;DR](#tldr---the-meat-and-potatoes-of-deploying-the-dotfiles) :fast_forward: :checkered_flag:
+).
 
 However, the usual "ymmv", "No warranty either expressed or implied", "Use of this repo may totally break your sh\*t" - rules governing personal responsibility most definitely apply here, and you should certainly always be weighing the associated risks of hastily cloning some random dotfiles project into your environment :)
 
-:watch: [TL;DR](#tldr---the-meat-and-potatoes-of-deploying-the-dotfiles) :fast_forward: :checkered_flag:
 
 But first, before you so eagerly throw your support behind Microsoft's (at least in the opinion of this writer, *extremely welcome*) efforts to be much more open-source interested/inclusive, I'd recommend reading [this excellent blog post](https://blog.jessfraz.com/post/windows-for-linux-nerds/) from former Docker/Google-Engineer-turned-core-member-of-Microsoft's Container Development Team, [Jessie Frazelle](http://redmonk.com/jgovernor/2017/09/06/on-hiring-jessie-frazelle-microsofts-developer-advocacy-hot-streak-continues/) discussing the nuts and bolts of WSL.
 
