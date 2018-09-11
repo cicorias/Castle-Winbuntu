@@ -48,7 +48,7 @@ Here's what I (eventually) did to get things working consistently:
 bash -c -l "cd ~ && DISPLAY=:0 xfce4-terminal"
 ```
 6. Click the `OK` button (ignoring the temptation to click on the "Bookmark settings" tab and the "Create a desktop shortcut to this session" button...).
-7. You should see your session listed on the left-hand side of the main MobaXterm window. Right-click the icon and (now) select "Create a desktop shortcut" to create an "Ubuntu Bash" shortcut on the desktop.
+7. You should see your session listed on the left-hand side of the main MobaXterm window. Right-click the icon and (now) select "Create a desktop shortcut" to create an "Ubuntu Bash" shortcut on the desktop. This should present a pop-up with a couple checkboxes for hiding the main MobaXterm window and cleanly exiting it. Check both boxes.
 8. Exit MobaXterm completely. Double-click the shortcut.
 9. If all goes well, this should launch xfce4-terminal in a single window (without opening another window for MobaXterm itself) ~in a separate window (it might be hidden behind the main MobaXterm window, so you may need to minimize this first in order to see it...).  This was really the only thing that ended-up working for me - at least consistently. Anyway, ymmv.~. **Update: So far I've had no problems with this working with build 17134.228 and MobaXterm 10.4.0.0**.
 10. One additional thing you will likely want to do to get copy/paste working properly between WSL and Windows: Go into the X11 server settings for MobaXterm, and change the clipboard behavior to "disable copy on select". Things should work as expected once you make this change :) 
