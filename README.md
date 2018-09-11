@@ -45,7 +45,7 @@ Here's what I (eventually) did to get things working consistently:
 5. In the "Startup directory" field, enter/select: `C:\Users\<your user>`
 6. Click the "Advanced shell settings" tab and enter:
 ```
-bash -c -l "DISPLAY=:0 xfce4-terminal"
+bash -c -l "cd ~ && DISPLAY=:0 xfce4-terminal"
 ```
 6. Click the `OK` button (ignoring the temptation to click on the "Bookmark settings" tab and the "Create a desktop shortcut to this session" button...).
 7. You should see your session listed on the left-hand side of the main MobaXterm window. Right-click the icon and (now) select "Create a desktop shortcut" to create an "Ubuntu Bash" shortcut on the desktop.
