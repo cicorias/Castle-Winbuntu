@@ -87,7 +87,7 @@ In the past, since it was common that I might be connected to several remote sys
 
 ### Upgrading WSL's Ubuntu to 16.04 
 
-**Note: Since the current version of WSL's Ubuntu is now at 18.x I've retained the following section mostly for historical perspective.**
+**Note: Since the current version of WSL's Ubuntu is now at 18.x I've retained the following section mostly for historical reference.**
 
 
 One additional observation that I should note is that [while simply removing and reinstalling WSL](https://www.howtogeek.com/278152/how-to-update-the-windows-bash-shell/) is *supposed to* upgrade you from Ubuntu 14.04 to 16.04, this was not true for me, despite what I was pretty sure (at the time) was a supported build (it simply hung indefinitely at the command line, even after I fully uninstalled, rebooted, then repeated the lxrun install..I finally had to manually kill it - and in the end was *still* left with an unaltered version of 14.04).
