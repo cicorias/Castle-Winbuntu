@@ -28,7 +28,7 @@ In fact, after spending *a lot* of time in pretty rigorous comparison over the l
 
 In the end, I installed Ubuntu on a spare desktop system and used Ansible to configure Docker and its dependencies (which took me about 20 minutes) - and never really looked back.
 
-During this time I also discovered [Tmuxinator](https://fabianfranke.de/2013/11/19/use-tmuxinator-to-recreate-tmux-panes-and-windows/) out of a desperate need to shield myself from the instability of VcXsrv, considerably thus reducing the whispered profanity punctuating each terminal crash to tolerably work-safe levels :)
+During this time I also discovered [Tmuxinator](https://fabianfranke.de/2013/11/19/use-tmuxinator-to-recreate-tmux-panes-and-windows/) out of a desperate need to shield myself from the instability of VcXsrv, thus reducing the whispered profanity punctuating each terminal crash to tolerably work-safe levels :)
 
 **Update**: I've now completely ditched VcXsrv in favor of [MobaXterm](https://mobaxterm.mobatek.net/) --which is working out *much* better for me (in fact, I've yet to see a single crash...). It has however been quite a bit more difficult for me to hack out a powershell script/shortcut to launch xfce4-terminal and tmuxinator ~(although I have something working, it's *far* from what I would consider sufficient...essentially I'm adding an arbitrary amount of delay through the use of a "sleep" command so as to negotiate a pretty convolluted "relay" b/w MobaXterm, ConEmu, xfce4-terminal, and tmux/tmuxinator~ I have something in place that I like now, and this can actually be generated as a shortcut (somewhat less intuitively) from within MobaXterm without the need for a powershell script (see below...).
 
