@@ -5,6 +5,8 @@
 
 ## Welcome!
 
+**Update:** Install wsl with: `choco install wsl-ubuntu-1804`
+
 This is my [Homesick](https://github.com/technicalpickles/homesick) Castle intended for use on the Windows Subsystem for Linux (aka "WSL", or Bash/Ubuntu on Windows).
 
 If your search for guidance on setting up a reasonable dev environment on WSL has lead you here, I hope that through offering this fairly opinionated, occassionally solipsistic, yet well-intentioned collection of observations and sample configurations I may be of service to you :)
