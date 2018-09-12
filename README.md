@@ -5,7 +5,7 @@
 
 ## Welcome!
 
-**Update:** Install wsl with: `choco install wsl-ubuntu-1804`
+**Update:** Install wsl with: `Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1804 -OutFile Ubuntu.appx -UseBasicParsing` - which, depending on where you work might prompt you with an "Install from store" pop-up...
 
 This is my [Homesick](https://github.com/technicalpickles/homesick) Castle intended for use on the Windows Subsystem for Linux (aka "WSL", or Bash/Ubuntu on Windows).
 
