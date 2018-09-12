@@ -168,8 +168,7 @@ Install Bash-it with: `sh -c "$(curl -fsSL https://raw.githubusercontent.com/Bas
 
 As noted above, I'm also a big fan of managing my dotfiles across different distributions with [Homesick](https://github.com/technicalpickles/homesick). While more or less a "git wrapper" abstracting a core subset of typical git source-control tasks to a set of reasonably intuitive conventions (which are then aggregated into "castles" - or repos tailored/specific to managing dotfiles...) Homesick still manages to differentiate itself from merely a "travel-sized, git translator/symlink-er" - by providing its themed-collection of command-line utilities similarly to those typical of git, i.e.`homesick clone`, `homesick commit`, `homesick pull` - without the same cumbersome requirement to first `cd` into the directory under source-control in order to manage its contents. It's also worth noting that given the generally more user-specific and less distributed nature typical of managing dotfiles, a number of git features specific to resolving conflicts, scaling efficiently, "cherry-picking" commits, rev-parsing, hooks, or sophisticated approaches to tagging/branching, are likely to be encountered less as useful features and more as either unneccessary distractions or arbitrary contstraints. In any case, it's important to remember the adjacent availability of git - always ready to be handed the "pickle jar", should a firmer "grip" be required :) 
 
-I'm happy to continue recommending Homesick as an alternative to some of the more awkward/arbitrary complexities found in other approaches to managing dotfiles. To install it:
-  1. You'll first need to install ruby, then `gem install homesick`
+  1. You'll first need to install ruby, then install Homesick with: `gem install homesick`
   1. Clone this castle with `homesick clone rodtreweek/castle-winbuntu`
   1. Create the symlinks with `homesick link castle-winbuntu`
 
