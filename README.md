@@ -47,10 +47,6 @@ Here's what I (eventually) did to get things working consistently:
 ```
 bash -c -l "cd ~ && DISPLAY=:0 xfce4-terminal"
 ```
-**Or if you have already installed another shell, i.e. zsh/oh-my-zsh do this:**
-```
-zsh -c -l "cd ~ && DISPLAY=:0 xfce4-terminal"
-```
 6. Click the `OK` button (ignoring the temptation to click on the "Bookmark settings" tab and the "Create a desktop shortcut to this session" button...).
 7. You should see your session listed on the left-hand side of the main MobaXterm window. Right-click the icon and (now) select "Create a desktop shortcut" to create an "Ubuntu Bash" shortcut on the desktop. This should present a pop-up with a couple checkboxes for hiding the main MobaXterm window and cleanly exiting it. Check both boxes.
 8. Exit MobaXterm completely. Double-click the shortcut.
@@ -132,7 +128,7 @@ chmod 0666 /dev/tty
 ```
 
 
-I've since come to understand that 16.04 is technically not supported on pre-"Creator" builds, so I should probably just state for the record here that for those thinking of rolling the dice, upgrading *may invite a number of other unexpected "guests" to the party who then refuse to leave, proceeding to break some of your fancier stuff* :( The point here is that you should be reasonably clear on what problem you are looking to solve by upgrading to 16.04 and pretty sure it contains either the "fix" you seek, or are at least willing to accept the risk. My decision to upgrade wasn't particularly well-articulated or thoughtfull, and rather prompted by a pair of *really* frustrating issues which had me pretty willing to take my chances in experimenting.  Here were the issues I was quite sure would be resolved by upgrading to Ubuntu 16.04:
+I've since come to understand that 16.04 is technically unsupported on pre-"Creator" builds, so I should probably just state for the record here that for those thinking of rolling the dice, upgrading *may invite a number of other unexpected "guests" to the party who then refuse to leave, and then start breaking some of your fancy stuff* :( The point here is that you should be reasonably clear on what problem you are looking to solve by upgrading to 16.04 and pretty sure it contains either the "fix" you seek, or are at least willing to accept the risk. My decision to upgrade wasn't particularly well-articulated or thoughtfull, and rather prompted by a pair of *really* frustrating issues which had me pretty willing to take my chances in experimenting.  Here were the issues I was quite sure would be resolved by upgrading to Ubuntu 16.04:
 
 * Several of my Vim plugins didn't work with the stock version of Vim that ships with Ubuntu 14.04 (In the end, I actually wound up just building Vim 8 from source due to dependency problems encountered with the Vim YouCompleteMe plugin that persisted even into 16.04).
 * The routine difficulty I was having with getting sudo to work predictably/reliably, i.e. `sudo apt-get install` would typically hang, and it seemed like I was constantly having to exit my shell to perform trivial tasks as root (I didn't realize at the time that due to what I now believe is an environment bug, you may need to instead use `sudo -E`).
@@ -230,16 +226,8 @@ In trying to get any form of "seamless" copy/paste behavior to happen between th
 
 Soooo the short answer is: *"Yes (at a minimum), you'll need to install an X-server of some sort (xming/VcXsrv/MobaXterm) if you want to share a clipboard b/w Linux and Windows - even when one (WSL) would appear to reside on the same host OS."*. 
 
-Having now travelled down every available avenue with my build version, I finally threw in the towel ~and am trying out VcXsrv~ (additionally requiring the installation of **a bunch** of other stuff to satisfy various dependencies for first Terminator, then xfce4 respectively, i.e. the (huge) ubuntu-gnome-desktop package which seemed necessary to fill various other "gaps" in my build version). Note that if you do decide to go this route, make sure you have enough disk space.
 
- I will say however that my ConEmu, vim-related copy/paste angst was substantially diminished upon discovery of this simple checkbox in  **Settings --> Keys & Macro --> Mark/Copy:** 
-<img src="https://raw.githubusercontent.com/rodtreweek/i/master/castle-winbuntu/conemu-vim-text-select.gif" height="450">
-
-- then just selecting the text with the mouse/touchpad, or for larger copy selections, first doing a `cat <filename>`, then selecting the text, and `ctrl-c`, `ctrl-v` respectively to copy/paste.
-
-While I don't *love* the *considerable* amount of trailing whitespace that this captures, or the inability to reasonably deal with line-wrapping (**note:** again, this is really less an issue with ConEmu, and more to do with crossing the inherent boundary b/w OS's as mentioned above...) , this still made me **a lot** happier than having to first turn off line numbering, or constantly remove leading white space when pasting, for example into this readme here on Github. :)
-
-**Update:** I was able to work around the trailing/leading whitespace issue as well as identify/reduce spaces before a tab by adding a few entries to my .vimrc.settings file:
+**Update:** I was able to (mostly) work around the trailing/leading whitespace issue as well as identify/reduce spaces before a tab by adding a few entries to my .vimrc.settings file:
 ```
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=darkred guibg=darkred
 ```
@@ -266,9 +254,9 @@ nnoremap <silent> <F5> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :noh
  <img src="https://raw.githubusercontent.com/rodtreweek/i/master/castle-winbuntu/whitespace_removal.gif" height="450">
 **Note:** you may have to hit the `Esc` key in order to get it to "let go"  of the text you have mouse highlighted/selected, subsequently passing it along to the clipboard buffer and allowing for `ctrl-v` pasting).
 
-Again, not *ideal*, but this method arguably offers the least complicated remedy for cleaning-up problematic whitespace which some may even find preferable to the added installation, configuration, maintainance, and additional complexity of using an X-server to "proxy" terminal connections to a shared clipboard buffer - or perhaps as an alternative to troubleshooting multiple system components when things go wrong.
+This method arguably offers the least complicated remedy for cleaning up problematic whitespace.
 
-Another annoyance I was committed to at least minimizing right away was the routine observation of my pasted text "cascading" in a sideways ripple, then becoming a series of steady waves before crashing against the margin of my text editor every time (which is all the time) I forget to type `:set paste`. While it hasn't improved my memory any, and the "tide" seems to come in only slightly less frequently, I've at least configured `F2` to toggle `:set paste` - so now I only have to type `u + F2` :) (Oh, also make sure you have the "multiline paste" option set for ctrl-v in the settings for ConEmu...):
+Another annoyance I was committed to at least minimizing right away was the routine observation of my pasted text "cascading" in a sideways ripple, then becoming a series of steady waves before crashing against the margin of my text editor every time (which is all the time) I forget to type `:set paste`. While it hasn't improved my memory any, and the "tide" seems to come in only slightly less frequently, I've at least configured `F2` to toggle `:set paste` - so now I only have to type `u + F2` :)
 ```
 " Press F2 to toggle set paste:
 set pastetoggle=<F2>
@@ -298,7 +286,7 @@ This has apparently been the case for at least a couple years now. Oddly, I have
 
 SSH port forwarding/tunneling also seems pretty broken on WSL (at the very least it doesn't seem able to integrate with any real mechanism for name to number resolution, i.e. the `/etc/hosts` file appears at times as though it just gets ignored completely - or is perhaps less "authoritative" than the Windows-native "hosts" file. What this means is that you will typically need to use an ip address rather than the fqdn/hostname (including `127.0.0.1` instead of `localhost`) - unless the address would appear resolvable by a local/internal DNS server. You will also likely need sudo privileges in order to execute aliases/functions which may be configured to use "privileged ports" (which are really most network aliases/functions). 
 
-In fact, I was never *really* able to get ssh port-forwarding to work natively in WSL - and perhaps collaterly why I started seeing the host key verification failures mentioned above - so you might be better served by using a native Windows app like PuTTY to accomplish this (I can report that this works quite well, if a little less intuitively in terms of initial setup than I had expected...). ~I won't document it here, but be on the lookout for another setup guide here on Github featuring my transparent, muti-hop solution featuring ConEmu/PuTTY/Pageant and oh-my-zsh plugins to create a session "index" for several different types of encrypted tunnels/port mappings :)~
+In fact, I was never truly able to get ssh port-forwarding to work reliably in WSL - and perhaps collaterly why I started seeing the host key verification failures mentioned above - so you might be better served by using a native Windows app like PuTTY to accomplish this (I can report that this works quite well, if a little less intuitively in terms of initial setup than I had expected...).
 
 **Update:** I was *finally* able to get **ssh multiplexing** to work, which has *all but completely eliminated a massive number of obstacles for me*... I'd describe this particular discovery as really the Sysadmin equivalent of feeling an immediate surge of supernatural power after being bitten by some weird glowing orange spider, or a sudden shirt-shredding green pectoral enormity after absorbing the entire radioactive, yet particularly nutrient-dense payload from an oddly unscrupulous, negligently-controlled yet curiously well-funded experiment featuring a highly-concentrated mix of weapons-grade plutonium, Human Growth Hormone, high-enzyme wheatgrass, and particularly viscous fish oil supplements :)
 
