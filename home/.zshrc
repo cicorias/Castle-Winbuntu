@@ -1,6 +1,13 @@
 # Path to your oh-my-zsh configuration
 export DISPLAY="localhost:0"
 export ZSH=$HOME/.oh-my-zsh
+
+# Install zplug
+# You can customize where you put it but it's generally recommended that you put in $HOME/.zplug
+if [[ ! -d ~/.zplug ]];then
+    git clone https://github.com/b4b4r07/zplug ~/.zplug
+fi
+
 export ZPLUG_HOME=$HOME/.zplug
 
 # Let's try using 256 Colors.
