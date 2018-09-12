@@ -164,7 +164,7 @@ Install Bash-it with: `sh -c "$(curl -fsSL https://raw.githubusercontent.com/Bas
   * First, `mkdir ~/src` then `git clone https://github.com/bhilburn/powerlevel9k.git ~/src/powerlevel9k`
   * Create a symlink with `ln -s ~/src/powerlevel9k/powerlevel9k.zsh-theme ~/.oh-my-zsh/custom/themes/powerlevel9k.zsh-theme`.
 1. zplug: `curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh| zsh`
-1. I also had to do: `compinit -u` in order to get zplug to work reliably...also I needed to follow the instructions here: https://evalcode.com/zsh-default-wsl-windows-10/ .
+
 
 *Note that for older Windows builds (I believe this may be fixed on recent builds but haven't confirmed this yet...), currently running a large number of plugins or a special theme in *either Bash-it or oh-my-zsh*, i.e. powerline-multiline for Bash-it or powerlevel9k for oh-my-zsh, slows things down pretty intolerably... - If you're on an older build, I'd recommend choosing a minimal theme (I'm currently pretty happy with the oh-my-zsh ~"ys"~ default robby-russell theme..) and limiting your customizations if speed is important to you.
 
@@ -173,7 +173,11 @@ Install Bash-it with: `sh -c "$(curl -fsSL https://raw.githubusercontent.com/Bas
 
 As noted above, I'm also a big fan of managing my dotfiles across different distributions with [Homesick](https://github.com/technicalpickles/homesick). While more or less a "git wrapper" abstracting a core subset of typical source-control tasks to a set of reasonably intuitive conventions, Homesick still manages to differentiate itself from merely a "travel-sized, git translator/symlink-er" - by providing its themed-collection of command-line utilities similarly to git, i.e.`homesick clone`, `homesick commit`, `homesick pull` - without the same cumbersome requirement to first `cd` into the directory under source-control in order to manage its contents. It's also worth noting that given the generally more user-specific and less distributed nature typical of managing dotfiles, a number of git features that are geared toward resolving conflicts, scaling efficiently, "cherry-picking" commits, rev-parsing, executing hooks, or sophisticated approaches to tagging/branching might be conversely encountered as either unneccessary distractions or arbitrary contstraints. In any case, it's important to remember the adjacent availability of git - always ready to be handed the "pickle jar", should a firmer "grip" be required :) 
 
-  1. You'll first need to install ruby, then install Homesick with: `gem install homesick`
+  1. Run `sudo apt-get install ruby ruby-dev`, then change the permissions to allow write access for your user to install gems:
+  ```
+  sudo chmod -R go+w /var/lib/gems/2.5.0 && sudo chmod -R go+w /usr/local/bin
+  ```
+  1. Install Homesick with: `gem install homesick`
   1. Clone this castle with `homesick clone rodtreweek/castle-winbuntu`
   1. Create the symlinks with `homesick link castle-winbuntu`
 
