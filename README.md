@@ -155,6 +155,7 @@ I'm a pretty big fan of both [Bash-it](https://github.com/Bash-it/bash-it) and [
 Install Bash-it with: `sh -c "$(curl -fsSL https://raw.githubusercontent.com/Bash-it/bash-it/master/install.sh)"`
 
 ### Zsh
+**Note:** After a forced-reboot following a Windows update, I'm no longer able to run zsh at all.  Still looking into this, but it looks like I'm getting blocked by some sort of policy thing...If I can only run bash, I'll be pretty unhappy.
 
 1. Install oh-my-zsh: `sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"`
 1. You may also want to try out the excellent powerlevel9k theme.
