@@ -54,7 +54,7 @@ I'll say it again that your Windows build version will be the *single-most impor
 
 If you're on an earlier build-version (prior to 15046, aka the "Windows Creator Update"), aren't able to upgrade for reasons outside your control, and are hitting some of these same snags, then what follows may continue to be relevant to you :)
 
-### Again, with the build vesion...
+### Again, with the build version...
 
 You can easily check your Windows build version by simply hitting the Windows key on your keyboard, typing `winver`, then checking the version against [the release notes here](https://msdn.microsoft.com/en-us/commandline/wsl/release_notes).
 
