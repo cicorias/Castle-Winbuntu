@@ -204,6 +204,7 @@ I've also included a .fonts directory that contains a number of fonts I've found
 
 1. Download and install the Inconsolata Awesome patched font from here (not included in fonts):
   * <https://github.com/gabrielelana/awesome-terminal-fonts/raw/patching-strategy/patched/Inconsolata%2BAwesome.ttf>
+  * `sudo mkdir /usr/share/fonts/truetype/inconsolata-awesome/` - and copy the .ttf file you downloaded to this location.
 
 <img src="https://raw.githubusercontent.com/rodtreweek/i/master/castle-winbuntu/change_font_in_conemu.gif" height="450">
 
