@@ -150,4 +150,5 @@ alias dkcom='docker inspect  -f "{{.Name}} {{.Config.Cmd}}" $(docker ps -a -q)' 
 alias txl='tmux ls'                                                                                                     
 alias txn='tmux new -s'                                                                                                 
 alias txa='tmux a -t'                                                                                                   
-
+# Tmuxinator aliases
+alias tmxd='tmuxinator start daily'
