@@ -5,17 +5,16 @@
 
 ## Welcome!
 
-**Update:** Make sure you get **all** the updates installed from your IT departments before proceeding (I didn't and it *completely* destroyed my WSL environment! Once you are sure you have *everything* updated, install wsl from elevated Powershell with: `Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1804 -OutFile Ubuntu.appx -UseBasicParsing` - which, depending on where you work might prompt you with an "Install from store" pop-up...
+**Update:** Make sure you get **all** the updates installed from your IT departments before proceeding (I didn't and it *completely* destroyed my WSL environment! Once you are sure you have *everything* updated, install wsl from an elevated Powershell with: `Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1804 -OutFile Ubuntu.appx -UseBasicParsing` - which, depending on where you work might prompt you with an "Install from store" pop-up...
 
 This is my [Homesick](https://github.com/technicalpickles/homesick) Castle intended for use on the Windows Subsystem for Linux (aka "WSL", or Bash/Ubuntu on Windows).
 
-If your search for guidance on setting up a reasonable dev environment on WSL has lead you here, I hope that through offering this fairly opinionated, occassionally solipsistic, yet well-intentioned collection of observations and sample configurations I may be of service to you :)
+If your search for guidance on setting up a reasonable dev environment based on WSL has lead you here, I hope that through offering this fairly opinionated, occassionally solipsistic, yet well-intentioned collection of observations and sample configurations I may be of service to you :)
 
-I also leverage the deployable ease offered by Homesick in distributing and managing my configuration files, and have included an example Homesick "castle" in this repo which you are free to clone/download (or skip to the instructions by clicking here: :watch: [TL;DR](#tldr---the-meat-and-potatoes-of-deploying-the-dotfiles) :fast_forward: :checkered_flag:
+I also leverage the deployable ease offered by Homesick in distributing and managing my configuration files, and have included an example Homesick "castle" in this repo which you are free to clone/download.
+
+However, the usual "ymmv", "No warranty either expressed or implied", "Use of this repo may totally break your sh\*t" - rules governing personal responsibility most definitely apply here, and you should certainly always be weighing the associated risks of hastily cloning some random dotfiles project into your environment :) (you can skip to the instructions by clicking here: [TL;DR](#tldr---the-meat-and-potatoes-of-deploying-the-dotfiles) :watch: :fast_forward: :checkered_flag:
 ).
-
-However, the usual "ymmv", "No warranty either expressed or implied", "Use of this repo may totally break your sh\*t" - rules governing personal responsibility most definitely apply here, and you should certainly always be weighing the associated risks of hastily cloning some random dotfiles project into your environment :)
-
 
 But first, before you so eagerly throw your support behind Microsoft's (at least in the opinion of this writer, *extremely welcome*) efforts to be much more open-source interested/inclusive, I'd recommend reading [this excellent blog post](https://blog.jessfraz.com/post/windows-for-linux-nerds/) from former Docker/Google-Engineer-turned-core-member-of-Microsoft's Container Development Team, [Jessie Frazelle](http://redmonk.com/jgovernor/2017/09/06/on-hiring-jessie-frazelle-microsofts-developer-advocacy-hot-streak-continues/) discussing the nuts and bolts of WSL.
 
@@ -128,15 +127,13 @@ While upgrading was perhaps the right decision for me ultimately, it really didn
 
 In retrospect these issues were again highly build/environment specific, (and I'll admit ~due in part to my misunderstanding of how sudo/su actually works with environment variables in WSL~ *how sudo really just works in general* - see my table [below](#another-quick-note-on-sudo)), and would seem comparatively rare, especially for those who have already carefully checked their build version for any surprises and are on anything other than the earliest Windows 10/WSL builds ;) In any case, since this was a much less straightforward and time-consuming process than I had anticipated, I'm including this information in case it might be useful to the similarly impetuous :)
 
-### Acknowledgements!
-
-I'd also like to send a super-appreciative shout-out to all those who so generously share their time and effort on Github assisting others in building and shaping rapidly deployable configurations. The bulk of my dotfiles are really just a curation of extremely useful things I've either lightly iterated on, -- or simply lifted outright from others (with permission of course). Several were sourced initially from [Jessie Frazelle](https://github.com/jessfraz/dotfiles), - who through her work with Docker, Google (and now [Microsoft!](https://github.com/microsoft)), continues to impressively shape many notable innovations while promoting FOSS/OSS and remaining unfailingly generous and remarkably empathic in offering considerable guidance on a range of engineering/development issues, -- and also [Nate Mccurdy](https://github.com/natemccurdy/dotfiles) from [Puppet](https://github.com/puppetlabs), who - in addition to providing the principal inspiration for this repo - continues to generously offer his elegantly tailored, thoughtfully maintained and rigorously "customer-prem battle-tested" code/configuration for a rapidly deployable Ruby/Puppet development workflow  --- *You constantly inspire me through your intelligence and generosity* --- *Thank you both!*
-
-
 ## TL;DR - The "Meat and Potatoes" of deploying the dotfiles...
 
-Ok, I hear ya...sounds like you're hungry. Here's how to deploy:
+## Acknowledgements!
 
+I'd also like to send a super-appreciative shout-out to all those who so generously share their time and effort on Github assisting others in building and shaping rapidly deployable configurations. The bulk of my dotfiles are really just a curation of extremely useful things I've either lightly iterated on, -- or simply lifted outright from others (with permission of course). Several were sourced initially from Jessie Frazelle, - who through her work with Docker, Google (and now Microsoft!), continues to impressively shape many notable innovations while promoting FOSS/OSS and remaining unfailingly generous and remarkably empathic in offering considerable guidance on a range of engineering/development issues, -- and also Nate Mccurdy from Puppet, who - in addition to providing the principal inspiration for this repo - continues to generously offer his elegantly tailored, thoughtfully maintained and rigorously "customer-prem battle-tested" code/configuration for a rapidly deployable Ruby/Puppet development workflow --- You constantly inspire me through your intelligence and generosity --- Thank you both!
+
+Ok, I hear ya...sounds like you're hungry. Here's how to deploy:
 
 ## Shell
 I'm a pretty big fan of [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh), and have been using it exclusively on WSL (previously I had tried bash-it, which also worked pretty well...)  
