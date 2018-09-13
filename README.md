@@ -164,7 +164,6 @@ As noted above, I'm also a big fan of managing my dotfiles across different dist
   1. Clone this castle with `homesick clone rodtreweek/castle-winbuntu`
   1. Create the symlinks with `homesick link castle-winbuntu`
 
-**Update:** I've also started using a Makefile in addition to Homesick to script some additional tasks, as well as run shellcheck in a Docker container, - which I must say has worked quite well, especially when paired with Travis to catch any problems I may have overlooked... However, I still don't see these two approaches as mutually exclusive, and am likely to continue using both together.
 
 ### Vim plugins
 
