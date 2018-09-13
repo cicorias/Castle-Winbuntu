@@ -24,41 +24,32 @@ But first, before you so eagerly throw your support behind Microsoft's (at least
 
 It should also be noted that prior to getting *too* precious about the idea of using WSL exclusively as your seamless "personal development-workflow-*asis*", you'll want to know that WSL is *highly* Windows build-dependent - meaning that certain things you might expect to "just work" in Ubuntu/Bash *may only be supported in more recent builds, or perhaps offered exclusively through the Windows Insider Program*.
 
-In fact, after spending *a lot* of time in pretty rigorous comparison over the last several months - *and if your build-version would seem to support it* - I might even suggest skipping the rest of this guide, and heading straight over to https://blog.ropnop.com/configuring-a-pretty-and-usable-terminal-emulator-for-wsl - and configuring WSL along similarly X-server-based lines as opposed to the ~more "ConEmu-centric"~ approach roughly-outlined here (*Note:* You may additionally need to do as instructed [here](https://www.reddit.com/r/Windows10/comments/4rsmzp/bash_on_windows_getting_dbus_and_x_server_working/?st=jbilzojq&sh=30f063d5) in order to get your X-server/Linux terminal app to work properly under WSL.).
-
-**Update**: I can get neither Docker nor Vagrant to ~install~ run on my build :( The errors are plentiful and seem to change contantly.  ~This issue has me completely re-thinking the suitability of WSL for my particular use case :( Since i can't actually upgrade my build, I believe I may actually need to consider going back to Cygwin (which is just incredibly disappointing...).~ - Ok, that reaction was a bit overwrought in hindsight...While I'm still disappointed that this can't unfortunately work for me, it's less of a WSL "deal-breaker" than I had been winding myself up over. In the case of Docker the problem initially was simply getting it installed without errors mainly related to its dependency on Hyper-V and some virtualization features that despite having enabled them in the BIOS still seemed to be explicitly referenced as tripping up the installation.  After finally managing to work through the dependency chain, I was able to at least get Docker for Windows installed (I'm still not entirely sure what may have allowed for the installation to finally proceed...my best guess is either the removal of some AD policy-based restriction or the surreptitious arrival of a Windows patch update which may have corrected an issue with Hyper-V...). Unfortunately this success was relatively short-lived; the final straw was not being able to share any volumes with Docker - a firm requirement for running the docker client within WSL (as detailed here: https://forums.docker.com/t/cannot-share-drive-in-windows-10/28798/9 -which is apparently fixed with an updated Insider build which I didn't have access to at the time.).  Similarly, as far as using Virtualbox/Vagrant as an alternative, you need to be running the "Fall Creator Update" aka build 1709 to get this to run within WSL. I was also pretty hamstrung by policy-based restrictions on making local firewall changes which pretty much thwarted running a local nginx or gitlab server thus making the whole effort seem a bit too pointless ultimately, and not something I was likely to work around simply by switching to Babun/Cygwin. 
-
-In the end, I installed Ubuntu on a spare desktop system and used Ansible to configure Docker and its dependencies (which took me about 20 minutes) - and never really looked back.
+In fact, after spending *a lot* of time in pretty rigorous comparison over the last several months - *and if your build-version would seem to support it* - I would suggest using Boxtarter/Chocolatey to install MobaXterm and using it's builtin X-server with xfce4-terminal rather than relying on something like ConEmu, etc.
 
 During this time I also discovered [Tmuxinator](https://fabianfranke.de/2013/11/19/use-tmuxinator-to-recreate-tmux-panes-and-windows/) out of a desperate need to shield myself from the instability of VcXsrv, thus reducing the whispered profanity punctuating each terminal crash to tolerably work-safe levels :)
 
-**Update**: I've now completely ditched VcXsrv in favor of [MobaXterm](https://mobaxterm.mobatek.net/) --which is working out *much* better for me (in fact, I've yet to see a single crash...). ~It has however been quite a bit more difficult for me to hack out a powershell script/shortcut to launch xfce4-terminal and tmuxinator ~(although I have something working, it's *far* from what I would consider sufficient...essentially I'm adding an arbitrary amount of delay through the use of a "sleep" command so as to negotiate a pretty convolluted "relay" b/w MobaXterm, ConEmu, xfce4-terminal, and tmux/tmuxinator. I have something in place that I like now, and this can actually be generated as a shortcut (somewhat less intuitively) from within MobaXterm without the need for a powershell script~ (see below...).
-
-**Update**: I've also **waved bye-bye to ConEmu entirely** after struggling to have it work properly following a recent Windows update. It may also be worth noting that the route to *actually uninstalling ConEmu completely* was fraught with an uncomfortable number of stops at locations scattered throughout the Windows Registry...a protracted hassle that given my previous limitations on making firewall changes was something I was shocked I was able to do...which leads me to another important "bulletin":
-
-**Note: a word of caution if you decide to completely remove ConEmu in favor of simplifying your configuration - when choosing among the various "guides" claiming suitability for this purpose, I found several that were either totally useless, or worse, *could potentially do more harm than good*. I ended-up following this vid on YouTube: https://www.youtube.com/watch?v=-mp5Xk55q2o - which didn't completely match-up with everything I needed to delete from the registry, but provided a reasonable starting place...again, *make sure you have a functional backup before mucking-about in the registry...you can seriously mess things up if you're not careful...***.  
-
 Here's what I (eventually) did to get things working consistently:
 
+1. Before anything else, run: `sudo apt-get update`
+1. Then: `sudo apt-get install xfce-terminal`
 1. Install MobaXterm (I used Chocolatey which installed version 10.4 -not the latest which was 10.9 . Instructions for installing Chocolatey can be found [here](https://chocolatey.org/docs/installation#install-with-powershellexe) and you can then install MobaXterm simply by typing `choco install mobaxterm` in an elevated Powershell sesh...).
-2. Open up MobaXterm and click on **Sessions-->New Session** at the top.
-3. A new window should open. Click on the **Shell** icon at the top of this window.
-4. From the "Terminal shell" drop-down, select **Ubuntu Bash (WSL)**.
-5. In the "Startup directory" field, enter/select: `C:\Users\<your user>`
-6. Click the "Advanced shell settings" tab and enter:
+1. Open up MobaXterm and click on **Sessions-->New Session** at the top.
+1. A new window should open. Click on the **Shell** icon at the top of this window.
+1. From the "Terminal shell" drop-down, select **Ubuntu Bash (WSL)**.
+1. In the "Startup directory" field, enter/select: `C:\Users\<your user>`
+1. Click the "Advanced shell settings" tab and enter:
 ```
 bash -c -l "cd ~ && DISPLAY=:0 xfce4-terminal"
 ```
-6. Click the `OK` button (ignoring the temptation to click on the "Bookmark settings" tab and the "Create a desktop shortcut to this session" button...).
-7. You should see your session listed on the left-hand side of the main MobaXterm window. Right-click the icon and (now) select "Create a desktop shortcut" to create an "Ubuntu Bash" shortcut on the desktop. This should present a pop-up with a couple checkboxes for hiding the main MobaXterm window and cleanly exiting it. Check both boxes.
-8. Exit MobaXterm completely. Double-click the shortcut.
-9. If all goes well, this should launch xfce4-terminal in a single window (without opening another window for MobaXterm itself) ~in a separate window (it might be hidden behind the main MobaXterm window, so you may need to minimize this first in order to see it...).  This was really the only thing that ended-up working for me - at least consistently. Anyway, ymmv.~. **Update: So far I've had no problems with this working with build 17134.228 and MobaXterm 10.4.0.0**.
-10. One additional thing you will likely want to do to get copy/paste working properly between WSL and Windows: Go into the X11 server settings for MobaXterm, and change the clipboard behavior to "disable copy on select". Things should work as expected once you make this change :) 
+1. Click the `OK` button (ignoring the temptation to click on the "Bookmark settings" tab and the "Create a desktop shortcut to this session" button...).
+1. You should see your session listed on the left-hand side of the main MobaXterm window. Right-click the icon and (now) select "Create a desktop shortcut" to create an "Ubuntu Bash" shortcut on the desktop. This should present a pop-up with a couple checkboxes for hiding the main MobaXterm window and cleanly exiting it. Check both boxes.
+1. Exit MobaXterm completely. Double-click the shortcut.
+1. If all goes well, this should launch xfce4-terminal in a single window (without opening another window for MobaXterm itself) **Note: So far I've had no problems with this working with build 17134.228 and MobaXterm 10.4.0.0**.
+1. One additional thing you will likely want to do to get copy/paste working properly between WSL and Windows: Go into the X11 server settings for MobaXterm, and change the clipboard behavior to "disable copy on select". Things should work as expected once you make this change :) 
 
-I'm definitely more comfortable recommending this sort of approach now than in the past where I naively considered any use of an X-server as contradicting some vaguely "minimalist" orthodoxy in the spartan restriction to a single component. Personally, using MobaXterm to launch xfce4-terminal and Tmuxinator is just a more sustainable way for me to get things done than trying to twist what are essentially a severely limited collection of Windows-native "ssh clients" into the pretzel-shaped approximation of my dimming recollection of a merely sufficient Mac/iTerm2 terminal solution.
+I'm definitely more comfortable recommending this sort of approach now than in the past where I naively considered any use of an X-server as contradicting some vaguely "minimalist" orthodoxy in the spartan restriction of this to a single component. Personally, using MobaXterm to launch xfce4-terminal and Tmuxinator is just a more sustainable way for me to get things done than trying to twist what are essentially a pretty limited collection of Windows-native "ssh clients" into the pretzel-shaped approximation of my dimming recollection of a merely sufficient Mac/iTerm2 terminal solution.
 
 Since I believe I've now spent enough time experimenting with WSL to form a reasonably credible opinion - perhaps even earning the right to express this editorially - and given just how crucial I feel it is to minimizing any substantial impact to personal productivity/expected rate of contribution when transitioning to a Windows-based workflow, *I'll just come right out and say that:* **There are currently no [terminal applications for Windows](https://raw.githubusercontent.com/rodtreweek/i/master/ansible/term_probs.gif) that can compete with those offered natively for Linux or to the (truly excellent) iTerm2 for Mac**.
-
 
 I'll say it again that your Windows build version will be the *single-most important factor* in determining which path your WSL configuration is likely to take. Unfortunately for me (and perhaps those continuing to read), the full realization of this uncomfortable fact arrived much less swiftly than I would have preferred when I began configuring my environment for golang development. I was immediately pummelled by `go build <command-line-arguments>: read |0: interrupted system call` errors that would appear randomly regardless of version, and then overlapping with frequent (and ultimately insurmountable) Vim code-completion plugin errors - or more recently while trying to go the "VcXsrv/Terminator" route as suggested suggested by Rognop in the link above, where I was halted abruptly (and permanently) by continual ` Client failed to connect to the D-BUS daemon:` - errors.
 
@@ -89,7 +80,7 @@ In the past, since it was common that I might be connected to several remote sys
 
 ### Upgrading WSL's Ubuntu to 16.04 
 
-**Note: Since the current version of WSL's Ubuntu is now at 18.x I've retained the following section mostly for historical reference.**
+**Note: Since the current version of WSL's Ubuntu is now at 18.x I've retained the following section mostly for historical reference/those who may be stuck on older builds.**
 
 
 One additional observation that I should note is that [while simply removing and reinstalling WSL](https://www.howtogeek.com/278152/how-to-update-the-windows-bash-shell/) is *supposed to* upgrade you from Ubuntu 14.04 to 16.04, this was not true for me, despite what I was pretty sure (at the time) was a supported build (it simply hung indefinitely at the command line, even after I fully uninstalled, rebooted, then repeated the lxrun install..I finally had to manually kill it - and in the end was *still* left with an unaltered version of 14.04).
@@ -129,7 +120,6 @@ dpkg -i strace_4.8-1ubuntu5_amd64.deb
 chmod 0666 /dev/tty
 ```
 
-
 I've since come to understand that 16.04 is technically unsupported on pre-"Creator" builds, so I should probably just state for the record here that for those thinking of rolling the dice, upgrading *may invite a number of other unexpected "guests" to the party who then refuse to leave, and then start breaking some of your fancy stuff* :( The point here is that you should be reasonably clear on what problem you are looking to solve by upgrading to 16.04 and pretty sure it contains either the "fix" you seek, or are at least willing to accept the risk. My decision to upgrade wasn't particularly well-articulated or thoughtfull, and rather prompted by a pair of *really* frustrating issues which had me pretty willing to take my chances in experimenting.  Here were the issues I was quite sure would be resolved by upgrading to Ubuntu 16.04:
 
 * Several of my Vim plugins didn't work with the stock version of Vim that ships with Ubuntu 14.04 (In the end, I actually wound up just building Vim 8 from source due to dependency problems encountered with the Vim YouCompleteMe plugin that persisted even into 16.04).
@@ -149,29 +139,26 @@ I'd also like to send a super-appreciative shout-out to all those who so generou
 Ok, I hear ya...sounds like you're hungry. Here's how to deploy:
 
 
-
 ## Shell
-I'm a pretty big fan of both [Bash-it](https://github.com/Bash-it/bash-it) and [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh), and have been using both somewhat interchangeably lately. Despite a few missing/broken items, they both work pretty well on WSL:)  
+I'm a pretty big fan of [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh), and have been using it exclusively on WSL (previously I had tried bash-it, which also worked pretty well...)  
 
 ### Bash
 Install Bash-it with: `sh -c "$(curl -fsSL https://raw.githubusercontent.com/Bash-it/bash-it/master/install.sh)"`
 
 ### Zsh
-**Note:** After a forced-reboot following a Windows update, I'm no longer able to run zsh at all.  Still looking into this, but it looks like I'm getting blocked by some sort of policy thing...If I can only run bash, I'll be pretty unhappy.
 
 1. Install oh-my-zsh: `sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"`
-1. You may also want to try out the excellent powerlevel9k theme.
+1. I'd also recommend trying out the excellent powerlevel9k theme. Install it with the following:
   * First, `mkdir ~/src` then `git clone https://github.com/bhilburn/powerlevel9k.git ~/src/powerlevel9k`
   * Create a symlink with `ln -s ~/src/powerlevel9k/powerlevel9k.zsh-theme ~/.oh-my-zsh/custom/themes/powerlevel9k.zsh-theme`.
-1. zplug: `curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh| zsh`
-
+1. I'm also fond of using zplug. Install it with: `curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh| zsh`
+1. Finally, execute `compaudit | xargs sudo chmod -R go-w` to get rid of the "insecure" messages.
 
 *Note that for older Windows builds (I believe this may be fixed on recent builds but haven't confirmed this yet...), currently running a large number of plugins or a special theme in *either Bash-it or oh-my-zsh*, i.e. powerline-multiline for Bash-it or powerlevel9k for oh-my-zsh, slows things down pretty intolerably... - If you're on an older build, I'd recommend choosing a minimal theme (I'm currently pretty happy with the oh-my-zsh ~"ys"~ default robby-russell theme..) and limiting your customizations if speed is important to you.
 
-
 ### Homesick
 
-As noted above, I'm also a big fan of managing my dotfiles across different distributions with [Homesick](https://github.com/technicalpickles/homesick). While more or less a "git wrapper" abstracting a core subset of typical source-control tasks to a set of reasonably intuitive conventions, Homesick still manages to differentiate itself from merely a "travel-sized, git translator/symlink-er" - by providing its themed-collection of command-line utilities similarly to git, i.e.`homesick clone`, `homesick commit`, `homesick pull` - without the same cumbersome requirement to first `cd` into the directory under source-control in order to manage its contents. It's also worth noting that given the generally more user-specific and less distributed nature typical of managing dotfiles, a number of git features that are geared toward resolving conflicts, scaling efficiently, "cherry-picking" commits, rev-parsing, executing hooks, or sophisticated approaches to tagging/branching might be conversely encountered as either unneccessary distractions or arbitrary contstraints. In any case, it's important to remember the adjacent availability of git - always ready to be handed the "pickle jar", should a firmer "grip" be required :) 
+As noted above, I'm also a big fan of managing my dotfiles across different distributions with [Homesick](https://github.com/technicalpickles/homesick). While more or less a "git-wrapper" abstracting a core subset of typical source-control tasks to a set of reasonably intuitive conventions, Homesick still manages to differentiate itself from merely a "travel-sized, git translator/symlink-er" - by providing its themed-collection of command-line utilities similarly to git, i.e.`homesick clone`, `homesick commit`, `homesick pull`. However, it does this without the same cumbersome requirement to first `cd` into the directory under source-control to manage its contents. It's also worth noting that given the generally more user-specific and less distributed nature typical of managing dotfiles, git features that are geared toward resolving conflicts, scaling efficiently, "cherry-picking" commits, rev-parsing, executing hooks, or sophisticated approaches to tagging/branching are more like unneccessary distractions or arbitrary contstraints rather than routinely useful. In any case, it's important to remember the adjacent availability of git - always ready to be handed the "pickle jar", should a firmer "grip" be required :) 
 
   1. Run `sudo apt-get install ruby ruby-dev`, then change the permissions to allow write access for your user to install gems:
   ```
