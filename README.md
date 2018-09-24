@@ -145,6 +145,7 @@ Install Bash-it with: `sh -c "$(curl -fsSL https://raw.githubusercontent.com/Bas
 
 ### Zsh
 
+1. Install zsh: `sudo apt-get update; sudo apt-get install zsh`
 1. Install oh-my-zsh: `sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"`
 1. I'd also recommend trying out the excellent powerlevel9k theme. Install it with the following:
   * First, `mkdir ~/src` then `git clone https://github.com/bhilburn/powerlevel9k.git ~/src/powerlevel9k`
