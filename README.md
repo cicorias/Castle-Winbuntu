@@ -30,8 +30,8 @@ During this time I also discovered [Tmuxinator](https://fabianfranke.de/2013/11/
 Here's what I (eventually) did to get things working consistently:
 
 1. Before anything else, run: `sudo apt-get update`
+1. Next, I installed Boxstarter, and ran it against my raw gist here: https://gist.githubusercontent.com/rodtreweek/c07a1c5624728f610c56ff84c3172f8f/raw/ae2323cc3c05f3dfa21c5503be0f5a84d19b5b96/boxstarter.ps1
 1. Then: `sudo apt-get install xfce-terminal`
-1. Install MobaXterm (I used Chocolatey which installed version 10.4 -not the latest which was 10.9 . Instructions for installing Chocolatey can be found [here](https://chocolatey.org/docs/installation#install-with-powershellexe) and you can then install MobaXterm simply by typing `choco install mobaxterm` in an elevated Powershell sesh...).
 1. Open up MobaXterm and click on **Sessions-->New Session** at the top.
 1. A new window should open. Click on the **Shell** icon at the top of this window.
 1. From the "Terminal shell" drop-down, select **Ubuntu Bash (WSL)**.
@@ -50,7 +50,7 @@ I'm definitely more comfortable recommending this sort of approach now than in t
 
 Since I believe I've now spent enough time experimenting with WSL to form a reasonably credible opinion - perhaps even earning the right to express this editorially - and given just how crucial I feel it is to minimizing any substantial impact to personal productivity/expected rate of contribution when transitioning to a Windows-based workflow, *I'll just come right out and say that:* **There are currently no [terminal applications for Windows](https://raw.githubusercontent.com/rodtreweek/i/master/ansible/term_probs.gif) that can compete with those offered natively for Linux or to the (truly excellent) iTerm2 for Mac**.
 
-I'll say it again that your Windows build version will be the *single-most important factor* in determining which path your WSL configuration is likely to take. Unfortunately for me (and perhaps those continuing to read), the full realization of this uncomfortable fact arrived much less swiftly than I would have preferred when I began configuring my environment for golang development. I was immediately pummelled by `go build <command-line-arguments>: read |0: interrupted system call` errors that would appear randomly regardless of version, and then overlap with frequent (and ultimately insurmountable) Vim code-completion plugin errors - or more recently while trying to go the "VcXsrv/Terminator" route where I was halted abruptly (and permanently) by continual ` Client failed to connect to the D-BUS daemon:` - errors.
+I'll say it again that your Windows build version will be the *single-most important factor* in determining which path your WSL configuration is likely to take. Unfortunately for me (and perhaps those continuing to read), the full realization of this uncomfortable fact arrived much less swiftly than I would have preferred when I began configuring my environment for golang development. I was immediately pummelled by `go build <command-line-arguments>: read |0: interrupted system call` errors that would appear randomly regardless of version, and then overlap with frequent (and ultimately insurmountable) code-completion plugin errors - or more recently while trying to go the "VcXsrv/Terminator" route where I was halted abruptly (and permanently) by continual ` Client failed to connect to the D-BUS daemon:` - errors.
 
 If you're on an earlier build-version (prior to 15046, aka the "Windows Creator Update"), aren't able to upgrade for reasons outside your control, and are hitting some of these same snags, then what follows may continue to be relevant to you :)
 
