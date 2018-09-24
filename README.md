@@ -31,7 +31,9 @@ Here's what I (eventually) did to get things working consistently:
 
 1. Before anything else, run: `sudo apt-get update`
 1. Next, I installed Boxstarter, and ran it against my raw gist here: https://gist.githubusercontent.com/rodtreweek/c07a1c5624728f610c56ff84c3172f8f/raw/ae2323cc3c05f3dfa21c5503be0f5a84d19b5b96/boxstarter.ps1
-1. Then: `sudo apt-get install xfce-terminal`
+1. Then, `sudo su -` to get root (change/create your password for root while here as well with `passwd`) and then: `echo "deb-src http://archive.ubuntu.com/ubuntu/ bionic main restricted universe multiverse" >> /etc/apt/sources.list;`
+1. Then: `sudo apt-get update` again.
+1. Then: `sudo apt-get install xfce4-terminal`
 1. Open up MobaXterm and click on **Sessions-->New Session** at the top.
 1. A new window should open. Click on the **Shell** icon at the top of this window.
 1. From the "Terminal shell" drop-down, select **Ubuntu Bash (WSL)**.
