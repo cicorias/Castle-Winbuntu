@@ -149,7 +149,7 @@ Install Bash-it with: `sh -c "$(curl -fsSL https://raw.githubusercontent.com/Bas
 1. Install oh-my-zsh: `sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"`
 1. I'd also recommend trying out the excellent powerlevel9k theme. Install it with the following:
   * First, `mkdir ~/src` then `git clone https://github.com/bhilburn/powerlevel9k.git ~/src/powerlevel9k`
-  * Create a symlink with `ln -s ~/src/powerlevel9k/powerlevel9k.zsh-theme ~/.oh-my-zsh/custom/themes/powerlevel9k.zsh-theme`.
+  * Create a symlink with `ln -s ~/src/powerlevel9k/powerlevel9k.zsh-theme ~/.oh-my-zsh/custom/themes/powerlevel9k.zsh-theme`
 1. I'm also fond of using zplug. Install it with: `curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh| zsh`
 1. Finally, execute `compaudit | xargs sudo chmod -R go-w` to get rid of the "insecure" messages.
 
