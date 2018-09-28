@@ -175,7 +175,7 @@ I love, love, love vim-plug. You will too. I promise :)
 https://github.com/junegunn/vim-plug
 
 1. Vim-plug Install: 
-`curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim ; vim +PlugInstall +qall`
+`curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim ; vim +PlugInstall +qall` **Note:** to use the `.vimrc` and `.vimrc.settings` files included in this Castle you will need to be using at least Vim 8.0 ...you can build a package from source to later install from by running the script (as root) located [here](https://gist.github.com/rodtreweek/894f02a23bbc7e3691fa1a0f954e3a40)
 1. Add a vim-plug section to your ~/.vimrc (or ~/.config/nvim/init.vim for Neovim). Complete instructions can be found [here](https://github.com/junegunn/vim-plug#usage), but to summarize:
 1. Begin the section with `call plug#begin()`
 1. List the plugins with `Plug` commands, for example:
@@ -198,7 +198,7 @@ If however you may still want to give YCM a shot, you will first need to install
 
 * Install and configure *MobaXterm*. (I tried other stuff. This one works best.)
 * If you use *tmux*, which I'd encourage you to try (before moving on to installing Tmuxinator as well...) if you haven't, make sure that when you change something related to display or key bindings for things like xfce4-terminal or vim in other files like `.bashrc`, `.zshrc`, or `.vimrc` that you also look at what you have in `.tmux.conf` and whether it might be necessary for you to add/change anything there so that it doesn't conflict or result in other unexpected weirdness (specifically, you may need to install and use something like `xclip` and then configure tmux to use this to work around a number of problems, i.e. the rather counterintuitively-named option `set -g set-clipboard off` - in your `.tmux.conf` which actually allows for more predictable use of the copy/paste buffer, etc....).
-* *Upgrade to Vim 8* (I haven't used Neovim, which might be an option as well...I've spent quite a lot of time on my configs, so unless these are "plug 'n' play" with Neovim, I'm a bit reticent to experiment...). There are quite a lot of new features in this version, and if you intend on using the `.vimrc` and `.vimrc.settings` files included in this repo then **this version is required**. Although it's a bit of a pain to build this from source, if you are serious about using Vim as your IDE then I think it's also a bit worthwhile to get an idea as to what's contained in the source :)
+* *Upgrade to Vim 8* (I haven't used Neovim, which might be an option as well...I've spent quite a lot of time on my configs, so unless these are "plug 'n' play" with Neovim, I'm a bit reticent to experiment...). There are quite a lot of new features in this version, and if you intend on using the `.vimrc` and `.vimrc.settings` files included in this repo then **this version is required**. Although it's a bit of a pain to build this from source, if you are serious about using Vim as your IDE then I think it's also a bit worthwhile to get an idea as to what's contained in the source (or just go [here](https://gist.github.com/rodtreweek/894f02a23bbc7e3691fa1a0f954e3a40) :)
 
 
 #### Fonts
