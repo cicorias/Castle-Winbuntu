@@ -115,3 +115,8 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# This is needed to work around WSL's insistence on the bash shell...
+if [ -t 1 ]; then
+exec zsh
+fi
