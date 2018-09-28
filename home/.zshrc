@@ -133,3 +133,8 @@ for file in ~/.{aliases,functions,path,dockerfunc,extra,exports}; do
   fi
 done
 unset file
+
+# This is needed to work around WSL's insistence on the bash shell...
+if [ -t 1 ]; then
+exec zsh
+fi
