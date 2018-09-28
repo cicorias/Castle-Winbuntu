@@ -154,7 +154,6 @@ Install Bash-it with: `sh -c "$(curl -fsSL https://raw.githubusercontent.com/Bas
 4. I'm also fond of using zplug. Install it with: `curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh`
 5. **Note:** If after installing zplug and configuring your environment you begin seeing various directory "insecure" messages pop-up in WSL, execute the following: `compaudit | xargs sudo chmod -R go-w` along with: `sudo chmod 755 /usr/local/bin` to remove group/owner write permissions on these directories.
 
-```
 *Note that for older Windows builds (I believe this may be fixed on recent builds but haven't confirmed this yet...), currently running a large number of plugins or a special theme in *either Bash-it or oh-my-zsh*, i.e. powerline-multiline for Bash-it or powerlevel9k for oh-my-zsh, slows things down pretty intolerably... - If you're on an older build, I'd recommend choosing a minimal theme (I'm currently pretty happy with the oh-my-zsh ~"ys"~ default robby-russell theme..) and limiting your customizations if speed is important to you.
 
 ### Homesick
@@ -320,14 +319,14 @@ Enable-WindowsOptionalFeature -Online -FeatureName:Microsoft-Hyper-V -All
 ### Install GVM (Go Version Manager)
 1. Although I ultimately didn't get very far with golang on my initial build, I have had success with it on a more recent Windows 10 build, so ymmv.
 The Github repo and basic instructions are available [here](https://github.com/moovweb/gvm). 
-First, run the installer with:
-- `zsh < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)` - or if you're using bash as your shell, substitute `bash` for `zsh`.
-2. I had to also install the following dependencies:
+First, install the following dependencies:
 ```
 sudo apt-get install binutils bison gcc make
 ```
-3. Before you'll be able to install and use more recent golang versions, you'll first need to "bootstrap" gvm by installing, then using go1.4:
-- `gvm install go1.4`
+Then run the installer with:
+- `zsh < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)` - or if you're using bash as your shell, substitute `bash` for `zsh`.
+2. Before you'll be able to install and use more recent golang versions, you'll first need to "bootstrap" gvm by installing, then using go1.4:
+- `gvm install go1.4 -B`
 - `gvm use go1.4`
 4. Then, you can do a `gvm listall` to show all versions up to the most recent.
 - For example, install version go1.9.1 with:
@@ -342,11 +341,11 @@ go1.9.1 successfully installed!
 
 ### Install [pyenv](https://github.com/pyenv/pyenv) 
 
-**Update:** Unfortunately, I've had to turn off pyenv for the moment as it totally cripples WSL for me. I'm still looking for a workaround on this, and have been thinking about possibly using something like Presto instead of oh-my-zsh...anyway, hit me up if you may have found a solution. pyenv remains a dev tool I'm keen to continue using.
+**Note:** On earlier Windows 10 builds, I've had to turn off pyenv as it totally cripples WSL for me. Fortunately this issue appears to be resolved in later builds.
 
 1. First, you'll probably need to install this stuff (so that things like bzip2 and sqlite work correctly):
 ```
-sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
+sudo apt-get install -y python python-dev make build-essential libssl-dev zlib1g-dev libbz2-dev \
 libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
 xz-utils tk-dev
 ```
@@ -372,6 +371,7 @@ pyenv update
 pyenv install -l
 # Then install with:
 pyenv install 3.5.2
+pyenv install jython-2.7.1
 ```
 6. Once you have installed the versions of python you want, have a look at the docs here: https://github.com/pyenv/pyenv#choosing-the-python-version . In a nutshell, you'll need to use the `pyenv local` and `pyenv global` commands to set which versions of python you will want available to different projects.
 
