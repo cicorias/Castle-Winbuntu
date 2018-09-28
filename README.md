@@ -371,6 +371,7 @@ pyenv update
 pyenv install -l
 # Then install with:
 pyenv install 3.5.2
+pyenv install jython-2.7.1
 ```
 6. Once you have installed the versions of python you want, have a look at the docs here: https://github.com/pyenv/pyenv#choosing-the-python-version . In a nutshell, you'll need to use the `pyenv local` and `pyenv global` commands to set which versions of python you will want available to different projects.
 
