@@ -151,7 +151,7 @@ Install Bash-it with: `sh -c "$(curl -fsSL https://raw.githubusercontent.com/Bas
 1. I'd also recommend trying out the excellent powerlevel9k theme. Install it with the following:
   * First, `mkdir ~/src` then `git clone https://github.com/bhilburn/powerlevel9k.git ~/src/powerlevel9k`
   * Create a symlink with `ln -s ~/src/powerlevel9k/powerlevel9k.zsh-theme ~/.oh-my-zsh/custom/themes/powerlevel9k.zsh-theme`
-1. I'm also fond of using zplug. Install it with: `curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh| zsh`
+1. I'm also fond of using zplug. Install it with: `curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh`
 1. Finally, execute `compaudit | xargs sudo chmod -R go-w` to get rid of the "insecure" messages.
 
 *Note that for older Windows builds (I believe this may be fixed on recent builds but haven't confirmed this yet...), currently running a large number of plugins or a special theme in *either Bash-it or oh-my-zsh*, i.e. powerline-multiline for Bash-it or powerlevel9k for oh-my-zsh, slows things down pretty intolerably... - If you're on an older build, I'd recommend choosing a minimal theme (I'm currently pretty happy with the oh-my-zsh ~"ys"~ default robby-russell theme..) and limiting your customizations if speed is important to you.
