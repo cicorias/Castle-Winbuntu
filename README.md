@@ -45,9 +45,7 @@ Here's what I (eventually) did to get things working consistently:
 1. From the "Terminal shell" drop-down, select **Ubuntu Bash (WSL)**.
 1. In the "Startup directory" field, enter/select: `C:\Users\<your user>`
 1. Click the "Advanced shell settings" tab and enter:
-```
-bash -c -l "cd ~ && DISPLAY=:0 xfce4-terminal"
-```
+`bash -c -l "cd ~ && DISPLAY=:0 xfce4-terminal"`
 1. Click the `OK` button (ignoring the temptation to click on the "Bookmark settings" tab and the "Create a desktop shortcut to this session" button...).
 1. You should see your session listed on the left-hand side of the main MobaXterm window. Right-click the icon and (now) select "Create a desktop shortcut" to create an "Ubuntu Bash" shortcut on the desktop. This should present a pop-up with a couple checkboxes for hiding the main MobaXterm window and cleanly exiting it. Check both boxes.
 1. Exit MobaXterm completely. Double-click the shortcut.
