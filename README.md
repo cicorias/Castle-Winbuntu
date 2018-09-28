@@ -36,7 +36,7 @@ Here's what I (eventually) did to get things working consistently:
 ```
 @powershell -NoProfile -ExecutionPolicy unrestricted -Command "iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))" && SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin
 ```
-1. Next, I installed Boxstarter with `choco install boxstarter`, and ran it against my raw gist here: https://gist.githubusercontent.com/rodtreweek/c07a1c5624728f610c56ff84c3172f8f/raw/ae2323cc3c05f3dfa21c5503be0f5a84d19b5b96/boxstarter.ps1
+1. Next, I installed Boxstarter with `choco install boxstarter -y`, and ran it against my raw gist here: https://gist.githubusercontent.com/rodtreweek/c07a1c5624728f610c56ff84c3172f8f/raw/ae2323cc3c05f3dfa21c5503be0f5a84d19b5b96/boxstarter.ps1
 1. Then, `sudo su -` to get root (change/create your password for root while here as well with `passwd`) and then: `echo "deb-src http://archive.ubuntu.com/ubuntu/ bionic main restricted universe multiverse" >> /etc/apt/sources.list;`
 1. Then: `sudo apt-get update` again.
 1. Then: `sudo apt-get install xfce4-terminal`
