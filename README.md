@@ -34,19 +34,20 @@ Here's what I (eventually) did to get things working consistently:
 1. Before anything else, run: `sudo apt-get update`
 1. Install Chocolatey by opening an administrative cmd.exe and running:
 `@powershell -NoProfile -ExecutionPolicy unrestricted -Command "iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))" && SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin`
-1. You're approach may differ somewhat, but personally I prefer to use Boxstarter to install a collection of core apps I use pretty frequently.  I first install it with: `choco install boxstarter -y` then open up an administrative Powershell/cmd.exe, and run: `Set-ExecutionPolicy RemoteSigned` and then select 'A'. Next, I run it against my raw gist with: `Install-BoxstarterPackage -PackageName https://gist.githubusercontent.com/rodtreweek/c07a1c5624728f610c56ff84c3172f8f/raw/ae2323cc3c05f3dfa21c5503be0f5a84d19b5b96/boxstarter.ps1 -DisableReboots` - which, among other things, installs MobaXterm.
-1. Then, `sudo su -` to get root (while root, I'd also highly recommend creating a password with `passwd`...) and then: `echo "deb-src http://archive.ubuntu.com/ubuntu/ bionic main restricted universe multiverse" >> /etc/apt/sources.list`
+1. You're approach may differ somewhat, but personally I prefer to use Boxstarter to install a collection of core apps I use pretty frequently.  I first install it with: `choco install boxstarter -y` then open up an administrative Powershell/cmd.exe, and run: `Set-ExecutionPolicy RemoteSigned` and when prompted, typing `A` for "all". 
+1. Next, I run Boxstarter against my raw gist from an admin Powershell/cmd.exe with: `Install-BoxstarterPackage -PackageName https://gist.githubusercontent.com/rodtreweek/c07a1c5624728f610c56ff84c3172f8f/raw/ae2323cc3c05f3dfa21c5503be0f5a84d19b5b96/boxstarter.ps1 -DisableReboots` - which currently installs MobaXterm 10.4.0 .
+1. Then, `sudo su -` to get root (incidentally, while you're here, I'd also *highly* recommend creating a password for the root user, i.e. typing the `passwd` command and entering something reasonably complex, since this is something that's easy to miss, and ended-up being a pretty big security issue for Apple awhile back...) then: `echo "deb-src http://archive.ubuntu.com/ubuntu/ bionic main restricted universe multiverse" >> /etc/apt/sources.list`
 1. Then: `sudo apt-get update` again.
 1. Then: `sudo apt-get install xfce4-terminal`
-1. Open up MobaXterm and click on **Sessions-->New Session** at the top.
+1. Next, open up MobaXterm and click on **Sessions-->New Session** at the top.
 1. A new window should open. Click on the **Shell** icon at the top of this window.
 1. From the "Terminal shell" drop-down, select **Ubuntu Bash (WSL)**.
-1. In the "Startup directory" field, enter/select: `C:\Users\<your user>`
+1. In the "Startup directory" field, select from the dropdown: `C:\Users\<your user>`
 1. Click the "Advanced shell settings" tab and enter:
 `bash -c -l "cd ~ && DISPLAY=:0 xfce4-terminal"`
-1. Click the `OK` button (ignoring the temptation to click on the "Bookmark settings" tab and the "Create a desktop shortcut to this session" button...).
-1. You should see your session listed on the left-hand side of the main MobaXterm window. Right-click the icon and (now) select "Create a desktop shortcut" to create an "Ubuntu Bash" shortcut on the desktop. This should present a pop-up with a couple checkboxes for hiding the main MobaXterm window and cleanly exiting it. Check both boxes.
-1. Exit MobaXterm completely. Double-click the shortcut.
+1. Click the `OK` button (*ignoring the temptation* to click on the "Bookmark settings" tab and the "Create a desktop shortcut to this session" button...).
+1. You should see your session listed on the left-hand side of the main MobaXterm window. Right-click the icon and (now) select "Create a desktop shortcut" to create an "Ubuntu Bash" shortcut on the desktop. This should present a pop-up with a couple checkboxes for hiding the main MobaXterm window and then exiting MobaXterm if/when this window is closed (which, while the hiding part works great, closing the terminal window still doesn't appear to terminate the main MobaXterm process...). I currently check both boxes.
+1. Next, exit MobaXterm completely. Double-click the shortcut you created on your Desktop.
 1. If all goes well, this should launch xfce4-terminal in a single window (without opening another window for MobaXterm itself) **Note: So far I've had no problems with this working with build 17134.228 and MobaXterm 10.4.0.0**.
 1. One additional thing you will likely want to do to get copy/paste working properly between WSL and Windows: Go into the X11 server settings for MobaXterm, and change the clipboard behavior to "disable copy on select". Things should work as expected once you make this change :) 
 
