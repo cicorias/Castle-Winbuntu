@@ -326,7 +326,7 @@ First, run the installer with:
 sudo apt-get install binutils bison gcc make
 ```
 3. Before you'll be able to install and use more recent golang versions, you'll first need to "bootstrap" gvm by installing, then using go1.4:
-- `gvm install go1.4`
+- `gvm install go1.4 -B`
 - `gvm use go1.4`
 4. Then, you can do a `gvm listall` to show all versions up to the most recent.
 - For example, install version go1.9.1 with:
