@@ -7,9 +7,9 @@
 
 **Update:** If you're trying to install WSL on a work PC, make sure you check with your IT department before proceeding...it's usually a good idea to let them know what you're up to beforehand to prevent any potential misunderstandings (and may even represent an opportunity to "evangelize" the virtues of leveraging WSL organizationally..) 
 
-Once you are clear as to organizational policy, and you have *everything* required by your IT department installed and updated, install WSL by first turning on "Developer Mode" (hit the Windows key on your keyboard, then just type "developer" - which should list it as "For developer settings"...) then, using an elevated Powershell, first run: `Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux` (you may need to reboot after this step...) and then: `Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1804 -OutFile Ubuntu.appx -UseBasicParsing` - which, may additionally prompt you with an "Install from store" pop-up. If you are locked on an earlier build, you might instead need to follow the instructions here: https://docs.microsoft.com/en-us/windows/wsl/install-win10#for-anniversary-update-and-creators-update-install-using-lxrun...
+Once you are clear as to organizational policy, and you have *everything* required by your IT department installed and updated, install WSL by first turning on "Developer Mode" (hit the Windows key on your keyboard, then just type "developer" - which should list it as "For developer settings"...) then, using an elevated Powershell, first run: `Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux` (you may need to reboot after this step...) and then: `Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1804 -OutFile Ubuntu.appx -UseBasicParsing` - which, may additionally prompt you with an "Install from store" pop-up. If you are locked on an earlier build, you might instead need to follow the instructions here: https://docs.microsoft.com/en-us/windows/wsl/install-win10#for-anniversary-update-and-creators-update-install-using-lxrun...ok moving on...
 
-This is my [Homesick](https://github.com/technicalpickles/homesick) Castle intended for use on the Windows Subsystem for Linux (aka "WSL", or Bash/Ubuntu on Windows). Opinions are also entirely my own ;)
+This is my [Homesick](https://github.com/technicalpickles/homesick) Castle intended for use on the Windows Subsystem for Linux (aka "WSL", or Bash/Ubuntu on Windows). Opinions represented here are also entirely my own ;)
 
 If your search for guidance on setting up a reasonable dev environment based on WSL has lead you here, I hope that through offering this fairly opinionated, occassionally solipsistic, yet well-intentioned collection of observations and sample configurations I may be of service to you :)
 
@@ -36,8 +36,8 @@ Here's what I (eventually) did to get things working consistently:
 ```
 @powershell -NoProfile -ExecutionPolicy unrestricted -Command "iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))" && SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin
 ```
-1. Next, I installed Boxstarter with `choco install boxstarter -y`, and ran it against my raw gist here: https://gist.githubusercontent.com/rodtreweek/c07a1c5624728f610c56ff84c3172f8f/raw/ae2323cc3c05f3dfa21c5503be0f5a84d19b5b96/boxstarter.ps1
-1. Then, `sudo su -` to get root (change/create your password for root while here as well with `passwd`) and then: `echo "deb-src http://archive.ubuntu.com/ubuntu/ bionic main restricted universe multiverse" >> /etc/apt/sources.list;`
+1. You're approach may differ somewhat, but personally I installed Boxstarter with `choco install boxstarter -y`, opened up cmd.exe, and ran it against my raw gist with:  `Install-BoxstarterPackage -PackageName https://gist.githubusercontent.com/rodtreweek/c07a1c5624728f610c56ff84c3172f8f/raw/ae2323cc3c05f3dfa21c5503be0f5a84d19b5b96/boxstarter.ps1 -DisableReboots` - which, among other things, installs MobaXterm.
+1. Then, `sudo su -` to get root (while root, you should also change/create your password with `passwd`) and then: `echo "deb-src http://archive.ubuntu.com/ubuntu/ bionic main restricted universe multiverse" >> /etc/apt/sources.list;`
 1. Then: `sudo apt-get update` again.
 1. Then: `sudo apt-get install xfce4-terminal`
 1. Open up MobaXterm and click on **Sessions-->New Session** at the top.
