@@ -9,9 +9,9 @@
 
 Once you are clear as to organizational policy, and you have *everything* required by your IT department installed and updated, install WSL by first turning on "Developer Mode" (hit the Windows key on your keyboard, then just type "developer" - which should list it as "For developer settings"...) then, using an elevated Powershell, first run: `Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux` (you may need to reboot after this step...) and then: `Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1804 -OutFile Ubuntu.appx -UseBasicParsing` - which, may additionally prompt you with an "Install from store" pop-up. If you are locked on an earlier build, you might instead need to follow the instructions here: https://docs.microsoft.com/en-us/windows/wsl/install-win10#for-anniversary-update-and-creators-update-install-using-lxrun ...ok moving on...
 
-This is my [Homesick](https://github.com/technicalpickles/homesick) Castle intended for use on the Windows Subsystem for Linux (aka "WSL", or Bash/Ubuntu on Windows). Opinions represented here are also entirely my own ;)
+This is my [Homesick](https://github.com/technicalpickles/homesick) Castle intended for use on the Windows Subsystem for Linux (aka "WSL", or Bash/Ubuntu on Windows).
 
-If your search for guidance on setting up a reasonable dev environment based on WSL has lead you here, I hope that through offering this fairly opinionated, occassionally solipsistic, yet well-intentioned collection of observations and sample configurations I may be of service to you :)
+If your search for guidance on setting up a reasonable dev environment based on WSL has lead you here, I hope that through offering this fairly opinionated (entirely my own), occassionally solipsistic, yet well-intentioned collection of observations and sample configurations I may be of service to you :)
 
 I also leverage the deployable ease offered by Homesick in distributing and managing my configuration files, and have included an example Homesick "castle" in this repo which you are free to clone/download.
 
