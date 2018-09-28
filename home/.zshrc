@@ -129,4 +129,5 @@ for file in ~/.{aliases,functions,path,dockerfunc,extra,exports}; do
                 source "$file"
         fi
 done
-unset file
+unset file;
+tmuxinator start daily
