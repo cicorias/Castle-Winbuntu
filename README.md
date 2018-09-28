@@ -147,12 +147,12 @@ Install Bash-it with: `sh -c "$(curl -fsSL https://raw.githubusercontent.com/Bas
 ### Zsh
 
 1. Install zsh: `sudo apt-get update; sudo apt-get install zsh`
-1. Install oh-my-zsh: `sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"`
-1. I'd also recommend trying out the excellent powerlevel9k theme. Install it with the following:
+2. Install oh-my-zsh: `sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"`
+3. I'd also recommend trying out the excellent powerlevel9k theme. Install it with the following:
   * First, `mkdir ~/src` then `git clone https://github.com/bhilburn/powerlevel9k.git ~/src/powerlevel9k`
   * Create a symlink with `ln -s ~/src/powerlevel9k/powerlevel9k.zsh-theme ~/.oh-my-zsh/custom/themes/powerlevel9k.zsh-theme`
-1. I'm also fond of using zplug. Install it with: `curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh`
-1. **Note:** If after installing zplug and configuring your environment you begin seeing various directory "insecure" messages pop-up in WSL, execute the following: `compaudit | xargs sudo chmod -R go-w` - to remove group/owner write permissions.
+4. I'm also fond of using zplug. Install it with: `curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh`
+5. **Note:** If after installing zplug and configuring your environment you begin seeing various directory "insecure" messages pop-up in WSL, execute the following: `compaudit | xargs sudo chmod -R go-w` - to remove group/owner write permissions.
 
 *Note that for older Windows builds (I believe this may be fixed on recent builds but haven't confirmed this yet...), currently running a large number of plugins or a special theme in *either Bash-it or oh-my-zsh*, i.e. powerline-multiline for Bash-it or powerlevel9k for oh-my-zsh, slows things down pretty intolerably... - If you're on an older build, I'd recommend choosing a minimal theme (I'm currently pretty happy with the oh-my-zsh ~"ys"~ default robby-russell theme..) and limiting your customizations if speed is important to you.
 
@@ -164,9 +164,9 @@ As noted above, I'm also a big fan of managing my dotfiles across different dist
   ```
   sudo chmod -R go+w /var/lib/gems/2.5.0 && sudo chmod -R go+w /usr/local/bin
   ```
-  1. Install Homesick with: `gem install homesick`
-  1. Clone this castle with `homesick clone rodtreweek/castle-winbuntu`
-  1. Create the symlinks with `homesick link castle-winbuntu`
+  2. Install Homesick with: `gem install homesick`
+  3. Clone this castle with `homesick clone rodtreweek/castle-winbuntu`
+  4. Create the symlinks with `homesick link castle-winbuntu`
 
 
 ### Vim plugins
@@ -205,9 +205,8 @@ If however you may still want to give YCM a shot, you will first need to install
 
 I've also included a .fonts directory that contains a number of fonts I've found useful. You might also be interested in using a patched Inconsalata Awesome font for better terminal compatibility with vim-airline (not included - see the link below for instructions on installing this), or you might be interested in having a look at what's offered here: https://github.com/powerline/fonts .
 
-1. Download and install the Inconsolata Awesome patched font from here (not included in fonts):
-  * <https://github.com/gabrielelana/awesome-terminal-fonts/raw/patching-strategy/patched/Inconsolata%2BAwesome.ttf>
-  * `sudo mkdir /usr/share/fonts/truetype/inconsolata-awesome/` - and copy the .ttf file you downloaded to this location.
+* Download and install the Inconsolata Awesome patched font from here (not included in fonts): <https://github.com/gabrielelana/awesome-terminal-fonts/raw/patching-strategy/patched/Inconsolata%2BAwesome.ttf>
+* Next, `sudo mkdir /usr/share/fonts/truetype/inconsolata-awesome/` - and copy the .ttf file you downloaded to this location.
 
 <img src="https://raw.githubusercontent.com/rodtreweek/i/master/castle-winbuntu/change_font_in_conemu.gif" height="450">
 
