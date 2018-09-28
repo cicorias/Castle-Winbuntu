@@ -36,8 +36,8 @@ Here's what I (eventually) did to get things working consistently:
 ```
 @powershell -NoProfile -ExecutionPolicy unrestricted -Command "iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))" && SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin
 ```
-1. You're approach may differ somewhat, but personally I installed Boxstarter with `choco install boxstarter -y`, opened up cmd.exe, and ran it against my raw gist with:  `Install-BoxstarterPackage -PackageName https://gist.githubusercontent.com/rodtreweek/c07a1c5624728f610c56ff84c3172f8f/raw/ae2323cc3c05f3dfa21c5503be0f5a84d19b5b96/boxstarter.ps1 -DisableReboots` - which, among other things, installs MobaXterm.
-1. Then, `sudo su -` to get root (while root, you should also change/create your password with `passwd`) and then: `echo "deb-src http://archive.ubuntu.com/ubuntu/ bionic main restricted universe multiverse" >> /etc/apt/sources.list;`
+1. You're approach may differ somewhat, but personally I prefer to use Boxstarter to install a collection of core apps I use pretty frequently.  I first install it with: `choco install boxstarter -y` then open up an administrative Powershell/cmd.exe, and run: `Set-ExecutionPolicy RemoteSigned` and then select 'A'. Next, I run it against my raw gist with: `Install-BoxstarterPackage -PackageName https://gist.githubusercontent.com/rodtreweek/c07a1c5624728f610c56ff84c3172f8f/raw/ae2323cc3c05f3dfa21c5503be0f5a84d19b5b96/boxstarter.ps1 -DisableReboots` - which, among other things, installs MobaXterm.
+1. Then, `sudo su -` to get root (while root, I'd also highly recommend creating a password with `passwd`...) and then: `echo "deb-src http://archive.ubuntu.com/ubuntu/ bionic main restricted universe multiverse" >> /etc/apt/sources.list;`
 1. Then: `sudo apt-get update` again.
 1. Then: `sudo apt-get install xfce4-terminal`
 1. Open up MobaXterm and click on **Sessions-->New Session** at the top.
