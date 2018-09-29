@@ -2,6 +2,11 @@
 export DISPLAY="localhost:0"
 export ZSH=$HOME/.oh-my-zsh
 
+# Colorz cuz WSL is ugly.
+if [ -f ~/.dir_colors ]; then
+  eval `dircolors ~/.dir_colors`
+fi
+
 # Install zplug
 # You can customize where you put it but it's generally recommended that you put in $HOME/.zplug
 if [[ ! -d ~/.zplug ]];then
