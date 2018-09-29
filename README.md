@@ -205,7 +205,7 @@ If however you may still want to give YCM a shot, you will first need to install
 I've also included a .fonts directory in this castle that contains a number of fonts I've found useful. Among them you'll find  a patched Inconsalata Awesome font I'd highly recommend you try, as it works exceptionally well in xfce4-terminal/zsh and offers much better compatibility with vim-airline.
 
 * If you prefer, you can also download and install the Inconsolata Awesome patched font directly from here: <https://github.com/gabrielelana/awesome-terminal-fonts/raw/patching-strategy/patched/Inconsolata%2BAwesome.ttf>
-* Next, to use the font in xfce4-terminal you will need to copy it to a location under `/usr/share/fonts/truetype/` by executing the following: `sudo mkdir /usr/share/fonts/truetype/inconsolata-awesome; cp /path/to/Inconsolata+Awesome.ttf $_`.
+* Next, to use the font in xfce4-terminal you will need to copy it to a location under `/usr/share/fonts/truetype/` by executing the following: `sudo mkdir /usr/share/fonts/truetype/inconsolata-awesome; cp /path/to/Inconsolata+Awesome.ttf $_`
 
 
 
