@@ -1,14 +1,5 @@
 #!/bin/bash
 #export DOCKER_REPO_PREFIX=rtreweek
-
-#
-# Helper Functions
-#
-#!/bin/bash
-# Bash wrappers for docker run commands
-
-export DOCKER_REPO_PREFIX=jess
-
 #
 # Helper Functions
 #
