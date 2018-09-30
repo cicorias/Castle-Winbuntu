@@ -202,10 +202,12 @@ If however you may still want to give YCM a shot, you will first need to install
 
 #### Fonts
 
-I've also included a .fonts directory that contains a number of fonts I've found useful. You might also be interested in using a patched Inconsalata Awesome font for better terminal compatibility with vim-airline (not included - see the link below for instructions on installing this), or you might be interested in having a look at what's offered here: https://github.com/powerline/fonts .
+I've also included a .fonts directory in this castle that contains a number of fonts I've found useful. Among them you'll find  a patched Inconsalata Awesome font I'd highly recommend you try, as it works exceptionally well in xfce4-terminal/zsh and offers much better compatibility with vim-airline.
 
-* Download and install the Inconsolata Awesome patched font from here (not included in fonts): <https://github.com/gabrielelana/awesome-terminal-fonts/raw/patching-strategy/patched/Inconsolata%2BAwesome.ttf>
-* Next, `sudo mkdir /usr/share/fonts/truetype/inconsolata-awesome/` - and copy the .ttf file you downloaded to this location.
+* If you prefer, you can also download and install the Inconsolata Awesome patched font directly from here: <https://github.com/gabrielelana/awesome-terminal-fonts/raw/patching-strategy/patched/Inconsolata%2BAwesome.ttf>
+* Next, to use the font in xfce4-terminal you will need to copy it to a location under `/usr/share/fonts/truetype/` by executing the following: `sudo mkdir /usr/share/fonts/truetype/inconsolata-awesome; cp /path/to/Inconsolata+Awesome.ttf $_`
+
+
 
 <img src="https://raw.githubusercontent.com/rodtreweek/i/master/castle-winbuntu/change_font_in_conemu.gif" height="450">
 
