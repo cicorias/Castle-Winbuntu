@@ -193,3 +193,5 @@
 [user]
 	email = rodney.treweek@escocorp.com
 	name = Rod Treweek
+[gpg]
+	program = /usr/bin/gpg

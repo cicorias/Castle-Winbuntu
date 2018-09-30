@@ -2,12 +2,12 @@
 
 # Make vim the default editor
 export EDITOR=/usr/local/bin/vim;
-#export TERMINAL="urxvt";
 
 # Larger bash history (allow 32³ entries; default is 500)
 export HISTSIZE=50000000;
 export HISTFILESIZE=$HISTSIZE;
 export HISTCONTROL=ignoredups;
+
 # Make some commands not show up in history
 export HISTIGNORE=" *:ls:cd:cd -:pwd:exit:date:* --help:* -h:pony:pony add *:pony update *:pony save *:pony ls:pony ls *";
 
@@ -17,6 +17,11 @@ export LC_ALL="en_US.UTF-8";
 
 # Don’t clear the screen after quitting a manual page
 export MANPAGER="less -X";
+export LESS_TERMCAP_md="$yellow" # Highlight section titles in manual pages.
+
+# Always enable colored `grep` output.
+export EDITOR=vim
+export VISUAL=vim
 
 export DBUS_SESSION_BUS_ADDRESS
 DBUS_SESSION_BUS_ADDRESS=unix:path=/var/run/user/$(id -u)/bus;
@@ -30,3 +35,6 @@ export QT_DEVICE_PIXEL_RATIO=2
 
 # Set trust level (Needed to set this to 0 to do docker pulls on docker hub...do so at your own risk)
 export DOCKER_CONTENT_TRUST=1
+
+# Fix names in Tmuxinator
+export DISABLE_AUTO_TITLE=true

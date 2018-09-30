@@ -120,3 +120,4 @@ fi
 if [ -t 1 ]; then
 exec zsh
 fi
+export DOCKER_HOST=tcp://0.0.0.0:2375

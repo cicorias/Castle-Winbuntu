@@ -43,7 +43,7 @@ root: ~/
 # post: tmux -CC attach -t daily
 
 windows:
-  - editor:
+  - vim:
       layout: 3682,208x59,0,0[208x29,0,0{95x29,0,0,0,112x29,96,0[112x22,96,0,1,112x6,96,23,2]},208x29,0,30,3]
       # Synchronize all panes of this window, can be enabled before or after the pane commands run.
       # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
