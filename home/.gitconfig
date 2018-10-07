@@ -183,11 +183,7 @@
 
 [commit]
   gpgsign = true
-
 [user]
-  name = Rod Treweek
-  email = rtreweek@gmail.com
-  name = Rod Treweek
-
-[gpg]
-  program = /usr/bin/gpg
+	name = Rod Treweek
+[github]
+	user = Rod
