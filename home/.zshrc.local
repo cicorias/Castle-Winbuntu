@@ -1,0 +1,55 @@
+export DISPLAY="localhost:0"
+
+# bindkey for autosuggestions
+bindkey '**' autosuggest-accept
+
+# Set SSH to use gpg-agent
+unset SSH_AGENT_PID
+if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
+	if [[ -z "$SSH_AUTH_SOCK" ]] || [[ "$SSH_AUTH_SOCK" == *"apple.launchd"* ]]; then
+		SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+		export SSH_AUTH_SOCK
+	fi
+fi
+# add alias for ssh to update the tty
+alias ssh="gpg-connect-agent updatestartuptty /bye >/dev/null; ssh"
+
+# Load SSH identities
+# Note: the default oh-my-zsh ssh-agent plugin
+# appears to be busted...in order to add
+# additional identities you will need to grab
+# the one from twang817/zsh-ssh-agent or bobsoppe/zsh-ssh-agent
+zstyle ':prezto:module:ssh:load' identities 'id_rsa'
+
+# PATH modifications. Don't modify if we're in TMUX because path_helper does it for us.
+if [[ -z $TMUX ]]; then
+  # Add ~/.bin to PATH
+  export PATH="$PATH:$HOME/.bin"
+  export PATH="/usr/local/sbin:$PATH"
+fi
+
+# Initialize rbenv
+# if which rbenv >/dev/null ; then
+# [[ $PATH =~ 'rbenv/shims' ]] || eval "$(rbenv init -)"
+# fi
+
+#Initialize pyenv
+export PATH="${HOME}/.pyenv/bin:$PATH"
+# eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
+
+#Initialize GVM
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+
+# Load the shell dotfiles, and then some:
+# * ~/.path can be used to extend `$PATH`.
+# * ~/.extra can be used for other settings you don’t want to commit.
+for file in ~/.{aliases,functions,path,extra,exports}; do
+  if [[ -r "$file" ]] && [[ -f "$file" ]]; then
+  source "$file"
+  fi
+done
+unset file
+
+# Docker for Windows...
+export DOCKER_HOST=tcp://0.0.0.0:2375

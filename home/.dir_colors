@@ -124,7 +124,8 @@ OTHER_WRITABLE 48;5;235;38;5;33 # dir that is other-writable (o+w) and not stick
 STICKY 48;5;33;38;5;230 # dir with the sticky bit set (+t) and not other-writable
 # This is for files with execute permission:
 #EXEC 00;38;5;64
-EXEC 00;38;5;244
+#EXEC 48;5;64;38;5;230
+EXEC 45;37
 
 ## Archives or compressed (violet + bold for compression)
 .tar    00;38;5;61

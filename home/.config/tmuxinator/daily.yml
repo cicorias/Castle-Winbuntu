@@ -1,7 +1,7 @@
 # /home/rtrew/.config/tmuxinator/daily.yml
 
 name: daily
-root: ~/
+# root: ~/
 
 # Optional tmux socket
 # socket_name: foo
@@ -49,8 +49,11 @@ windows:
       # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
       # synchronize: after
       panes:
-        - yurgen:
-        - burgen:
-        - zurgen:
+        - zig:
+          - clear
+        - zag:
+          - clear
+        - zog:
+          - clear
   # - server: bundle exec rails s
   # - logs: tail -f log/development.log
