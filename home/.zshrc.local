@@ -1,4 +1,8 @@
+# Set the terminal properly...
 export DISPLAY="localhost:0"
+
+# When did it happen?
+HIST_STAMPS="mm/dd/yyyy"
 
 # bindkey for autosuggestions
 bindkey '**' autosuggest-accept
@@ -15,10 +19,6 @@ fi
 alias ssh="gpg-connect-agent updatestartuptty /bye >/dev/null; ssh"
 
 # Load SSH identities
-# Note: the default oh-my-zsh ssh-agent plugin
-# appears to be busted...in order to add
-# additional identities you will need to grab
-# the one from twang817/zsh-ssh-agent or bobsoppe/zsh-ssh-agent
 zstyle ':prezto:module:ssh:load' identities 'id_rsa'
 
 # PATH modifications. Don't modify if we're in TMUX because path_helper does it for us.
@@ -51,5 +51,3 @@ for file in ~/.{aliases,functions,path,extra,exports}; do
 done
 unset file
 
-# Docker for Windows...
-export DOCKER_HOST=tcp://0.0.0.0:2375
