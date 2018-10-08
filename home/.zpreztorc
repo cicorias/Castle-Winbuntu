@@ -32,14 +32,15 @@ zstyle ':prezto:load' pmodule \
   'spectrum' \
   'utility' \
   'completion' \
-  'prompt' \
   'autosuggestions' \
   'syntax-highlighting' \
   'history-substring-search' \
   'ssh' \
   'gpg' \
   'docker' \
-  'rsync'
+  'rsync' \
+  # 'contrib-prompt' \
+  'prompt'
 
 #
 # Autosuggestions
@@ -62,8 +63,8 @@ zstyle ':prezto:module:autosuggestions:color' found 'blue'
 #
 
 # Set the key mapping style to 'emacs' or 'vi'.
-#zstyle ':prezto:module:editor' key-bindings 'emacs'
-#zstyle ':prezto:module:editor' key-bindings 'vi'
+# zstyle ':prezto:module:editor' key-bindings 'emacs'
+# zstyle ':prezto:module:editor' key-bindings 'vi'
 
 # Auto convert .... to ../..
 zstyle ':prezto:module:editor' dot-expansion 'yes'
@@ -119,7 +120,11 @@ zstyle ':prezto:module:history-substring-search' globbing-flags 'yellow'
 # Set the prompt theme to load.
 # Setting it to 'random' loads a random theme.
 # Auto set to 'off' on dumb terminals.
-zstyle ':prezto:module:prompt' theme 'fire'
+# zstyle ':prezto:module:prompt' theme 'fire' # Lacks features, but good.
+# zstyle ':prezto:module:prompt' theme 'powerline' # Slow and incomplete :(
+# zstyle ':prezto:module:prompt' theme 'powerlevel9k' # This is terrible :(
+zstyle ':prezto:module:prompt' theme 'fade' red
+# zstyle ':prezto:module:prompt' theme 'spaceship'
 
 # Set the working directory prompt display length.
 # By default, it is set to 'short'. Set it to 'long' (without '~' expansion)
@@ -128,7 +133,7 @@ zstyle ':prezto:module:prompt' pwd-length 'short'
 
 # Set the prompt to display the return code along with an indicator for non-zero
 # return codes. This is not supported by all prompts.
-zstyle ':prezto:module:prompt' show-return-val 'yes'
+# zstyle ':prezto:module:prompt' show-return-val 'yes'
 
 #
 # Python
@@ -186,13 +191,13 @@ zstyle ':prezto:module:syntax-highlighting' highlighters \
 zstyle ':prezto:module:terminal' auto-title 'yes'
 
 # Set the window title format.
-zstyle ':prezto:module:terminal:window-title' format '%n@%m: %s'
+# zstyle ':prezto:module:terminal:window-title' format '%n@%m: %s'
 
 # Set the tab title format.
-zstyle ':prezto:module:terminal:tab-title' format '%m: %s'
+# zstyle ':prezto:module:terminal:tab-title' format '%m: %s'
 
 # Set the terminal multiplexer title format.
-zstyle ':prezto:module:terminal:multiplexer-title' format '%s'
+# zstyle ':prezto:module:terminal:multiplexer-title' format '%s'
 
 #
 # Tmux
@@ -217,6 +222,6 @@ zstyle ':prezto:module:terminal:multiplexer-title' format '%s'
 # Enabled safe options. This aliases cp, ln, mv and rm so that they prompt
 # before deleting or overwriting files. Set to 'no' to disable this safer
 # behavior.
-zstyle ':prezto:module:utility' safe-ops 'yes'
+# zstyle ':prezto:module:utility' safe-ops 'yes'
 zstyle ':prezto:module:utility:ls' color 'yes'
 
