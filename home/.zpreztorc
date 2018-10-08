@@ -39,7 +39,6 @@ zstyle ':prezto:load' pmodule \
   'gpg' \
   'docker' \
   'rsync' \
-  # 'contrib-prompt' \
   'prompt'
 
 #
@@ -123,7 +122,7 @@ zstyle ':prezto:module:history-substring-search' globbing-flags 'yellow'
 # zstyle ':prezto:module:prompt' theme 'fire' # Lacks features, but good.
 # zstyle ':prezto:module:prompt' theme 'powerline' # Slow and incomplete :(
 # zstyle ':prezto:module:prompt' theme 'powerlevel9k' # This is terrible :(
-zstyle ':prezto:module:prompt' theme 'fade' red
+zstyle ':prezto:module:prompt' theme 'fade' 'red'
 # zstyle ':prezto:module:prompt' theme 'spaceship'
 
 # Set the working directory prompt display length.
