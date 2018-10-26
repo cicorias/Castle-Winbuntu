@@ -321,7 +321,7 @@ Enable-WindowsOptionalFeature -Online -FeatureName:Microsoft-Hyper-V -All
 The Github repo and basic instructions are available [here](https://github.com/moovweb/gvm). 
 First, install the following dependencies:
 ```
-sudo apt-get install binutils bison gcc make
+sudo apt-get install binutils bison gcc make libczmq-dev
 ```
 Then run the installer with:
 - `zsh < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)` - or if you're using bash as your shell, substitute `bash` for `zsh`.
