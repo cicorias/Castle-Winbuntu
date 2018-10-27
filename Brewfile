@@ -24,6 +24,7 @@ brew "tig"
 brew "xclip"
 brew "nethogs"
 brew "bmon"
+brew "zeromq"
 
 # Ruby
 brew "ruby"
