@@ -82,7 +82,7 @@ sh ~/.homesick/repos/Castle-Winbuntu/home/bin/osx.sh
 echo
 echo "Finished!"
 echo
-echo "All that's left is to configure iTerm2: https://github.com/natemccurdy/dotfiles#colors-and-fonts"
+echo "All that's left is to configure iTerm2."
 echo
 read -r -p "Also, you should reboot. Do that now? [Y/n]: " answer
 if [[ $answer =~ ^[Yy]$ ]]; then
