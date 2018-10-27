@@ -79,4 +79,5 @@ cask "slack"
 cask "vagrant"
 cask "vlc"
 cask "wireshark"
+cask "xquartz"
 
