@@ -22,6 +22,8 @@ brew "neovim"
 brew "zsh"
 brew "tig"
 brew "xclip"
+brew "nethogs"
+brew "bmon"
 
 # Ruby
 brew "ruby"
