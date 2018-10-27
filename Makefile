@@ -30,15 +30,15 @@ dotfiles: ## Installs the dotfiles.
 		sudo ln -snf /usr/bin/pinentry /usr/local/bin/pinentry; \
 	fi;
 
-.PHONY: etc
-etc: ## Installs the etc directory files.
-	sudo mkdir -p /etc/docker/seccomp
-	for file in $(shell find $(CURDIR)/etc -type f -not -name ".*.swp"); do \
-		f=$$(echo $$file | sed -e 's|$(CURDIR)||'); \
-		sudo ln -f $$file $$f; \
-	done
-	systemctl --user daemon-reload || true
-	sudo systemctl daemon-reload
+#.PHONY: etc
+#etc: ## Installs the etc directory files.
+#	sudo mkdir -p /etc/docker/seccomp
+#	for file in $(shell find $(CURDIR)/etc -type f -not -name ".*.swp"); do \
+#		f=$$(echo $$file | sed -e 's|$(CURDIR)||'); \
+#		sudo ln -f $$file $$f; \
+#	done
+#	systemctl --user daemon-reload || true
+#	sudo systemctl daemon-reload
 
 .PHONY: test
 test: shellcheck ## Runs all the tests on the files in the repository.
