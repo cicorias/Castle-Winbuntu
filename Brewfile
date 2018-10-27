@@ -21,6 +21,7 @@ brew "vim", args: ["with-override-system-vi"]
 brew "neovim"
 brew "zsh"
 brew "tig"
+brew "xclip"
 
 # Ruby
 brew "ruby"
