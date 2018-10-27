@@ -24,7 +24,7 @@ git clone https://github.com/bhilburn/powerlevel9k.git ~/src/powerlevel9k
 # Get Homesick for dotfiles
 sudo gem install homesick --no-doc --no-ri
 homesick clone rodtreweek/Castle-Winbuntu
-homesick symlink dotfiles
+homesick symlink Castle-Winbuntu
 
 # Install HomeBrew apps
 brew bundle --file=~/.homesick/repos/Castle-Winbuntu/Brewfile
@@ -48,10 +48,9 @@ vim +PlugInstall +qall
 # Install Oh My ZSH
 # git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 
-# --Or skip OMZ and install Prezto instead...
+# -- Or skip OMZ and install Prezto instead...
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 # Create a new Zsh configuration by copying the Zsh configuration files provided:
-setopt EXTENDED_GLOB
 for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
   ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
 done
