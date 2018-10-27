@@ -51,9 +51,9 @@ vim +PlugInstall +qall
 # -- Or skip OMZ and install Prezto instead...
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 # Create a new Zsh configuration by copying the Zsh configuration files provided:
-for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
-  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
-done
+#for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+#  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+#done
 
 echo "Changing ${USER}'s shell to Brew's zsh..."
 sudo dscl . -create "/Users/$USER" UserShell /usr/local/bin/zsh
@@ -74,7 +74,7 @@ rm gruvbox-dark.itermcolors
 
 # Run OSX config script
 echo "Configuring a bunch of OSX things"
-sh ~/.homesick/repos/Castle-Winbuntu/home/.bin/osx.sh
+sh ~/.homesick/repos/Castle-Winbuntu/home/bin/osx.sh
 
 echo
 echo "Finished!"
