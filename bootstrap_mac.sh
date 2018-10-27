@@ -62,6 +62,9 @@ sudo dscl . -create "/Users/$USER" UserShell /usr/local/bin/zsh
 echo "Installing Go Version Manager..."
 zsh < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
 
+# Install zplug...
+curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+
 # Get fonts
 echo "Downloading Inconsolata fonts to ~/Library/Fonts/"
 wget -P ~/Library/Fonts/ https://github.com/gabrielelana/awesome-terminal-fonts/raw/patching-strategy/patched/Inconsolata%2BAwesome.ttf
