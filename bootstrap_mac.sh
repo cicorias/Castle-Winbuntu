@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 #
-# Run this on a stock Mac to bootstrap it with dotfiles and customizations
-#
+# Run this on a stock Mac to bootstrap it with dotfiles and customizations.
+# It should do a mostly automated install if you run this curl command from the command-line:
+# curl -O https://raw.githubusercontent.com/rodtreweek/Castle-Winbuntu/master/bootstrap_mac.sh && chmod u+x bootstrap_mac.sh; bash bootstrap_mac.sh
 
 # Ask for the administrator password upfront
 echo "Asking for your sudo password upfront..."
